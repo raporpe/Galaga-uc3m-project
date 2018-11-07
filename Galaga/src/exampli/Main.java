@@ -17,7 +17,7 @@ public class Main {
 		
 		Enemy example = new Enemy(85,110);
 		
-
+		board.bd_addSprite(0, "enemy100.png", true)
 	
 	}
 	
