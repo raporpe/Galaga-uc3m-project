@@ -28,6 +28,7 @@ public class TestingGUI {
 		do {
 			String lastAction;
 			lastAction = board.gb_getLastAction();
+			
 			if(lastAction.equals("right")) {
 				enemy1.setX(enemy1.getX() + 1);
 			}
@@ -38,6 +39,9 @@ public class TestingGUI {
 				enemy1.setY(enemy1.getY() -1);
 			}
 			if(lastAction.equals("down")) {
+				enemy1.setY(enemy1.getY() + 1);
+			}
+			if(lastAction.equals("space")) {
 				enemy1.setY(enemy1.getY() + 1);
 			}
 			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
