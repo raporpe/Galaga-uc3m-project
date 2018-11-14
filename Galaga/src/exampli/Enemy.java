@@ -42,7 +42,6 @@ public class Enemy {
 		return y;
 	}
 	
-
 	public int getId() {
 		return id;
 	}
@@ -51,6 +50,13 @@ public class Enemy {
 		return image;
 	}
 	
+	
+	public void moving(int module, int dir) {
+		setX(getX() + Constants.MOVES[dir][0]*module);
+		
+		setY(getY() + Constants.MOVES[dir][1]*module);
+		
+	}
 	
 	
 }
