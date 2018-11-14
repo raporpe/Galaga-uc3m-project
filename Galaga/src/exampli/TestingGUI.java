@@ -24,13 +24,23 @@ public class TestingGUI {
 		//Make board visible
 		board.setVisible(true);
 		
+		
 		do {
 			String lastAction;
 			lastAction = board.gb_getLastAction();
 			if(lastAction.equals("right")) {
 				int currentX = enemy1.getX();
+				currentX++;
+				enemy1.setX(currentX);
 			}
-		}
+			if(lastAction.equals("left")) {
+				int currentX = enemy1.getX();
+				currentX--;
+				enemy1.setX(currentX);
+			}
+			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
+		}while(true);
+
 	}
 
 }
