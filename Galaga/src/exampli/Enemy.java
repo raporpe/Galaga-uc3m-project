@@ -42,6 +42,7 @@ public class Enemy {
 		return y;
 	}
 	
+
 	public int getId() {
 		return id;
 	}
