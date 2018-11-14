@@ -38,6 +38,16 @@ public class TestingGUI {
 				currentX--;
 				enemy1.setX(currentX);
 			}
+			if(lastAction.equals("up")) {
+				int currentY = enemy1.getY();
+				currentY--;
+				enemy1.setY(currentY);
+			}
+			if(lastAction.equals("down")) {
+				int currentY = enemy1.getY();
+				currentY++;
+				enemy1.setY(currentY);
+			}
 			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
 		}while(true);
 
