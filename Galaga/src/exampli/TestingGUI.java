@@ -29,24 +29,16 @@ public class TestingGUI {
 			String lastAction;
 			lastAction = board.gb_getLastAction();
 			if(lastAction.equals("right")) {
-				int currentX = enemy1.getX();
-				currentX++;
-				enemy1.setX(currentX);
+				enemy1.setX(enemy1.getX() + 1);
 			}
 			if(lastAction.equals("left")) {
-				int currentX = enemy1.getX();
-				currentX--;
-				enemy1.setX(currentX);
+				enemy1.setX(enemy1.getX() - 1);
 			}
 			if(lastAction.equals("up")) {
-				int currentY = enemy1.getY();
-				currentY--;
-				enemy1.setY(currentY);
+				enemy1.setY(enemy1.getY() -1);
 			}
 			if(lastAction.equals("down")) {
-				int currentY = enemy1.getY();
-				currentY++;
-				enemy1.setY(currentY);
+				enemy1.setY(enemy1.getY() + 1);
 			}
 			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
 		}while(true);
