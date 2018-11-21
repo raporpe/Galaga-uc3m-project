@@ -4,7 +4,7 @@ package src;
 import java.util.Locale;
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-public class TestingGUI {
+public class Game {
 
 	public int i=0;
 	public static void main(String[] args) {
