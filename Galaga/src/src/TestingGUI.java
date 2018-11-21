@@ -1,4 +1,4 @@
-package exampli;
+package src;
 //Importing the Locale object to change the default
 //configuration of the computer to English
 import java.util.Locale;
@@ -15,7 +15,7 @@ public class TestingGUI {
 		//Create a 17x22 board
 		board = new GameBoardGUI(17,22);
 		//We create an enemy
-		Enemy enemy1= new Enemy(85,110,0,"enemy100.png");
+		Enemy enemy1= new Enemy(85,110,0,"player.png");
 		//Adding the enemy to the board
 		board.gb_addSprite(enemy1.getId(), enemy1.getImage(), true);
 		//Placing the enemy at the requested coordinates

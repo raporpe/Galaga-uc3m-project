@@ -1,4 +1,4 @@
-package exampli;
+package src;
 
 public class Enemy {
 

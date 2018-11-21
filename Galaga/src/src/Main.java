@@ -1,4 +1,4 @@
-package exampli;
+package src;
 import java.util.Locale;
 import edu.uc3m.game.GameBoardGUI;
 
@@ -14,9 +14,9 @@ public class Main {
 		
 		board.setVisible(true);
 		
-		Enemy example = new Enemy(85,110);
+		Enemy example = new Enemy(85,110,1,"f");
 		
-		board.bd_addSprite(0, "enemy100.png", true)
+		board.gb_addSprite(0, "enemy100.png", true);
 	
 	}
 	

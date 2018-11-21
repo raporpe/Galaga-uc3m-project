@@ -1,4 +1,4 @@
-package exampli;
+package src;
 
 public class Constants {
 	 public static final int DIR_N = 0;
