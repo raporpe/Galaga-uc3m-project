@@ -2,38 +2,32 @@ package src;
 
 public class Player {
 	private int x;
-	final int Y;
-	private String sprite;
+	private final int Y;
+	
+	
 
-	public Player (int x, int y, String sprite) {
-		setX(x);
-		this.Y=y;
-		setSprite(sprite);
-	}
-	
-	public void setX(int x) {
-		if(x>=0) {
-			this.x=x;
-		}
+		
+	//Constructor
+	public Player (int x, int Y) {
+		this.x = x;
+		this.Y = Y;
+		
 	}
 	
 	
-	public void setSprite(String sprite) {
-		this.sprite=sprite;
-	}
+	//Setters and getters
 	
 	public int getX() {
 		return x;
 	}
 	
-	public String getSprite() {
-		return sprite;
+	//Movements
+	public void moveRight() {
+		this.x = this.x + 1;
+		
+	}
+	public void moveLeft() {
+		this.x = this.x - 1;
 	}
 	
-	public void move(int module, int dir) {
-		setX(getX() + Constants.MOVES[dir][0]*module);
-		
-		setY(getY() + Constants.MOVES[dir][1]*module);
-		
-	}
 }

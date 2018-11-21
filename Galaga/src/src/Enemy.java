@@ -1,70 +1,39 @@
 package src;
 
+//Importing the GameBoardGUI library
+import edu.uc3m.game.GameBoardGUI;
+
+
 public class Enemy {
 
+
+	private int id;
 	private int x;
 	private int y;
-	private int id;
-	private byte dir;
-	private String image;
+	private int EnemyType;
+		
 	
-	public Enemy (int x, int y, int id, String image) {
-		setX(x);
-		setY(y);
-		setId(id);
-		setImage(image);
-	}
-	
-	public void setX(int x) {
-		if(x>=0) {
-			this.x=x;
-		}
-	}
-	
-	public void setY(int y) {
-		if(y>=0) {
-			this.y=y;
-		}
-	}
-	
-	public void setId(int id) {
-		this.id=id;
-	}
-	
-	public void setImage(String im) {
-		this.image=im;
-	}
-	
-	public int getX() {
-		return x;
-	}
-	
-	public int getY() {
-		return y;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
-	public void move(byte direction, byte steps) {
-		if(direction>=0 && direction<16) {
-			dir = direction;
-			this.x=this.x+Constants.MOVES[dir][0]*steps;
-			this.y=this.y+Constants.MOVES[dir][1]*steps;
 
-		}
-	}
-	public String getImage() {
-		return image;
+	public Enemy(int x, int y, int EnemyType) {
+		
+		//TODO: ADD THE CHECKER
+		this.EnemyType = EnemyType;
+		
+		
+		
 	}
 	
 	
-	public void moving(int module, int dir) {
-		setX(getX() + Constants.MOVES[dir][0]*module);
-		
-		setY(getY() + Constants.MOVES[dir][1]*module);
-		
-	}	
+	//Functions
+	
+	public boolean CheckCollision() {
+		if(Player.get)
+	}
+	
+	
+	
+	
+	
+	
 	
 }
