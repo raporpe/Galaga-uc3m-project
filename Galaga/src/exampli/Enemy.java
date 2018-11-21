@@ -4,7 +4,7 @@ public class Enemy {
 	private int x;
 	private int y;
 	private int id;
-
+	private byte dir;
 	private String image;
 	
 	public Enemy (int x, int y, int id, String image) {
@@ -46,17 +46,18 @@ public class Enemy {
 		return id;
 	}
 	
+	public void move(byte direction, byte steps) {
+		if(direction>=0 && direction<16) {
+			dir = direction;
+			this.x=this.x+Constants.MOVES[dir][0]*steps;
+			this.y=this.y+Constants.MOVES[dir][1]*steps;
+
+		}
+	}
 	public String getImage() {
 		return image;
 	}
 	
-	
-	public void moving(int module, int dir) {
-		setX(getX() + Constants.MOVES[dir][0]*module);
-		
-		setY(getY() + Constants.MOVES[dir][1]*module);
-		
-	}
 	
 	
 }

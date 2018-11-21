@@ -6,6 +6,7 @@ import java.util.Locale;
 import edu.uc3m.game.GameBoardGUI;
 public class TestingGUI {
 
+	public int i=0;
 	public static void main(String[] args) {
 		//To change the GUI to English
 		Locale.setDefault(new Locale("en"));
@@ -39,6 +40,9 @@ public class TestingGUI {
 			}
 			if(lastAction.equals("down")) {
 				enemy1.setY(enemy1.getY() + 1);
+			}
+			if(lastAction.equals("space")) {
+				enemy1.move((byte)1, (byte)1);
 			}
 			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
 		}while(true);
