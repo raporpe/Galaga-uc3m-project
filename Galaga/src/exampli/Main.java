@@ -2,7 +2,6 @@ package exampli;
 import java.util.Locale;
 import edu.uc3m.game.GameBoardGUI;
 
-
 public class Main {
 	
 	public static void main(String[] args) {
