@@ -1,6 +1,7 @@
 package exampli;
 
 public class Enemy {
+
 	private int x;
 	private int y;
 	private int id;
@@ -59,5 +60,11 @@ public class Enemy {
 	}
 	
 	
+	public void moving(int module, int dir) {
+		setX(getX() + Constants.MOVES[dir][0]*module);
+		
+		setY(getY() + Constants.MOVES[dir][1]*module);
+		
+	}	
 	
 }
