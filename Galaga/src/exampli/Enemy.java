@@ -1,5 +1,7 @@
 package exampli;
 
+import edu.uc3m.game.GameBoardGUI;
+
 public class Enemy {
 	private int x;
 	private int y;
@@ -7,6 +9,8 @@ public class Enemy {
 
 	private String image;
 	
+	TestingGUI board = new TestingGUI();
+		
 	public Enemy (int x, int y, int id, String image) {
 		setX(x);
 		setY(y);
@@ -53,10 +57,14 @@ public class Enemy {
 	
 	public void moving(int module, int dir) {
 		setX(getX() + Constants.MOVES[dir][0]*module);
-		
+		switch(dir) {
+		}
 		setY(getY() + Constants.MOVES[dir][1]*module);
-		
-	}
+
 	
+	}
+
 	
 }
+
+

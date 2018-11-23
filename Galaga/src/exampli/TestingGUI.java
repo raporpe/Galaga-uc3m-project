@@ -24,6 +24,12 @@ public class TestingGUI {
 		//Make board visible
 		board.setVisible(true);
 		
+		System.out.println(board);
+		
+		
+		
+		
+		int ii = 0;
 		
 		do {
 			String lastAction;
@@ -40,8 +46,27 @@ public class TestingGUI {
 			if(lastAction.equals("down")) {
 				enemy1.setY(enemy1.getY() + 1);
 			}
+			if(lastAction.equals("space")) {
+				enemy1.setY(enemy1.getY() + 1);
+
+				
+				while(!(lastAction.equals("tab"))) {
+					enemy1.moving(2,ii);
+					ii++;
+					
+					if(ii == 16){
+						ii = 0;
+					}
+					
+					board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
+
+				}
+		
+			}
 			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
 		}while(true);
+		
+		
 
 	}
 
