@@ -7,6 +7,11 @@ public class Stars implements Runnable {
 	int[] starPositionX;
 	int[] starPositionY;
 
+	
+	
+	
+	
+	
 	public void generateSky() {
 		
 		starPositionX = new int[this.density];
@@ -23,11 +28,12 @@ public class Stars implements Runnable {
 		}
 		
 		
+		
 		//Movement loop
 		while(Stats.playing) {
 			for(int ii = 0; ii < this.density; ii++) {
 				
-				if(starPositionY[ii] < 220) {
+				if(starPositionY[ii] < Game.height) {
 					starPositionY[ii]++;
 				} else {
 					starPositionY[ii] = 0;
@@ -48,6 +54,13 @@ public class Stars implements Runnable {
 		}
 
 	}
+	
+	
+	
+	
+	
+	
+	
 
 	//Procedural generator of stars position
 	public void positionGenerator(int[] X, int[] Y, int density) {
@@ -72,7 +85,7 @@ public class Stars implements Runnable {
 				passed = true;
 
 				//X axis
-				genX = (int)(Math.random()*165);
+				genX = (int)(Math.random()*(Game.width-5));
 				
 				for(int jj = 0; jj < ii; jj++) {
 					if(Math.abs((genX - tempX[jj])) <= sep) {
@@ -81,10 +94,10 @@ public class Stars implements Runnable {
 				}
 				
 				//Y axis
-				genY = (int)(Math.random()*220);
+				genY = (int)(Math.random()*Game.height);
 				
 				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genY - tempY[jj])) <= 7) {
+					if(Math.abs((genY - tempY[jj])) <= 10) {
 						passed = false;
 					}
 				}
@@ -104,6 +117,16 @@ public class Stars implements Runnable {
 
 	}
 
+	
+	
+
+
+	
+	
+	
+	
+	
+	
 	public Stars(int density, int speed) {
 		if (density > 0) {
 			this.density = density;

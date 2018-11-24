@@ -10,6 +10,8 @@ public class Game {
 	public static GameBoardGUI board;
 	public int i=0;
 	
+	
+	//Responsive
 	public static int width = 170;
 	public static int height = 220;
 	
@@ -30,20 +32,28 @@ public class Game {
 		//set Sprite visible
 //board.gb_setSpriteVisible(enemy1.getId(), true);
 		//Make board visible
+		
+		
 		board.setVisible(true);
 				
+		
+		
+		//Color setter
 		board.gb_setGridColor(0, 0, 0);		
 		
-		for(int ii = 0; ii<17; ii++) {
-			for(int jj = 0; jj < 22; jj++) {
+		for(int ii = 0; ii<(width/10); ii++) {
+			for(int jj = 0; jj < (height/10); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
 		}
 		
 		//We create three layers of stars
 		
-		Runnable layer1 = new Stars(20, 6);
+		Runnable layer1 = new Stars(15, 6);
 		new Thread(layer1).start();
+		
+		
+		//Create planets
 		
 		//We create the player
 		Player player = new Player();
@@ -82,9 +92,12 @@ public class Game {
 			
 			if(lastAction.equals("space")) {
 				player.torpedo();
+				Stats.playing = false;
 			}
 			
+	
 			
+						
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 		}while(Stats.playing);
