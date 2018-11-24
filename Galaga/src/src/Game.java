@@ -10,12 +10,17 @@ public class Game {
 	public static GameBoardGUI board;
 	public int i=0;
 	
+	public static int width = 170;
+	public static int height = 220;
+	
+	
+	
 	public static void main(String[] args) {
 		//To change the GUI to English
 		Locale.setDefault(new Locale("en"));
 
 		//Create a 17x22 board
-		board = new GameBoardGUI(17,22);
+		board = new GameBoardGUI(Game.width/10,Game.height/10);
 		//We create an enemy
 //		Enemy enemy1 = new Enemy(85,110,0,"player.png");
 		//Adding the enemy to the board
@@ -27,42 +32,62 @@ public class Game {
 		//Make board visible
 		board.setVisible(true);
 				
-		board.gb_setGridColor(10, 10, 10);
+		board.gb_setGridColor(0, 0, 0);		
+		
+		for(int ii = 0; ii<17; ii++) {
+			for(int jj = 0; jj < 22; jj++) {
+				board.gb_setSquareColor(ii, jj, 0, 0, 0);
+			}
+		}
 		
 		//We create three layers of stars
 		
-		Runnable layer1 = new Stars(11, 100);
+		Runnable layer1 = new Stars(20, 6);
 		new Thread(layer1).start();
-		Runnable layer2 = new Stars(11, 500);
-		new Thread(layer2).start();
-		Runnable layer3 = new Stars(11, 1000);
-		new Thread(layer3).start();
+		
+		//We create the player
+		Player player = new Player();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		Runnable layer2 = new Stars(11, 500);
+//		new Thread(layer2).start();
+//		Runnable layer3 = new Stars(11, 1000);
+//		new Thread(layer3).start();
 
 
-
-		board.gb_showMessageDialog("Test");;
 
 		
-//		do {
-//			String lastAction;
-//			lastAction = board.gb_getLastAction();
-//			if(lastAction.equals("right")) {
-//				enemy1.setX(enemy1.getX() + 1);
-//			}
-//			if(lastAction.equals("left")) {
-//				enemy1.setX(enemy1.getX() - 1);
-//			}
-//			if(lastAction.equals("up")) {
-//				enemy1.setY(enemy1.getY() - 1);
-//			}
-//			if(lastAction.equals("down")) {
-//				enemy1.setY(enemy1.getY() + 1);
-//			}
-//			if(lastAction.equals("space")) {
-//				enemy1.move((byte)1, (byte)1);
-//			}
-//			board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getY());
-//		}while(false);
+		
+		
+		
+		
+		
+		do {
+			String lastAction;
+			lastAction = board.gb_getLastAction();
+			if(lastAction.equals("right")) {	
+				player.moveRight();
+
+			}
+			if(lastAction.equals("left")) {
+				player.moveLeft();
+			}
+			
+			if(lastAction.equals("space")) {
+				player.torpedo();
+			}
+			
+			
+
+			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
+		}while(Stats.playing);
 
 	}
 

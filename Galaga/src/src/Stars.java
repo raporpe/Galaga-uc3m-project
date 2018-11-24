@@ -17,7 +17,7 @@ public class Stars implements Runnable {
 		
 		
 		for(int ii = 0; ii < this.density; ii++) {
-			Game.board.gb_addSprite((ii+5000), "player.png", true);
+			Game.board.gb_addSprite((ii+5000), "Star.png", true);
 			Game.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
 			Game.board.gb_setSpriteVisible((ii+5000), true);
 		}
@@ -33,7 +33,7 @@ public class Stars implements Runnable {
 					starPositionY[ii] = 0;
 				}
 				
-				starPositionX[ii] = starPositionX[ii] + (int)((Math.random()*1)*(Math.random()*-1));
+				//starPositionX[ii] = starPositionX[ii] + (int)((Math.random()*-1));
 				
 				Game.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
 				
@@ -55,9 +55,12 @@ public class Stars implements Runnable {
 		int[] tempX = new int[X.length];
 		int[] tempY = new int[Y.length];
 		
+		int sep = (int)((17-1-this.density)/(this.density+2));
+		
 		//Procedural generator for even distribution of stars
 		
 		for(int ii = 0; ii < tempX.length; ii++){
+			
 			
 			boolean passed = true;
 			int genX;
@@ -72,7 +75,7 @@ public class Stars implements Runnable {
 				genX = (int)(Math.random()*165);
 				
 				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genX - tempX[jj])) <= 8) {
+					if(Math.abs((genX - tempX[jj])) <= sep) {
 						passed = false;
 					}
 				}
@@ -81,7 +84,7 @@ public class Stars implements Runnable {
 				genY = (int)(Math.random()*220);
 				
 				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genY - tempY[jj])) <= 10) {
+					if(Math.abs((genY - tempY[jj])) <= 7) {
 						passed = false;
 					}
 				}
