@@ -25,6 +25,10 @@ public class Game {
 		board = new GameBoardGUI(Game.width/10,Game.height/10);
 		
 		
+		
+		
+		
+		
 		//We create an enemy
 //		Enemy enemy1 = new Enemy(85,110,0,"player.png");
 		//Adding the enemy to the board
