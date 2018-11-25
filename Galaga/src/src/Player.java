@@ -46,7 +46,7 @@ public class Player {
 		Game.board.gb_setValueAbility1(this.shoots);
 		Game.board.gb_setValueAbility2(this.rightBullets);
 		
-		Game.board.gb_setPortraitPlayer("galago.jpeg");
+		Game.board.gb_setPortraitPlayer("portrait.jpeg");
 		Game.board.gb_setTextPointsUp("Score");
 		Game.board.gb_setTextPointsDown("Speed");
 		Game.board.gb_setValuePointsDown(this.speed);
