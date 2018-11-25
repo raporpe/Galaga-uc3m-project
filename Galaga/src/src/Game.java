@@ -73,8 +73,10 @@ public class Game {
 		//We create the player
 		Player player = new Player(playerName, 3);
 		
-		
-		
+		//We create the zakos
+		for(int i=0;i<5;i++) {
+		Enemy enemy1 = new Enemy(i,"zako");
+		}
 		
 		
 		
