@@ -10,6 +10,8 @@ public class Game {
 	public static GameBoardGUI board;
 	public int i=0;
 	
+	public static boolean running = true;
+	
 	
 	//Responsive
 	public static int width = 170;
@@ -57,7 +59,7 @@ public class Game {
 			}
 		}
 		
-		playerName = "Test";
+		playerName = "Galagoncio";
 	
 		Game.board.gb_showMessageDialog("Select your name");
 				
@@ -109,7 +111,7 @@ public class Game {
 			
 			if(lastAction.equals("space")) {
 				player.torpedo();
-				Stats.playing = false;
+				Game.running = false;
 			}
 			
 	
@@ -117,7 +119,7 @@ public class Game {
 						
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
-		}while(Stats.playing);
+		}while(Game.running);
 
 	}
 

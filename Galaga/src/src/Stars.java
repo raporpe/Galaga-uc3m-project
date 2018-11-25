@@ -30,7 +30,7 @@ public class Stars implements Runnable {
 		
 		
 		//Movement loop
-		while(Stats.playing) {
+		while(Game.running) {
 			for(int ii = 0; ii < this.density; ii++) {
 				
 				if(starPositionY[ii] < Game.height) {
