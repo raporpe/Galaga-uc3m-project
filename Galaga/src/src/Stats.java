@@ -19,7 +19,7 @@ public class Stats {
 		Game.board.gb_setValueLevel(Stats.level);
 	}
 	
-	public 
+	 
 	
 	
 	
