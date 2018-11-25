@@ -5,10 +5,6 @@ import edu.uc3m.game.GameBoardGUI;
 
 
 public class Enemy {
-
-
-
-
 	private int id;
 	private int x;
 	private int y;
@@ -28,8 +24,6 @@ public class Enemy {
 		
 		
 	}
-	
-	
 	//Getters and setters
 	public int getId() {
 		return id;
@@ -73,12 +67,16 @@ public class Enemy {
 	
 	
 	//Functions
+
 	
-	public boolean CheckCollision() {
-		//Check player pos
-		return true;
+	public boolean CheckCollision(int pos1X, int pos1Y, int pos2X, int pos2Y) {
+		//Check player position
+		if(pos1X==pos2X && pos2Y == pos2Y) {
+			return true;
+		}else {
+			return false;
+		}
 	}
-	
 	public void move(int a, int b) {
 		
 	}
