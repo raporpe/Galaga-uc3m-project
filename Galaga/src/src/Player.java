@@ -24,12 +24,11 @@ public class Player {
 		if(maxLives > 0) {
 			this.maxLives = maxLives;
 		}
-		
 		this.name = name;
-		
+
 		this.lives = this.maxLives;
 		
-		//Craeting player in board
+		//Creating player in board
 		Game.board.gb_addSprite(1, "player.png", true);
 		Game.board.gb_moveSpriteCoord(1, this.X, this.Y);
 		Game.board.gb_setSpriteVisible(1, true);
@@ -39,12 +38,18 @@ public class Player {
 		Game.board.gb_setValueHealthCurrent(this.lives);
 		Game.board.gb_setValueHealthMax(this.maxLives);
 		Game.board.gb_setTextPlayerName(this.name);
-		Game.board.gb_setTextLevel("This is a test");
+		Game.board.gb_setTextLevel("Level");
 		
 		Game.board.gb_setTextAbility1("Shootings");
 		Game.board.gb_setTextAbility2("Right Bullets");
 		Game.board.gb_setValueAbility1(this.shoots);
 		Game.board.gb_setValueAbility2(this.rightBullets);
+		
+		Game.board.gb_setPortraitPlayer("galago");
+		Game.board.gb_setTextPointsUp("Score");
+		Game.board.gb_setTextPointsDown("Speed");
+
+		
 
 		
 
@@ -105,6 +110,7 @@ public class Player {
 		if(plusScore > 0) {
 			this.score = this.score + plusScore;	
 		}
+		Game.board.gb_setValuePointsUp(this.score);
 	}
 	
 	
