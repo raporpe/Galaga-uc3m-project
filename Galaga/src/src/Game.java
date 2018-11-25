@@ -30,7 +30,11 @@ public class Game {
 		//Create a 17x22 board
 		board = new GameBoardGUI(Game.width/10,Game.height/10);
 		
-		Enemy enemies = new Enemy(0,"zako");
+		Enemy[] enemies = new Enemy[20];
+		
+		for(int ii = 0; ii < enemies.length; ii++) {
+			enemies[ii] = new Enemy(ii, "zako");
+		}
 		
 		
 		
@@ -54,12 +58,12 @@ public class Game {
 		
 		playerName = "Galagoncio";
 	
-		Game.board.gb_showMessageDialog("Select your name");
+	//	Game.board.gb_showMessageDialog("Select your name");
 				
 		
 		//We create three layers of stars
 		
-		Runnable layer1 = new Stars(15, 6);
+		Runnable layer1 = new Stars(14, 10);
 		new Thread(layer1).start();
 
 //		Runnable layer2 = new Stars(11, 500);
@@ -75,11 +79,6 @@ public class Game {
 		
 		//We create the player
 		Player player = new Player(playerName, 3);
-		
-		//We create the zakos
-		for(int i=0;i<5;i++) {
-		Enemy enemy1 = new Enemy(i,"zako");
-		}
 		
 		
 		

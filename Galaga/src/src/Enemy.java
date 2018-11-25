@@ -12,6 +12,7 @@ public class Enemy {
 	private String imgPath;
 		
 	public Enemy(int id, String type) {
+		
 		this.id=id;
 		this.type=type;
 		
@@ -22,7 +23,14 @@ public class Enemy {
 		}else if(type.equals("galagan")) {
 			this.imgPath="enemy100.png";
 		}
-		this.id=
+		
+		this.x = Constants.enemyCoordinatesLevel1[id][0];
+		this.y = Constants.enemyCoordinatesLevel1[id][1];
+		
+		Game.board.gb_addSprite(this.id, this.imgPath, true);
+		Game.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+		Game.board.gb_setSpriteVisible(this.id, true);
+
 
 	}
 	//Getters and setters

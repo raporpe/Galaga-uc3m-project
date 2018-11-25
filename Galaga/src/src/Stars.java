@@ -97,7 +97,7 @@ public class Stars implements Runnable {
 				genY = (int)(Math.random()*Game.height);
 				
 				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genY - tempY[jj])) <= 10) {
+					if(Math.abs((genY - tempY[jj])) <= 5) {
 						passed = false;
 					}
 				}
