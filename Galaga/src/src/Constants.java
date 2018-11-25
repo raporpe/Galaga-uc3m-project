@@ -37,4 +37,5 @@ public class Constants {
 	  { -3,-3 }, // DIR_NW
 	  { -1,-4 }, // DIR_NNW
 	 };
+	 
 }

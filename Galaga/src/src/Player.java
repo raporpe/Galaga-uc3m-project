@@ -6,22 +6,43 @@ public class Player {
 	private final int Y = (Game.height-20);
 	private int id= 1;
 	
+	private int lives;
+	private int maxLives = 3;
+	private int score;
+	private String name = "NO_NAME";
+	
+	
 	
 	
 
 		
 	//Constructor
-	public Player () {
+	public Player (String name, int maxLives) {
 		
+		if(maxLives > 0) {
+			this.maxLives = maxLives;
+		}
 		
+		this.name = name;
+		
+		this.lives = this.maxLives;
+		
+		//Craeting player in board
 		Game.board.gb_addSprite(1, "player.png", true);
 		Game.board.gb_moveSpriteCoord(1, this.X, this.Y);
 		Game.board.gb_setSpriteVisible(1, true);
 		
+		//Generating text
+		
+		Game.board.gb_setValueHealthCurrent(this.lives);
+		Game.board.gb_setValueHealthMax(this.maxLives);
+		Game.board.gb_setTextPlayerName(this.name);
+		Game.board.gb_setTextLevel("This is a test");
+
 	}
 	
 	
-	//Setters and getters
+	//Public setters and getters
 	
 	public int getX() {
 		return X;
@@ -33,6 +54,20 @@ public class Player {
 		return id;
 	}
 	
+	public int getLives() {
+		return this.lives;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+		Game.board.gb_setTextPlayerName(this.name);
+	}
+	
+	
+	
+
+	
+		
 	//Movements
 	public void moveRight() {
 		if(this.X < Game.width-5) {
@@ -47,9 +82,23 @@ public class Player {
 	}
 	
 	public void torpedo() {
-		
-		
-		
+
 	}
+	
+	public void loseLife() {
+		this.lives = this.lives-1;
+		if(this.lives == 0) {
+			Stats.playing = false;
+		}
+	}
+	
+	public void increaseScore(int plusScore) {
+		if(plusScore > 0) {
+			this.score = this.score + plusScore;	
+		}
+	}
+	
+	
+
 	
 }

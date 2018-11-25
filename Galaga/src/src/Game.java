@@ -18,6 +18,10 @@ public class Game {
 	
 	
 	public static void main(String[] args) {
+		
+		String playerName;
+		
+		
 		//To change the GUI to English
 		Locale.setDefault(new Locale("en"));
 
@@ -53,7 +57,11 @@ public class Game {
 			}
 		}
 		
-
+		playerName = "Test";
+	
+		Game.board.gb_showMessageDialog("Select your name");
+				
+		
 		//We create three layers of stars
 		
 		Runnable layer1 = new Stars(15, 6);
@@ -63,7 +71,7 @@ public class Game {
 		//Create planets
 		
 		//We create the player
-		Player player = new Player();
+		Player player = new Player(playerName, 3);
 		
 		
 		
