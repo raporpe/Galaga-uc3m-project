@@ -13,6 +13,7 @@ public class Player {
 	
 	private int rightBullets;
 	private int shoots;
+	private int speed;
 	
 	
 	
@@ -48,6 +49,8 @@ public class Player {
 		Game.board.gb_setPortraitPlayer("galago");
 		Game.board.gb_setTextPointsUp("Score");
 		Game.board.gb_setTextPointsDown("Speed");
+		Game.board.gb_setValuePointsDown(this.speed);
+		//TODO: Invent another value different to speed
 
 		
 
