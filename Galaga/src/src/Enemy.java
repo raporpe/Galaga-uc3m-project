@@ -14,7 +14,14 @@ public class Enemy {
 	public Enemy(int id, String type) {
 		this.id=id;
 		this.type=type;
-		 
+		
+		if(type.equals("zako")) {
+			this.imgPath="enemy300.png";
+		}else if(type.equals("goei")) {
+			this.imgPath="enemy200.png";
+		}else if(type.equals("galagan")) {
+			this.imgPath="enemy100.png";
+		}
 
 	}
 	//Getters and setters
