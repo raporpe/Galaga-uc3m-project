@@ -30,7 +30,7 @@ public class Game {
 		//Create a 17x22 board
 		board = new GameBoardGUI(Game.width/10,Game.height/10);
 		
-		Enemy[] enemies = new Enemy[20];
+		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 		
 		for(int ii = 0; ii < enemies.length; ii++) {
 			enemies[ii] = new Enemy(ii, "zako");
