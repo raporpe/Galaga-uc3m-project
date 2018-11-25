@@ -14,6 +14,7 @@ public class Player {
 	private int rightBullets;
 	private int shoots;
 	private int speed;
+	private int level = 1;
 	
 	
 	
@@ -52,9 +53,8 @@ public class Player {
 		Game.board.gb_setValuePointsDown(this.speed);
 		//TODO: Invent another value different to speed
 
-		
+		Game.board.gb_setValueLevel(this.level);
 
-		
 
 	}
 	
@@ -80,12 +80,16 @@ public class Player {
 		Game.board.gb_setTextPlayerName(this.name);
 	}
 	
+	public int getLevel() {
+		return this.level;
+	}
+	
 	
 	
 
 	
 		
-	//Movements
+	//Funcitions
 	public void moveRight() {
 		if(this.X < Game.width-5) {
 			this.X = this.X + 1;
@@ -105,7 +109,7 @@ public class Player {
 	public void loseLife() {
 		this.lives = this.lives-1;
 		if(this.lives == 0) {
-			Stats.playing = false;
+			Game.running = false;
 		}
 	}
 	
@@ -116,7 +120,9 @@ public class Player {
 		Game.board.gb_setValuePointsUp(this.score);
 	}
 	
-	
-
+	public void nextLevel() {
+		this.level++;
+		Game.board.gb_setValueLevel(this.level);
+	}
 	
 }
