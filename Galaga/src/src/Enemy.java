@@ -8,27 +8,19 @@ public class Enemy {
 	private int id;
 	private int x;
 	private int y;
-	private int EnemyType;
-
-
-
+	private String type;
 	private String imgPath;
 		
-	
+	public Enemy(int id, String type) {
+		this.id=id;
+		this.type=type;
+		 
 
-	public Enemy(int x, int y, int EnemyType, String imgPath) {
-		
-		//TODO: ADD THE CHECKER
-		this.EnemyType = EnemyType;
-		
-		
-		
 	}
 	//Getters and setters
 	public int getId() {
 		return id;
 	}
-
 
 	public int getX() {
 		return x;
@@ -67,7 +59,6 @@ public class Enemy {
 	
 	
 	//Functions
-
 	
 	public boolean CheckCollision(int pos1X, int pos1Y, int pos2X, int pos2Y) {
 		//Check player position
