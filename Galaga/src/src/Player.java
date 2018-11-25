@@ -11,6 +11,8 @@ public class Player {
 	private int score;
 	private String name = "NO_NAME";
 	
+	private int rightBullets;
+	private int shoots;
 	
 	
 	
@@ -38,6 +40,13 @@ public class Player {
 		Game.board.gb_setValueHealthMax(this.maxLives);
 		Game.board.gb_setTextPlayerName(this.name);
 		Game.board.gb_setTextLevel("This is a test");
+		
+		Game.board.gb_setTextAbility1("Shootings");
+		Game.board.gb_setTextAbility2("Right Bullets");
+		Game.board.gb_setValueAbility1(this.shoots);
+		Game.board.gb_setValueAbility2(this.rightBullets);
+
+		
 
 	}
 	
