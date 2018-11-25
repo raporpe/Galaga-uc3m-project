@@ -42,5 +42,5 @@ public class Constants {
 	 public static final int [][] id= {
 			 {(Game.width-40)/2,25},{(Game.width-30)/2,25},{55,25},{(Game.width-20)/2,25},{(Game.width-10)/2,25},{(Game.width)/2,25},{(Game.width+10)/2,25},{(Game.width+20)/2,25},{(Game.width+30)/2,25},{(Game.width+40)/2,25},
 			 {(Game.width-40)/2,35},{(Game.width-30)/2,35},{55,35},{(Game.width-20)/2,35},{(Game.width-10)/2,35},{(Game.width)/2,35},{(Game.width+10)/2,35},{(Game.width+20)/2,35},{(Game.width+30)/2,35},{(Game.width+40)/2,35},
-			 													   {(Game.width-10)/2,15},{(Game.width)/2,35},{(Game.width+10)/2,45}};
+			 													   {(Game.width-20)/2,15},{(Game.width)/2,35},{(Game.width+10)/2,45}};
 	 }
