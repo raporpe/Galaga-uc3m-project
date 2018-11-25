@@ -44,8 +44,8 @@ public class Game {
 				
 		
 		
-		//Color setter
-		board.gb_setGridColor(0, 0, 0);		
+		//Grid color setter
+		board.gb_setGridColor(80, 80, 80);		
 		
 		for(int ii = 0; ii<(width/10); ii++) {
 			for(int jj = 0; jj < (height/10); jj++) {
@@ -53,6 +53,7 @@ public class Game {
 			}
 		}
 		
+
 		//We create three layers of stars
 		
 		Runnable layer1 = new Stars(15, 6);
