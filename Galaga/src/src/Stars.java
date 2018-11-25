@@ -59,7 +59,7 @@ public class Stars implements Runnable {
 	
 	
 	
-	
+	 
 	
 
 	//Procedural generator of stars position
@@ -113,7 +113,7 @@ public class Stars implements Runnable {
 		}
 		
 		System.arraycopy(tempX, 0, X, 0, X.length);
-		System.arraycopy(tempY, 0, Y, 0, Y.length);
+		System.arraycopy(tempX, 0, Y, 0, Y.length);
 
 	}
 
