@@ -63,7 +63,7 @@ public class Game {
 		
 		//We create three layers of stars
 		
-		Runnable layer1 = new Stars(14, 10);
+		Runnable layer1 = new Stars(50, 10);
 		new Thread(layer1).start();
 
 //		Runnable layer2 = new Stars(11, 500);
