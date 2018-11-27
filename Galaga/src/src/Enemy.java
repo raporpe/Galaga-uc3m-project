@@ -8,11 +8,11 @@ public class Enemy {
 	private int id;
 	private int x;
 	private int y;
-	private String imgPath;
+	protected String imgPath;
 	private GameBoardGUI board;
 	
 	public Enemy(int id, GameBoardGUI b, String imgPath) {
-		
+	
 		this.id=id;
 		
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
@@ -71,7 +71,11 @@ public class Enemy {
 	
 	public boolean CheckCollision(int pos1X, int pos1Y, int pos2X, int pos2Y) {
 		//Check player position
+<<<<<<< HEAD
 		if(pos1X==pos2X && pos2Y == pos2Y) {
+=======
+		if(Math.abs(pos1X-pos1X) < Game.COLLISION_RADIUS  && Math.abs(pos2X-pos2Y) < Game.COLLISION_RADIUS) {
+>>>>>>> branch 'master' of https://github.com/raporpe/Galaga.git
 			return true;
 		}else {
 			return false;
