@@ -12,20 +12,31 @@ public class Enemy {
 	protected String imgPath;
 	private GameBoardGUI board;
 	
+<<<<<<< HEAD
+	public Enemy(int id, GameBoardGUI board, String imgPath) {
+=======
 	
 	public Enemy(int id, GameBoardGUI b, String imgPath) {
+>>>>>>> branch 'master' of https://github.com/raporpe/Galaga.git
 	
 		this.id=id;
-		
+		this.imgPath=imgPath;
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
+<<<<<<< HEAD
+		this.board = board;
+		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
+		this.board.gb_moveSpriteCoord(this.getId(), this.x, this.y);
+		this.board.gb_setSpriteVisible(this.getId(), true);
+=======
 		this.board = b;
 		this.board.gb_addSprite(this.id, this.getImgPath(), true);
 		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		this.board.gb_setSpriteVisible(this.id, true);
 
 
+>>>>>>> branch 'master' of https://github.com/raporpe/Galaga.git
 	}
 	
 	public Enemy() {
