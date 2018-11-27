@@ -4,7 +4,8 @@ package src;
 import edu.uc3m.game.GameBoardGUI;
 
 
-public class Enemy {
+abstract public class Enemy {
+	
 	private int id;
 	private int x;
 	private int y;
