@@ -7,6 +7,8 @@ public class Zako extends Enemy{
 	private GameBoardGUI board;
 	
 	public Zako(int id, GameBoardGUI board){
-		super(id,board, "enemy300.png");
+		
+		super(id, board, "enemy300.png");
+		
 	}
 }
