@@ -23,7 +23,7 @@ public class Enemy {
 		}else if(type.equals("galagan")) {
 			this.imgPath="enemy100.png";
 		}
-		
+
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
