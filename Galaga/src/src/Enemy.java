@@ -19,9 +19,9 @@ public class Enemy {
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
 		this.board = b;
-		this.board.gb_addSprite(this.id, this.imgPath, true);
-		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-		this.board.gb_setSpriteVisible(this.id, true);
+		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
+		this.board.gb_moveSpriteCoord(this.getId(), this.x, this.y);
+		this.board.gb_setSpriteVisible(this.getId(), true);
 
 
 	}
