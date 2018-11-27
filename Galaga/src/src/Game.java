@@ -30,20 +30,17 @@ public class Game {
 		//Create a 17x22 board
 		board = new GameBoardGUI(Game.width/10,Game.height/10);
 		
+		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
+		
+		for(int ii = 0; ii < enemies.length; ii++) {
+			enemies[ii] = new Enemy(ii, "zako");
+		}
 		
 		
 		
 		
 		
-		//We create an enemy
-//		Enemy enemy1 = new Enemy(85,110,0,"player.png");
-		//Adding the enemy to the board
-//board.gb_addSprite(enemy1.getId(), enemy1.getImgPath(), true);
-		//Placing the enemy at the requested coordinates
-//board.gb_moveSpriteCoord(enemy1.getId(), enemy1.getX(), enemy1.getX());
-		//set Sprite visible
-//board.gb_setSpriteVisible(enemy1.getId(), true);
-		//Make board visible
+
 		
 		
 		board.setVisible(true);
@@ -61,13 +58,21 @@ public class Game {
 		
 		playerName = "Galagoncio";
 	
-		Game.board.gb_showMessageDialog("Select your name");
+	//	Game.board.gb_showMessageDialog("Select your name");
 				
 		
 		//We create three layers of stars
 		
-		Runnable layer1 = new Stars(15, 6);
+		Runnable layer1 = new Stars(1000, 10);
 		new Thread(layer1).start();
+
+//		Runnable layer2 = new Stars(11, 500);
+//		new Thread(layer2).start();
+//		Runnable layer3 = new Stars(11, 1000);
+//		new Thread(layer3).start();
+		
+		
+		
 		
 		
 		//Create planets
@@ -75,20 +80,10 @@ public class Game {
 		//We create the player
 		Player player = new Player(playerName, 3);
 		
-		//We create the zakos
-		for(int i=0;i<5;i++) {
-		Enemy enemy1 = new Enemy(i,"zako");
-		}
 		
 		
 		
-		
-		
-		
-//		Runnable layer2 = new Stars(11, 500);
-//		new Thread(layer2).start();
-//		Runnable layer3 = new Stars(11, 1000);
-//		new Thread(layer3).start();
+
 
 
 

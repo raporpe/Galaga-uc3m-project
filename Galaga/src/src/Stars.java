@@ -6,7 +6,7 @@ public class Stars implements Runnable {
 	int speed;
 	int[] starPositionX;
 	int[] starPositionY;
-
+	int precission = 20;
 	
 	
 	
@@ -18,7 +18,7 @@ public class Stars implements Runnable {
 		starPositionY = new int[this.density];
 		
 		//Procedural generator
-		positionGenerator(starPositionX, starPositionY, this.density);
+		positionGenerator(starPositionX, starPositionY, this.density, this.precission);
 		
 		
 		for(int ii = 0; ii < this.density; ii++) {
@@ -63,65 +63,114 @@ public class Stars implements Runnable {
 	
 
 	//Procedural generator of stars position
-	public void positionGenerator(int[] X, int[] Y, int density) {
+	
+	//TODO: add in the memory: We attempted several times to design an algorithm capable of creating nice-evenly distributed stars position.
+	//However, we realised we weren't mathematicians. So we decided to implement the Poisson-Disc Sampling by Robert Bridson.
+
+	
+	public void positionGenerator(int[] X, int[] Y, int density, int precission) {
 		
-		int[] tempX = new int[X.length];
+		int[] tempX = new int[X.length]; //The same length for both
 		int[] tempY = new int[Y.length];
 		
-		int sep = (int)((17-1-this.density)/(this.density+2));
+		//Creating one initial random point
+		tempX[0] = (int)(Math.random()*(Game.width));
+		tempY[0] = (int)(Math.random()*(Game.height));
+		
+		tempX[1] = (int)(Math.random()*(Game.width));
+		tempY[1] = (int)(Math.random()*(Game.height));
+		tempX[2] = (int)(Math.random()*(Game.width));
+		tempY[2] = (int)(Math.random()*(Game.height));
+		
 		
 		//Procedural generator for even distribution of stars
 		
-		for(int ii = 0; ii < tempX.length; ii++){
+		for(int ii = 3; ii < tempX.length; ii++){
 			
+			int bestIndex = 0;
 			
-			boolean passed = true;
-			int genX;
-			int genY;
+			//Generating ten candidates
 			
-			//Checking if the stars have been generated nearly
-			do {
+				int[] candidateX = new int[precission];
+				int[] candidateY = new int[precission];
+	
+				for(int kk = 0; kk < precission; kk++) {
+					candidateX[kk] = (int)(Math.random()*(Game.width));
+					candidateY[kk] = (int)(Math.random()*(Game.height));
+				}
 				
-				passed = true;
+				//Selecting the best candidate between the generated ones
+				
+				double biggestDistance = 0; //TODO: Arbitrary?
+				double totalDistance = 0;
+				
+				
+									
+					for(int kk = 0; kk < precission; kk++) {
+						
+						totalDistance = 0;
+						
+						//Calculating the total distance of k = 1 and so wrt tempX
+						for(int ll = 0; ll < ii; ll++) {
+								totalDistance = totalDistance + NewdistanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
+						}
+						
+						if(biggestDistance < totalDistance) {
+							bestIndex = kk;
+							biggestDistance = totalDistance;
+						}
+						
+						
+					}
 
-				//X axis
-				genX = (int)(Math.random()*(Game.width-5));
-				
-				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genX - tempX[jj])) <= sep) {
-						passed = false;
-					}
-				}
-				
-				//Y axis
-				genY = (int)(Math.random()*Game.height);
-				
-				for(int jj = 0; jj < ii; jj++) {
-					if(Math.abs((genY - tempY[jj])) <= 10) {
-						passed = false;
-					}
-				}
-				
-			} while(!passed);
 			
-			
-			
-			tempX[ii] = genX;
-			tempY[ii] = genY;
+			tempX[ii] = candidateX[bestIndex];
+			tempY[ii] = candidateY[bestIndex];
 			
 			
 		}
 		
 		System.arraycopy(tempX, 0, X, 0, X.length);
-		System.arraycopy(tempX, 0, Y, 0, Y.length);
+		System.arraycopy(tempY, 0, Y, 0, Y.length);
 
 	}
+	
+	
+	
+	
 
 	
 	
 
 
+	private double distanceCalculator(int Ax,int Ay, int Bx, int By) {
+		
+		int dx = Math.abs(Ax-Bx);
+		int dy = Math.abs(Ay-By);
+		
+		double distance = Math.pow((dx*dx + dy*dy),(0.5));
+		
+		return distance;
+		
+	}
 	
+	private double NewdistanceCalculator(int Ax,int Ay, int Bx, int By) {
+		
+		int dx = Math.abs(Ax-Bx);
+		int dy = Math.abs(Ay-By);
+		
+		if(dx > Game.width) {
+			dx = dx - Game.width;
+		}
+		if(dy > Game.height) {
+			dy = dy - Game.height;
+		}
+		
+		double distance = Math.pow((dx*dx + dy*dy),(0.5));
+		
+		return distance;
+		
+	}
 	
 	
 	
@@ -142,6 +191,130 @@ public class Stars implements Runnable {
 	public void run() {
 		generateSky();		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Procedural generator of stars position
+	
+	//TODO: add in the memory: We attempted several times to design an algorithm capable of creating nice-evenly distributed stars position.
+	//However, we realised we weren't mathematicians. So we decided to implement the Poisson-Disc Sampling by Robert Bridson.
+
+	
+	public void positionGeneratorDisk(int[] X, int[] Y, int density, int precission) {
+		
+		int[] tempX = new int[X.length]; //The same length for both
+		int[] tempY = new int[Y.length];
+		
+		//Creating one initial random point
+		tempX[0] = (int)(Math.random()*(Game.width));
+		tempY[0] = (int)(Math.random()*(Game.height));
+		
+		tempX[1] = (int)(Math.random()*(Game.width));
+		tempY[1] = (int)(Math.random()*(Game.height));
+		tempX[2] = (int)(Math.random()*(Game.width));
+		tempY[2] = (int)(Math.random()*(Game.height));
+		
+		
+		//Procedural generator for even distribution of stars
+		
+		for(int ii = 3; ii < tempX.length; ii++){
+			
+			int bestIndex = 0;
+			
+			//Generating ten candidates
+			
+				int[] candidateX = new int[precission];
+				int[] candidateY = new int[precission];
+	
+				for(int kk = 0; kk < precission; kk++) {
+					candidateX[kk] = (int)(Math.random()*(Game.width));
+					candidateY[kk] = (int)(Math.random()*(Game.height));
+				}
+				
+				//Selecting the best candidate between the generated ones
+				
+				double biggestDistance = 0; //TODO: Arbitrary?
+				double totalDistance = 0;
+				
+				
+									
+					for(int kk = 0; kk < precission; kk++) {
+						
+						totalDistance = 0;
+						
+						//Calculating the total distance of k = 1 and so wrt tempX
+						for(int ll = 0; ll < ii; ll++) {
+								totalDistance = totalDistance + distanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
+						}
+						
+						if(biggestDistance > totalDistance) {
+							bestIndex = kk;
+							biggestDistance = totalDistance;
+						}
+						
+						
+					}
+
+			
+			tempX[ii] = candidateX[bestIndex];
+			tempY[ii] = candidateY[bestIndex];
+			
+			
+		}
+		
+		System.arraycopy(tempX, 0, X, 0, X.length);
+		System.arraycopy(tempY, 0, Y, 0, Y.length);
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

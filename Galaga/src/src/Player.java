@@ -89,7 +89,7 @@ public class Player {
 
 	
 		
-	//Funcitions
+	//Functions
 	public void moveRight() {
 		if(this.X < Game.width-5) {
 			this.X = this.X + 1;
