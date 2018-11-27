@@ -9,8 +9,9 @@ abstract public class Enemy {
 	private int id;
 	private int x;
 	private int y;
-	private String imgPath;
 	private GameBoardGUI board;
+	
+	abstract private String imgPath;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		
