@@ -7,6 +7,7 @@ public class Player {
 	private int X = (int)(Game.width/2);
 	private final int Y = (Game.height-20);
 	private int id= 1;
+	private final int collisionRadius;
 	
 	private int lives;
 	private int maxLives = 3;
@@ -57,7 +58,7 @@ public class Player {
 
 		this.board.gb_setValueLevel(this.level);
 
-
+		this.collisionRadius=10;
 	}
 	
 	
@@ -71,6 +72,10 @@ public class Player {
 	}
 	public int getId() {
 		return id;
+	}
+	
+	public int getCollisionRadius() {
+		return collisionRadius;
 	}
 	
 	public int getLives() {
