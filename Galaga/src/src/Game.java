@@ -33,9 +33,9 @@ public class Game {
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 		
 		for(int ii = 0; ii < enemies.length; ii++) {
-			enemies[ii] = new Zako();
+			enemies[ii] = new Zako(1);
 			if(ii-2 < enemies.length) {
-				enemies[ii] = new Goei();
+				enemies[ii] = new Goei(2);
 			}
 		}
 		
