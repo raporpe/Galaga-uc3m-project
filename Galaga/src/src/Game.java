@@ -9,6 +9,8 @@ public class Game {
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
 	public int i=0;
+	public static final int COLLISION_RADIUS;
+
 	
 	public static boolean running = true;
 	

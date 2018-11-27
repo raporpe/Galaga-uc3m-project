@@ -11,7 +11,7 @@ abstract public class Enemy {
 	private int y;
 	private GameBoardGUI board;
 	
-	abstract private String imgPath;
+	abstract protected String imgPath;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		
@@ -81,7 +81,7 @@ abstract public class Enemy {
 	public boolean CheckCollision(int pos1X, int pos1Y, int pos2X, int pos2Y) {
 		
 		//Check player position
-		if(Math.abs(pos1X-pos1X) < Game.collisionRadius  && Math.abs(pos2X-pos2Y) < Game.collisionRadius) {
+		if(Math.abs(pos1X-pos1X) < Game.COLLISION_RADIUS  && Math.abs(pos2X-pos2Y) < Game.COLLISION_RADIUS) {
 			return true;
 		}else {
 			return false;
