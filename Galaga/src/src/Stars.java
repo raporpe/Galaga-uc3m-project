@@ -1,16 +1,15 @@
 package src;
 
+import edu.uc3m.game.GameBoardGUI;
+
 public class Stars implements Runnable {
 	
-	int density;
-	int speed;
-	int[] starPositionX;
-	int[] starPositionY;
-	int precission = 20;
-	
-	
-	
-	
+	private int density;
+	private int speed;
+	private int[] starPositionX;
+	private int[] starPositionY;
+	private int precission = 20;
+	private GameBoardGUI board;
 	
 	public void generateSky() {
 		
@@ -22,9 +21,9 @@ public class Stars implements Runnable {
 		
 		
 		for(int ii = 0; ii < this.density; ii++) {
-			Game.board.gb_addSprite((ii+5000), "Star.png", true);
-			Game.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
-			Game.board.gb_setSpriteVisible((ii+5000), true);
+			this.board.gb_addSprite((ii+5000), "Star.png", true);
+			this.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
+			this.board.gb_setSpriteVisible((ii+5000), true);
 		}
 		
 		
@@ -41,7 +40,7 @@ public class Stars implements Runnable {
 				
 				//starPositionX[ii] = starPositionX[ii] + (int)((Math.random()*-1));
 				
-				Game.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
+				this.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
 				
 			}
 			

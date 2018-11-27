@@ -17,24 +17,6 @@ public class Game {
 	public static int width = 170;
 	public static int height = 220;
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args) {
 		
 		String playerName;
@@ -83,7 +65,7 @@ public class Game {
 		//Create planets
 		
 		//We create the player
-		Player player = new Player(playerName, 3);
+		Player player = new Player(playerName, 3, board);
 		
 		
 		

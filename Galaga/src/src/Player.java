@@ -1,5 +1,7 @@
 package src;
 
+import edu.uc3m.game.GameBoardGUI;
+
 public class Player {
 	
 	private int X = (int)(Game.width/2);
@@ -16,12 +18,12 @@ public class Player {
 	private int speed;
 	private int level = 1;
 	
-	
-	
+	private GameBoardGUI board;
+
 
 		
 	//Constructor
-	public Player (String name, int maxLives) {
+	public Player (String name, int maxLives, GameBoardGUI b) {
 		
 		if(maxLives > 0) {
 			this.maxLives = maxLives;
@@ -29,31 +31,31 @@ public class Player {
 		this.name = name;
 
 		this.lives = this.maxLives;
-		
+		this.board=b;
 		//Creating player in board
-		Game.board.gb_addSprite(1, "player.png", true);
-		Game.board.gb_moveSpriteCoord(1, this.X, this.Y);
-		Game.board.gb_setSpriteVisible(1, true);
+		this.board.gb_addSprite(1, "player.png", true);
+		this.board.gb_moveSpriteCoord(1, this.X, this.Y);
+		this.board.gb_setSpriteVisible(1, true);
 		
 		//Generating text
 		
-		Game.board.gb_setValueHealthCurrent(this.lives);
-		Game.board.gb_setValueHealthMax(this.maxLives);
-		Game.board.gb_setTextPlayerName(this.name);
-		Game.board.gb_setTextLevel("Level");
+		this.board.gb_setValueHealthCurrent(this.lives);
+		this.board.gb_setValueHealthMax(this.maxLives);
+		this.board.gb_setTextPlayerName(this.name);
+		this.board.gb_setTextLevel("Level");
 		
-		Game.board.gb_setTextAbility1("Shootings");
-		Game.board.gb_setTextAbility2("Right Bullets");
-		Game.board.gb_setValueAbility1(this.shoots);
-		Game.board.gb_setValueAbility2(this.rightBullets);
+		this.board.gb_setTextAbility1("Shootings");
+		this.board.gb_setTextAbility2("Right Bullets");
+		this.board.gb_setValueAbility1(this.shoots);
+		this.board.gb_setValueAbility2(this.rightBullets);
 		
-		Game.board.gb_setPortraitPlayer("portrait.jpeg");
-		Game.board.gb_setTextPointsUp("Score");
-		Game.board.gb_setTextPointsDown("Speed");
-		Game.board.gb_setValuePointsDown(this.speed);
+		this.board.gb_setPortraitPlayer("portrait.jpeg");
+		this.board.gb_setTextPointsUp("Score");
+		this.board.gb_setTextPointsDown("Speed");
+		this.board.gb_setValuePointsDown(this.speed);
 		//TODO: Invent another value different to speed
 
-		Game.board.gb_setValueLevel(this.level);
+		this.board.gb_setValueLevel(this.level);
 
 
 	}
@@ -77,7 +79,7 @@ public class Player {
 	
 	public void setName(String name) {
 		this.name = name;
-		Game.board.gb_setTextPlayerName(this.name);
+		this.board.gb_setTextPlayerName(this.name);
 	}
 	
 	public int getLevel() {
@@ -117,12 +119,12 @@ public class Player {
 		if(plusScore > 0) {
 			this.score = this.score + plusScore;	
 		}
-		Game.board.gb_setValuePointsUp(this.score);
+		this.board.gb_setValuePointsUp(this.score);
 	}
 	
 	public void nextLevel() {
 		this.level++;
-		Game.board.gb_setValueLevel(this.level);
+		this.board.gb_setValueLevel(this.level);
 	}
 	
 }
