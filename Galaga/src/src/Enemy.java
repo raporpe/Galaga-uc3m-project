@@ -11,19 +11,17 @@ public class Enemy {
 	protected String imgPath;
 	private GameBoardGUI board;
 	
-	public Enemy(int id, GameBoardGUI b, String imgPath) {
+	public Enemy(int id, GameBoardGUI board, String imgPath) {
 	
 		this.id=id;
-		
+		this.imgPath=imgPath;
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
-		this.board = b;
+		this.board = board;
 		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
 		this.board.gb_moveSpriteCoord(this.getId(), this.x, this.y);
 		this.board.gb_setSpriteVisible(this.getId(), true);
-
-
 	}
 	
 	public Enemy() {
