@@ -4,40 +4,31 @@ package src;
 import edu.uc3m.game.GameBoardGUI;
 
 
-abstract public class Enemy {
-	
+public class Enemy {
 	private int id;
 	private int x;
 	private int y;
+	private String imgPath;
 	private GameBoardGUI board;
 	
-	abstract private String imgPath;
-	
-	public Enemy(int id, GameBoardGUI board) {
+	public Enemy(int id, GameBoardGUI b, String imgPath) {
 		
-		//Transferring board pointer
-		this.board = board;
+		this.id=id;
 		
-		this.id = id;
-		
-		//Setting coordinates
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
-		//Creating sprites and setting coordinates and visibility
-		this.board.gb_addSprite(this.id, this.imgPath, true);
-		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-		this.board.gb_setSpriteVisible(this.id, true);
+		this.board = b;
+		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
+		this.board.gb_moveSpriteCoord(this.getId(), this.x, this.y);
+		this.board.gb_setSpriteVisible(this.getId(), true);
 
 
 	}
 	
-	//Empty constructor
 	public Enemy() {
 		
 	}
-	
-	
 	//Getters and setters
 	public int getId() {
 		return id;
@@ -79,14 +70,12 @@ abstract public class Enemy {
 	//Functions
 	
 	public boolean CheckCollision(int pos1X, int pos1Y, int pos2X, int pos2Y) {
-		
 		//Check player position
-		if(Math.abs(pos1X-pos1X) < Game.collisionRadius  && Math.abs(pos2X-pos2Y) < Game.collisionRadius) {
+		if(pos1X==pos2X && pos2Y == pos2Y) {
 			return true;
 		}else {
 			return false;
 		}
-		
 	}
 	public void move(int a, int b) {
 		
