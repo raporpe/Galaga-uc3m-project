@@ -32,6 +32,9 @@ public class Game {
 	
 	
 	
+	
+	
+	
 	public static void main(String[] args) {
 		
 		String playerName;
@@ -110,12 +113,9 @@ public class Game {
 				player.torpedo();
 				Game.running = false;
 			}
-			
-			
-			
-			
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
+			
 		}while(Game.running);
 
 	}
