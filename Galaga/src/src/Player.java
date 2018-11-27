@@ -92,15 +92,15 @@ public class Player {
 	
 		
 	//Functions
-	public void moveRight() {
+	public void moveRight(int quantity) {
 		if(this.X < Game.width-5) {
-			this.X = this.X + 1;
+			this.X = this.X + quantity;
 		}
 	}
 	
-	public void moveLeft() {
+	public void moveLeft(int quantity) {
 		if(this.X > 6) {
-			this.X = this.X - 1;
+			this.X = this.X - quantity;
 		}
 	}
 	

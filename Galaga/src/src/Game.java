@@ -1,7 +1,10 @@
 package src;
+import java.awt.event.KeyListener;
+
 //Importing the Locale object to change the default
 //configuration of the computer to English
 import java.util.Locale;
+
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
 public class Game {
@@ -9,7 +12,7 @@ public class Game {
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
 	public int i=0;
-	public static final int COLLISION_RADIUS;
+	public static final int COLLISION_RADIUS = 10;
 
 	
 	public static boolean running = true;
@@ -73,30 +76,45 @@ public class Game {
 		
 		
 
+		private int dx = 0;
 
 
-
-		
-		
-		
+		board.addKeyListener(new KeyListener() {
+						
+			@Override
+			public void keyReleased(java.awt.event.KeyEvent e) {
+				dx = 0;
+				
+			}
+			
+			@Override
+			public void keyPressed(java.awt.event.KeyEvent e) {
+				dx = 1;
+				
+			}
+		});
 		
 		
 		
 		do {
-			String lastAction;
-			lastAction = board.gb_getLastAction();
-			if(lastAction.equals("right")) {	
-				player.moveRight();
-
-			}
-			if(lastAction.equals("left")) {
-				player.moveLeft();
-			}
 			
-			if(lastAction.equals("space")) {
-				player.torpedo();
-				Game.running = false;
-			}
+			player.moveRight(dx);			
+			
+			
+//			String lastAction;
+//			lastAction = board.gb_getLastAction();
+//			if(lastAction.equals("right")) {	
+//				player.moveRight();
+//
+//			}
+//			if(lastAction.equals("left")) {
+//				player.moveLeft();
+//			}
+//			
+//			if(lastAction.equals("space")) {
+//				player.torpedo();
+//				Game.running = false;
+//			}
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
