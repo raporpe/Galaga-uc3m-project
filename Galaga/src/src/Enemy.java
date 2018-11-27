@@ -8,22 +8,11 @@ public class Enemy {
 	private int id;
 	private int x;
 	private int y;
-	private String type;
 	private String imgPath;
-		
-	public Enemy(int id, String type) {
+	public Enemy(int id) {
 		
 		this.id=id;
-		this.type=type;
 		
-		if(type.equals("zako")) {
-			this.imgPath="enemy300.png";
-		}else if(type.equals("goei")) {
-			this.imgPath="enemy200.png";
-		}else if(type.equals("galagan")) {
-			this.imgPath="enemy100.png";
-		}
-
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
@@ -32,6 +21,10 @@ public class Enemy {
 		Game.board.gb_setSpriteVisible(this.id, true);
 
 
+	}
+	
+	public Enemy() {
+		
 	}
 	//Getters and setters
 	public int getId() {
