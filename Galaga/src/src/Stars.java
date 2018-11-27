@@ -112,10 +112,10 @@ public class Stars implements Runnable {
 						
 						//Calculating the total distance of k = 1 and so wrt tempX
 						for(int ll = 0; ll < ii; ll++) {
-							totalDistance = totalDistance + distanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
+								totalDistance = totalDistance + NewdistanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
 						}
 						
-						if(biggestDistance > totalDistance) {
+						if(biggestDistance < totalDistance) {
 							bestIndex = kk;
 							biggestDistance = totalDistance;
 						}
@@ -148,7 +148,25 @@ public class Stars implements Runnable {
 		int dx = Math.abs(Ax-Bx);
 		int dy = Math.abs(Ay-By);
 		
-		double distance = Math.pow(Math.pow(dx, 2) + Math.pow(dy, 2),(0.5));
+		double distance = Math.pow((dx*dx + dy*dy),(0.5));
+		
+		return distance;
+		
+	}
+	
+	private double NewdistanceCalculator(int Ax,int Ay, int Bx, int By) {
+		
+		int dx = Math.abs(Ax-Bx);
+		int dy = Math.abs(Ay-By);
+		
+		if(dx > Game.width) {
+			dx = dx - Game.width;
+		}
+		if(dy > Game.height) {
+			dy = dy - Game.height;
+		}
+		
+		double distance = Math.pow((dx*dx + dy*dy),(0.5));
 		
 		return distance;
 		
@@ -204,7 +222,13 @@ public class Stars implements Runnable {
 	
 	
 	
-	public void positionGeneratorWithDisk(int[] X, int[] Y, int density, int precission) { //Developing
+	//Procedural generator of stars position
+	
+	//TODO: add in the memory: We attempted several times to design an algorithm capable of creating nice-evenly distributed stars position.
+	//However, we realised we weren't mathematicians. So we decided to implement the Poisson-Disc Sampling by Robert Bridson.
+
+	
+	public void positionGeneratorDisk(int[] X, int[] Y, int density, int precission) {
 		
 		int[] tempX = new int[X.length]; //The same length for both
 		int[] tempY = new int[Y.length];
@@ -248,7 +272,7 @@ public class Stars implements Runnable {
 						
 						//Calculating the total distance of k = 1 and so wrt tempX
 						for(int ll = 0; ll < ii; ll++) {
-							totalDistance = totalDistance + distanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
+								totalDistance = totalDistance + distanceCalculator(candidateX[kk], candidateY[kk], tempX[ll], tempY[ll]);
 						}
 						
 						if(biggestDistance > totalDistance) {
@@ -270,8 +294,6 @@ public class Stars implements Runnable {
 		System.arraycopy(tempY, 0, Y, 0, Y.length);
 
 	}
-	
-	
 	
 	
 	
