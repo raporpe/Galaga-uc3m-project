@@ -57,7 +57,6 @@ public class Player {
 
 		this.board.gb_setValueLevel(this.level);
 
-		this.collisionRadius=10;
 	}
 	
 	

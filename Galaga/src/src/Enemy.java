@@ -11,7 +11,7 @@ abstract public class Enemy {
 	private int y;
 	private GameBoardGUI board;
 	
-	abstract protected String imgPath;
+	protected String imgPath;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		
