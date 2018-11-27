@@ -9,16 +9,22 @@ public class Enemy {
 	private int x;
 	private int y;
 	private String imgPath;
-	public Enemy(int id) {
+	private GameBoardGUI board;
+	
+	public Enemy(int id, GameBoardGUI b) {
 		
 		this.id=id;
 		
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
 		this.y = Constants.enemyCoordinatesLevel1[id][1];
 		
-		Game.board.gb_addSprite(this.id, this.imgPath, true);
-		Game.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-		Game.board.gb_setSpriteVisible(this.id, true);
+		this.board = b;
+
+		Game.board.
+		
+		this.board.gb_addSprite(this.id, this.imgPath, true);
+		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+		this.board.gb_setSpriteVisible(this.id, true);
 
 
 	}

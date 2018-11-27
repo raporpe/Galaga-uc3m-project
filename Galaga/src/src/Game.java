@@ -7,7 +7,7 @@ import edu.uc3m.game.GameBoardGUI;
 public class Game {
 
 	//We declare a GameBoardGUI object
-	public static GameBoardGUI board;
+	private static GameBoardGUI board;
 	public int i=0;
 	
 	public static boolean running = true;
