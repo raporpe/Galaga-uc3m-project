@@ -34,6 +34,9 @@ public class Game {
 		
 		for(int ii = 0; ii < enemies.length; ii++) {
 			enemies[ii] = new Enemy(ii, "zako");
+			if(ii-2 < enemies.length) {
+				enemies[ii] = new Enemy(ii, "galaga");
+			}
 		}
 		
 		
