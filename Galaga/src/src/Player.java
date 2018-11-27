@@ -49,7 +49,7 @@ public class Player {
 		this.board.gb_setValueAbility1(this.shoots);
 		this.board.gb_setValueAbility2(this.rightBullets);
 		
-		this.board.gb_setPortraitPlayer("portrait.jpeg");
+		this.board.gb_setPortraitPlayer("portrait.png");
 		this.board.gb_setTextPointsUp("Score");
 		this.board.gb_setTextPointsDown("Speed");
 		this.board.gb_setValuePointsDown(this.speed);
