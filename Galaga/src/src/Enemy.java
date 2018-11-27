@@ -22,7 +22,6 @@ public class Enemy {
 		}else if(type.equals("galagan")) {
 			this.imgPath="enemy100.png";
 		}
-		this.id=
 
 	}
 	//Getters and setters
