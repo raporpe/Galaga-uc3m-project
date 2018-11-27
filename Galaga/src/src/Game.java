@@ -1,4 +1,5 @@
 package src;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 //Importing the Locale object to change the default
@@ -13,6 +14,7 @@ public class Game {
 	private static GameBoardGUI board;
 	public int i=0;
 	public static final int COLLISION_RADIUS = 10;
+	public static int dx = 0;
 
 	
 	public static boolean running = true;
@@ -76,20 +78,25 @@ public class Game {
 		
 		
 
-		private int dx = 0;
 
 
 		board.addKeyListener(new KeyListener() {
 						
 			@Override
 			public void keyReleased(java.awt.event.KeyEvent e) {
-				dx = 0;
+				Game.dx = 0;
 				
 			}
 			
 			@Override
 			public void keyPressed(java.awt.event.KeyEvent e) {
-				dx = 1;
+				Game.dx = 1;
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
 				
 			}
 		});
@@ -98,7 +105,7 @@ public class Game {
 		
 		do {
 			
-			player.moveRight(dx);			
+			player.moveRight(Game.dx);			
 			
 			
 //			String lastAction;
