@@ -19,6 +19,19 @@ public class Game {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		
 		String playerName;
@@ -63,21 +76,7 @@ public class Game {
 	
 	//	Game.board.gb_showMessageDialog("Select your name");
 				
-		
-		//We create three layers of stars
-		
-		Runnable layer1 = new Stars(1000, 10);
-		new Thread(layer1).start();
 
-//		Runnable layer2 = new Stars(11, 500);
-//		new Thread(layer2).start();
-//		Runnable layer3 = new Stars(11, 1000);
-//		new Thread(layer3).start();
-		
-		
-		
-		
-		
 		//Create planets
 		
 		//We create the player
@@ -112,9 +111,9 @@ public class Game {
 				Game.running = false;
 			}
 			
-	
 			
-						
+			
+			
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 		}while(Game.running);
