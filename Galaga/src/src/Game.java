@@ -35,6 +35,9 @@ public class Game implements KeyListener{
 	//Responsive
 	public static final int BOARD_WIDTH = 170;
 	public static final int BOARD_HEIGHT = 220;
+	
+	public static final int BOARD_WIDTH_BIG_COORDINATES = BOARD_WIDTH/10;
+	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
 	
 	final static int FPS = 60;
@@ -99,7 +102,7 @@ public class Game implements KeyListener{
 		Locale.setDefault(new Locale("en"));
 
 		//Create a 17x22 board
-		board = new GameBoardGUI(Game.BOARD_WIDTH/10,Game.BOARD_HEIGHT/10);
+		board = new GameBoardGUI(Game.BOARD_WIDTH_BIG_COORDINATES,Game.BOARD_HEIGHT_BIG_COORDINATES);
 		
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
@@ -113,6 +116,11 @@ public class Game implements KeyListener{
 		for(int ii = 21; ii < 24; ii++) {
 			enemies[ii] = new Commander(ii,board);
 		}
+		
+		//Generate torpedoes array
+		
+		Torpedo[] torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+		
 
 
 		
@@ -129,8 +137,8 @@ public class Game implements KeyListener{
 		//Grid color setter
 		board.gb_setGridColor(80, 80, 80);		
 		
-		for(int ii = 0; ii<(BOARD_WIDTH/10); ii++) {
-			for(int jj = 0; jj < (BOARD_HEIGHT/10); jj++) {
+		for(int ii = 0; ii<(BOARD_WIDTH_BIG_COORDINATES); ii++) {
+			for(int jj = 0; jj < (BOARD_HEIGHT_BIG_COORDINATES); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
 		}
