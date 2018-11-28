@@ -26,7 +26,7 @@ public class Game implements KeyListener{
 	
 	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
-	
+	final static int TORPEDOES_SPEED=10;
 	
 	
 	//Testing
