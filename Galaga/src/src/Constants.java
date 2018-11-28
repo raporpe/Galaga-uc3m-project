@@ -40,7 +40,7 @@ public class Constants {
 	 
 
 	 public static final int [][] enemyCoordinatesLevel1= {
-			 {Game.width/2-50,25},{Game.width/2-40,25},{Game.width/2-30,25},{Game.width/2-20,25},{Game.width/2-10,25},{Game.width/2,25},{Game.width/2+10,25},{Game.width/2+20,25},{Game.width/2+30,25},{Game.width/2+40,25},
-			 {Game.width/2-50,35},{Game.width/2-40,35},{Game.width/2-30,35},{Game.width/2-20,35},{Game.width/2-10,35},{Game.width/2,35},{Game.width/2+10,35},{Game.width/2+20,35},{Game.width/2+30,35},{Game.width/2+40,35},
-			 																								{Game.width/2-10,45},{Game.width/2,45},{Game.width/2+10,45},{Game.width/2-40,25}};
+			{Game.width/2-50,25},{Game.width/2-40,25},{Game.width/2-30,25},{Game.width/2-40,25},{Game.width/2-20,25},{Game.width/2-10,25},{Game.width/2,25},{Game.width/2+10,25},{Game.width/2+20,25},{Game.width/2+30,25},{Game.width/2+40,25},
+			{Game.width/2-50,35},{Game.width/2-40,35},{Game.width/2-30,35},{Game.width/2-20,35},{Game.width/2-10,35},{Game.width/2,35},{Game.width/2+10,35},{Game.width/2+20,35},{Game.width/2+30,35},{Game.width/2+40,35},
+			 																								{Game.width/2-10,15},{Game.width/2,15},{Game.width/2+10,15}};
 	 }

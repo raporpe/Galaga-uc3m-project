@@ -7,8 +7,8 @@ import edu.uc3m.game.GameBoardGUI;
 public class Enemy {
 	
 	private int id;
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	protected String imgPath;
 	private GameBoardGUI board;
 
@@ -19,8 +19,7 @@ public class Enemy {
 		this.id=id;
 		this.imgPath=imgPath;
 		this.x = Constants.enemyCoordinatesLevel1[id][0];
-		this.y = Constants.enemyCoordinatesLevel1[id][1];
-		
+		this.y = Constants.enemyCoordinatesLevel1[id][1];		
 		this.board = board;
 		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
 		this.board.gb_moveSpriteCoord(this.getId(), this.x, this.y);
@@ -86,9 +85,5 @@ public class Enemy {
 	}
 	
 	
-	
-	
-	
-	
-	
+
 }
