@@ -16,6 +16,7 @@ public class Torpedo {
 		setY(y);
 		this.board = board;
 		setId(id);
+		this.imgPath="torpedo100.png";
 	}
 	
 	//Getters and setters
