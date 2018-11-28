@@ -4,11 +4,18 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Torpedo extends Sprite{
 
-
+		
 	
 	public Torpedo(int id, GameBoardGUI board) {
-		super(id, board);
-		setImgPath("torpedo100.png");
+	//	this.imgPath = "torpedo100.png"; // Por qué this.imgPath y no arriba poner String imgPath = "torpedo100.png"; ????????????????
+		setImgPath("torpedo100.png");  //POR QUÉ NO SE PUEDE PONER UN FIELD String imgPath = "torpedo100.png";  y hay que user setImagPath???
+		
+		setId(id);				
+		setBoard(board);	
+		
+		//Creating sprite
+		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
+		this.board.gb_moveSpriteCoord(this.getId(), getX(), getY());
 	}
 
 
@@ -25,6 +32,12 @@ public class Torpedo extends Sprite{
 	public void moveStep() {
 		setY(getY() - Game.TORPEDOES_SPEED);
 		board.gb_moveSpriteCoord(getId(), getX(), getY());
+	}
+	
+	public void checkEnd() {
+		if(getY() <= 10) {
+			setVisibility(false);
+		}
 	}
 	
 	

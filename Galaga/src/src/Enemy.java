@@ -4,7 +4,7 @@ package src;
 import edu.uc3m.game.GameBoardGUI;
 
 
-public class Enemy {
+public class Enemy extends Sprite{
 	
 	private int id;
 	protected int x;

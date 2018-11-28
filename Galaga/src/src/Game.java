@@ -12,7 +12,7 @@ public class Game implements KeyListener {
 
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
-	public int i=0;
+	public int i = 0;
 	public static final int COLLISION_RADIUS = 10;
 	public static int dx = 0;
 
@@ -40,11 +40,11 @@ public class Game implements KeyListener {
 	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
 	
-	final static int FPS = 60;
+	final static int FPS = 120;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
 	final static int TORPEDOES_SPEED = 1;
-	final static int SPRITE_WIDTH = 10;
-	final static int SPRITE_HEIGTH = 10;
+	final static int SPRITE_WIDTH = 5;
+	final static int SPRITE_HEIGTH = 5;
 	final static int DEFAULT_SPRITE_POS_X = 0;
 	final static int DEFAULT_SPRITE_POS_Y = 0;
 
@@ -92,7 +92,7 @@ public class Game implements KeyListener {
 	
 	private static Player player;
 	private static Torpedo[] torpedo;
-	
+	static Enemy[] enemies;
 	
 	
 	
@@ -110,10 +110,12 @@ public class Game implements KeyListener {
 		//Create a 17x22 board
 		board = new GameBoardGUI(Game.BOARD_WIDTH_BIG_COORDINATES,Game.BOARD_HEIGHT_BIG_COORDINATES);
 		
-		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
+		enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
+
 
 		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
+
 		}
 		for(int ii = 10; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
@@ -165,21 +167,21 @@ public class Game implements KeyListener {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			torpedo[ii] = new Torpedo((ii+50), board);
 		}
+		Torpedo pep = new Torpedo(90 , board);
 		
-		
+		double lastShotTime = 0;
 
 
 
 //----------------------THE MAIN WHILE-------------------------//
 		
 		
-	/* 			  ("`-''-/").___..--''"`-._
+/* 				  ("`-''-/").___..--''"`-._
 				   `6_ 6  )   `-.  (     ).`-.__.`)
 				   (_Y_.)'  ._   )  `._ `. ``-..-'			//This cat will keep our code efficient, clean and organised.				   												
-				 _..`--'_..-_/  /--'_.' ,'					//She  likes to eat bugs.
-				(il),-''  (li),'  ((!.-'				
-		
-	*/
+				 _..`--'_..-_/  /--'_.' ,'					//She likes eating bugs.
+				(il),-''  (li),'  ((!.-'						
+*/
 		
 		do {
 			
@@ -205,38 +207,58 @@ public class Game implements KeyListener {
 			}
 			
 			if(lastAction.equals("space")) {
-				shootTorpedo(player);
+				
+				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
+					shootTorpedo(player);
+					lastShotTime = System.currentTimeMillis();
+					System.out.println(lastShotTime);
+				}
+				
 			}
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
-
-			/*for(int ii = 11; ii < 20; ii++) {
-				Zako.moveZako(enemies[ii]);
-			}	*/		
-			
-			//Implement fps control
-			double computingTime = System.nanoTime() - initialTime;
-			long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
-			
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+	
+			if(checkPossibleCollisions()) {
+				Game.player.increaseScore(1);
 			}
 			
+			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
+			  :::::.\::::::::.\::::::::.\   FPS CONTROLLER  \::::::::.\::::::::.\::::::::.\
+			  '      `--'      `.-'      `--'      `--'      `--'      `-.'      `--'      ` */
+		
+					double computingTime = System.nanoTime() - initialTime;
+					long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
+					
+					try {
+						Thread.sleep(sleepFor);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				
+			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
+			  :::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\
+			  '      `--'      `.-'      `--'      `--'      `--'      `-.'      `--'      ` */
+			
+			
 		}while(Game.isRunning());
+		
+//----------------------END OF THE MAIN WHILE-------------------------//
 
+		
+		
+		
 	}
 	
 	private static void updateTorpedoes() {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			if(torpedo[ii].isVisible()) {
 				torpedo[ii].moveStep();
+				//torpedo[ii].checkEnd();
+
 			}
-		}
+		}		
 	}
 	
 	private void updateSprites() {
@@ -261,8 +283,16 @@ public class Game implements KeyListener {
 		
 	}
 	
-	private void checkPossibleCollisions() {
-		
+	private static boolean checkPossibleCollisions() {
+		boolean result = false;
+		for(int ii = 0; ii < torpedo.length; ii++) {
+			for(int jj = 0; jj < enemies.length; jj++) {
+				if(torpedo[ii].checkCollision(enemies[jj])) {
+					result = true;
+				}
+			}
+		}
+		return result;
 	}
 	
 }

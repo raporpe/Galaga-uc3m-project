@@ -106,9 +106,6 @@ public class Player {
 		}
 	}
 	
-	public void torpedo() {
-
-	}
 	
 	public void loseLife() {
 		this.lives = this.lives-1;

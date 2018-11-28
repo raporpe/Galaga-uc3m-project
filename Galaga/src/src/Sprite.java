@@ -2,7 +2,7 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-abstract public class Sprite {
+public class Sprite {
 	
 	protected int id;
 	protected int x;
@@ -13,7 +13,6 @@ abstract public class Sprite {
 
 	public Sprite(int id, GameBoardGUI board) {
 
-
 		setId(id);
 		setBoard(board);	
 		
@@ -23,10 +22,14 @@ abstract public class Sprite {
 		
 	}
 	
+	public Sprite() {
+		
+	}
+	
 	
 	
 	public boolean checkCollision(Sprite sprite) {
-		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH || Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH) {
+		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
 			return true;
 		} else {
 			return false;
