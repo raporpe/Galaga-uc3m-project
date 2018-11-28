@@ -95,7 +95,7 @@ public class Game implements KeyListener{
 		}
 		for(int ii = 11; ii < 21; ii++) {
 			enemies[ii] = new Zako(ii,board);
-			Zako.moveZako(enemies[ii],1);
+			Zako.moveZako(enemies[ii]);
 
 		}
 		for(int ii = 21; ii < 24; ii++) {
