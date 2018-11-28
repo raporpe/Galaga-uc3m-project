@@ -42,7 +42,10 @@ public class Game implements KeyListener {
 	
 	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
-	final static int TORPEDOES_SPEED=10;
+	final static int TORPEDOES_SPEED = 1;
+	final static int SPRITE_WIDTH = 10;
+	final static int SPRITE_HEIGTH = 10;
+
 	
 	
 	//Testing
@@ -208,12 +211,12 @@ public class Game implements KeyListener {
 			double computingTime = System.nanoTime() - initialTime;
 			long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
 			
-//			try {
-//				Thread.sleep(sleepFor);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			try {
+				Thread.sleep(sleepFor);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 		}while(Game.isRunning());
 
@@ -237,8 +240,19 @@ public class Game implements KeyListener {
 	static int m = 0;
 	
 	private static void shootTorpedo(Player player) { 
-		torpedo[m].initTorpedo(player.getX()-5, player.getY()-5);
-		m++;
+		if(m >= torpedo.length) {
+			m=0;
+		}
+		
+		if(Math.abs(torpedo[m].getY() - player.getY()) < 100) {
+			torpedo[m].initTorpedo(player.getX()-5, player.getY()-5);
+			m++;
+		}
+		
+	}
+	
+	private void checkPossibleCollisions() {
+		
 	}
 	
 }

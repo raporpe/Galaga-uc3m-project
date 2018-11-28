@@ -80,6 +80,7 @@ public class Enemy {
 			return false;
 		}
 	}
+	
 	public void move(int a, int b) {
 		
 	}

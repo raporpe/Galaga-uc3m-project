@@ -68,7 +68,7 @@ public class Torpedo {
 	}
 	
 	public void setVisibility(boolean visibility) {
-		this.visible = visible;
+		this.visible = visibility;
 	}
 	
 
