@@ -220,9 +220,6 @@ public class Game implements KeyListener {
 			
 			updateTorpedoes();
 	
-			if(checkPossibleCollisions()) {
-				Game.player.increaseScore(1);
-			}
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\   FPS CONTROLLER  \::::::::.\::::::::.\::::::::.\
@@ -252,22 +249,23 @@ public class Game implements KeyListener {
 	}
 	
 	private static void updateTorpedoes() {
+		checkTorpedoesCollisions();
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			if(torpedo[ii].isVisible()) {
 				torpedo[ii].moveStep();
 				//torpedo[ii].checkEnd();
-
 			}
-		}		
+		}
 	}
 	
 	private void updateSprites() {
-		
 	}
 	
 	private void updateStars() {
 		
 	}
+
+
 	
 	static int m = 0;
 	
@@ -283,16 +281,12 @@ public class Game implements KeyListener {
 		
 	}
 	
-	private static boolean checkPossibleCollisions() {
-		boolean result = false;
+	private static void checkTorpedoesCollisions() {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			for(int jj = 0; jj < enemies.length; jj++) {
-				if(torpedo[ii].checkCollision(enemies[jj])) {
-					result = true;
-				}
+				torpedo[ii].checkCollision(enemies[jj]);
 			}
 		}
-		return result;
 	}
 	
 }

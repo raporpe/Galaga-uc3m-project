@@ -11,10 +11,11 @@ public class Sprite {
 	protected GameBoardGUI board;
 	protected boolean visible;
 
-	public Sprite(int id, GameBoardGUI board) {
+	public Sprite(int id, GameBoardGUI board, String imgPath) {
 
 		setId(id);
 		setBoard(board);	
+		setImgPath(imgPath);
 		
 		//Creating sprite
 		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
@@ -30,6 +31,8 @@ public class Sprite {
 	
 	public boolean checkCollision(Sprite sprite) {
 		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
+			this.setVisibility(false);
+		//	sprite.destroy();
 			return true;
 		} else {
 			return false;
@@ -96,8 +99,22 @@ public class Sprite {
 		
 		//Functions
 		
+		public void changeImgPath(String newImgpath) {
+			setImgPath(newImgpath);
+			board.gb_setSpriteImage(getId(), this.imgPath);
+		}
+		
 		public void moveSpriteTo(int x, int y) {
 			board.gb_moveSpriteCoord(getId(), x, y);
+		}
+		
+		public void destroy() {
+			//animateExplosion();
+			setVisibility(false);
+		}
+		
+		public void animateExplosion() {
+			//changeImgPath();
 		}
 	
 

@@ -11,10 +11,12 @@ public class Enemy extends Sprite{
 	protected int y;
 	protected String imgPath;
 	private GameBoardGUI board;
+//	protected String[] imgPathExplosion = new String[] = {"explosion11.jpg"};
+
 
 	
 	public Enemy(int id, GameBoardGUI board, String imgPath) {
-
+		
 
 		this.id=id;
 		this.imgPath=imgPath;
