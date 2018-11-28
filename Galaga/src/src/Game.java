@@ -106,15 +106,15 @@ public class Game implements KeyListener {
 		
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
-		for(int ii = 0; ii < 11; ii++) {
+		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
 		}
-		for(int ii = 11; ii < 21; ii++) {
+		for(int ii = 11; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
 			Zako.moveZako(enemies[ii]);
 
 		}
-		for(int ii = 21; ii < 24; ii++) {
+		for(int ii = 21; ii < 23; ii++) {
 			enemies[ii] = new Commander(ii,board);
 		}
 		
