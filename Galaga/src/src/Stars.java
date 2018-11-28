@@ -2,7 +2,7 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Stars implements Runnable {
+public class Stars {
 	
 	private int density;
 	private int speed;

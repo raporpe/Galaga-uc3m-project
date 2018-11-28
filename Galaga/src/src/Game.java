@@ -8,7 +8,7 @@ import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-public class Game implements KeyListener{
+public class Game implements KeyListener {
 
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
@@ -107,14 +107,13 @@ public class Game implements KeyListener{
 		
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
-		for(int ii = 0; ii < 11; ii++) {
+		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
 		}
-		for(int ii = 11; ii < 21; ii++) {
+		for(int ii = 10; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
-
 		}
-		for(int ii = 21; ii < 24; ii++) {
+		for(int ii = 20; ii < 23; ii++) {
 			enemies[ii] = new Commander(ii,board);
 		}
 		
@@ -142,7 +141,7 @@ public class Game implements KeyListener{
 			}
 		}
 		
-		playerName = "Galagoncio";
+		playerName = "Galaga";
 	
 	//	Game.board.gb_showMessageDialog("Select your name");
 				
@@ -196,10 +195,9 @@ public class Game implements KeyListener{
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
-			
-			
-			
-			
+			/*for(int ii = 11; ii < 20; ii++) {
+				Zako.moveZako(enemies[ii]);
+			}	*/		
 			
 			//Implement fps control
 			double computingTime = System.nanoTime() - initialTime;
@@ -236,7 +234,10 @@ public class Game implements KeyListener{
 		torpedo[m].initTorpedo(player.getX(), player.getY());
 		m++;
 	}
+	
+}
+
 
 	
 
-}
+
