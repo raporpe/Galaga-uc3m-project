@@ -18,12 +18,24 @@ public class Game{
 	public static int dx = 0;
 
 	
-	public static boolean running = true;
+	private static boolean running = true;
+	
+	public static void stopGame() {
+		Game.running = false;
+	}
+	
+	public static Boolean isRunning() {
+		if(Game.running) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	
 	//Responsive
-	public static final int width = 170;
-	public static final int height = 220;
+	public static final int BOARD_WIDTH = 170;
+	public static final int BOARD_HEIGHT = 220;
 	
 	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
@@ -67,7 +79,7 @@ public class Game{
 		Locale.setDefault(new Locale("en"));
 
 		//Create a 17x22 board
-		board = new GameBoardGUI(Game.width/10,Game.height/10);
+		board = new GameBoardGUI(Game.BOARD_WIDTH/10,Game.BOARD_HEIGHT/10);
 		
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
@@ -76,7 +88,6 @@ public class Game{
 		}
 		for(int ii = 11; ii < 21; ii++) {
 			enemies[ii] = new Zako(ii,board);
-			moveZako(enemies[ii],1);
 
 		}
 		for(int ii = 21; ii < 24; ii++) {
@@ -98,8 +109,8 @@ public class Game{
 		//Grid color setter
 		board.gb_setGridColor(80, 80, 80);		
 		
-		for(int ii = 0; ii<(width/10); ii++) {
-			for(int jj = 0; jj < (height/10); jj++) {
+		for(int ii = 0; ii<(BOARD_WIDTH/10); ii++) {
+			for(int jj = 0; jj < (BOARD_HEIGHT/10); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
 		}
@@ -173,7 +184,7 @@ public class Game{
 //				e.printStackTrace();
 //			}
 			
-		}while(Game.running);
+		}while(Game.isRunning());
 
 	}
 
