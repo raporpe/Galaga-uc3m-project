@@ -93,7 +93,7 @@ public class Game implements KeyListener {
 	
 	
 	
-	public static void main(String[] args)  throws InterruptedException {
+	public static void main(String[] args) {
 		
 		String playerName;
 		
@@ -109,12 +109,10 @@ public class Game implements KeyListener {
 		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
 		}
-		for(int ii = 11; ii < 20; ii++) {
+		for(int ii = 10; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
-			Zako.moveZako(enemies[ii]);
-
 		}
-		for(int ii = 21; ii < 23; ii++) {
+		for(int ii = 20; ii < 23; ii++) {
 			enemies[ii] = new Commander(ii,board);
 		}
 		
@@ -197,10 +195,9 @@ public class Game implements KeyListener {
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
-			
-			
-			
-			
+			/*for(int ii = 11; ii < 20; ii++) {
+				Zako.moveZako(enemies[ii]);
+			}	*/		
 			
 			//Implement fps control
 			double computingTime = System.nanoTime() - initialTime;
