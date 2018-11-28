@@ -8,12 +8,13 @@ import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-public class Game implements KeyListener{
+public class Game{
 
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
 	public int i=0;
 	public static final int COLLISION_RADIUS = 10;
+	public static final int TORPEDOES_SPEED = 1;
 	public static int dx = 0;
 
 	
@@ -21,35 +22,15 @@ public class Game implements KeyListener{
 	
 	
 	//Responsive
-	public static int width = 170;
-	public static int height = 220;
+	public static final int width = 170;
+	public static final int height = 220;
 	
 	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
 	
 	
 	
-	//Testing
 
-	@Override
-	public void keyTyped(KeyEvent e) {		
-		int test = e.getKeyCode();
-		if(test == KeyEvent.VK_0) {
-			goUp();
-		}
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public void goUp() {
 		Player pepe = new Player("pepe", 3, board);

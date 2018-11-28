@@ -1,5 +1,7 @@
 package src;
 
+import java.awt.event.KeyEvent;
+
 import edu.uc3m.game.GameBoardGUI;
 
 public class Player {
@@ -125,6 +127,28 @@ public class Player {
 	public void nextLevel() {
 		this.level++;
 		this.board.gb_setValueLevel(this.level);
+	}
+	
+	
+	//Testing
+	
+	//Testing
+
+	public void keyTyped(KeyEvent e) {		
+		int test = e.getKeyCode();
+		if(test == KeyEvent.VK_0) {
+			moveRight(1);
+		}
+	}
+
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
