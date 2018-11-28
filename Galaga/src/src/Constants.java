@@ -43,4 +43,12 @@ public class Constants {
 			{Game.BOARD_WIDTH/2-50,25},{Game.BOARD_WIDTH/2-40,25},{Game.BOARD_WIDTH/2-30,25},{Game.BOARD_WIDTH/2-40,25},{Game.BOARD_WIDTH/2-20,25},{Game.BOARD_WIDTH/2-10,25},{Game.BOARD_WIDTH/2,25},{Game.BOARD_WIDTH/2+10,25},{Game.BOARD_WIDTH/2+20,25},{Game.BOARD_WIDTH/2+30,25},{Game.BOARD_WIDTH/2+40,25},
 			{Game.BOARD_WIDTH/2-50,35},{Game.BOARD_WIDTH/2-40,35},{Game.BOARD_WIDTH/2-30,35},{Game.BOARD_WIDTH/2-20,35},{Game.BOARD_WIDTH/2-10,35},{Game.BOARD_WIDTH/2,35},{Game.BOARD_WIDTH/2+10,35},{Game.BOARD_WIDTH/2+20,35},{Game.BOARD_WIDTH/2+30,35},{Game.BOARD_WIDTH/2+40,35},
 			 																								{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}};
-	 }
+	
+	 public static final int[][] fastStars = {};
+	public static final int[][] slowStars = {};
+
+
+}
+
+
+

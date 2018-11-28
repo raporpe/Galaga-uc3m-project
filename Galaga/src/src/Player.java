@@ -6,7 +6,7 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Player {
 	
-	private int X = (int)(Game.BOARD_WIDTH/2);
+	private int x = (int)(Game.BOARD_WIDTH/2);
 	private final int Y = (Game.BOARD_HEIGHT-20);
 	private int id= 1;
 	
@@ -36,7 +36,7 @@ public class Player {
 		this.board=b;
 		//Creating player in board
 		this.board.gb_addSprite(1, "player.png", true);
-		this.board.gb_moveSpriteCoord(1, this.X, this.Y);
+		this.board.gb_moveSpriteCoord(1, this.x, this.Y);
 		this.board.gb_setSpriteVisible(1, true);
 		
 		//Generating text
@@ -65,7 +65,7 @@ public class Player {
 	//Public setters and getters
 	
 	public int getX() {
-		return X;
+		return x;
 	}
 	public int getY() {
 		return Y;
@@ -95,14 +95,14 @@ public class Player {
 		
 	//Functions
 	public void moveRight(int quantity) {
-		if(this.X < Game.BOARD_WIDTH-5) {
-			this.X = this.X + quantity;
+		if(this.x < Game.BOARD_WIDTH-5) {
+			this.x = this.x + quantity;
 		}
 	}
 	
 	public void moveLeft(int quantity) {
-		if(this.X > 6) {
-			this.X = this.X - quantity;
+		if(this.x > 6) {
+			this.x = this.x - quantity;
 		}
 	}
 	

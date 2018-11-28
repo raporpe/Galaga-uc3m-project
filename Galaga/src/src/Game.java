@@ -85,7 +85,8 @@ public class Game implements KeyListener{
 	
 	
 	
-	
+	private static Player player;
+	private static Torpedo[] torpedo;
 	
 	
 	
@@ -117,9 +118,7 @@ public class Game implements KeyListener{
 			enemies[ii] = new Commander(ii,board);
 		}
 		
-		//Generate torpedoes array
-		
-		Torpedo[] torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+
 		
 
 
@@ -155,15 +154,16 @@ public class Game implements KeyListener{
 		//Create planets
 		
 		//We create the player
-		Player player = new Player(playerName, 3, board);
+		player = new Player(playerName, 3, board);
 		
-		
+		//Generate torpedoes array
+		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
 		
 		
 
 
 
-//----------------------THE MAIN WHILE-------------------------
+//----------------------THE MAIN WHILE-------------------------//
 
 		
 		
@@ -191,7 +191,7 @@ public class Game implements KeyListener{
 			}
 			
 			if(lastAction.equals("space")) {
-				player.torpedo();
+				shootTorpedo(player);
 			}
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
@@ -215,7 +215,27 @@ public class Game implements KeyListener{
 		}while(Game.isRunning());
 
 	}
-
+	
+	private void updateTorpedoes() {
+		for(int ii = 0; ii < torpedo.length; ii++) {
+			if(torpedo[ii].isVisible()) {
+				torpedo[ii].moveStep();
+			}
+		}
+	}
+	
+	private void updateSprites() {
+		
+	}
+	
+	private void updateStars() {
+		
+	}
+	static int m = 0;
+	private static void shootTorpedo(Player player) { 
+		torpedo[m].initTorpedo(player.getX(), player.getY());
+		m++;
+	}
 
 	
 
