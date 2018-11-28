@@ -8,11 +8,5 @@ public class Zako extends Enemy{
 		
 		super(id, board, "enemy300.png");
 	}
-	
-	public void moveZako(Enemy zako) throws InterruptedException {
-		
-			x = this.getX()+(int) (Math.random()*10);
-			y = this.getX()+(int) (Math.random()*10);
-		Thread.sleep(20);	
-	}
+
 }

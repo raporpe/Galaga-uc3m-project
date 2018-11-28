@@ -6,8 +6,8 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Player {
 	
-	private int X = (int)(Game.width/2);
-	private final int Y = (Game.height-20);
+	private int X = (int)(Game.BOARD_WIDTH/2);
+	private final int Y = (Game.BOARD_HEIGHT-20);
 	private int id= 1;
 	
 	private int lives;
@@ -95,7 +95,7 @@ public class Player {
 		
 	//Functions
 	public void moveRight(int quantity) {
-		if(this.X < Game.width-5) {
+		if(this.X < Game.BOARD_WIDTH-5) {
 			this.X = this.X + quantity;
 		}
 	}
@@ -113,7 +113,7 @@ public class Player {
 	public void loseLife() {
 		this.lives = this.lives-1;
 		if(this.lives == 0) {
-			Game.running = false;
+			Game.stopGame();
 		}
 	}
 	

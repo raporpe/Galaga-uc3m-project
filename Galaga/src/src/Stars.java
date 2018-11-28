@@ -32,7 +32,7 @@ public class Stars implements Runnable {
 		while(Game.running) {
 			for(int ii = 0; ii < this.density; ii++) {
 				
-				if(starPositionY[ii] < Game.height) {
+				if(starPositionY[ii] < Game.BOARD_HEIGHT) {
 					starPositionY[ii]++;
 				} else {
 					starPositionY[ii] = 0;
@@ -73,13 +73,13 @@ public class Stars implements Runnable {
 		int[] tempY = new int[Y.length];
 		
 		//Creating one initial random point
-		tempX[0] = (int)(Math.random()*(Game.width));
-		tempY[0] = (int)(Math.random()*(Game.height));
+		tempX[0] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[0] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 		
-		tempX[1] = (int)(Math.random()*(Game.width));
-		tempY[1] = (int)(Math.random()*(Game.height));
-		tempX[2] = (int)(Math.random()*(Game.width));
-		tempY[2] = (int)(Math.random()*(Game.height));
+		tempX[1] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[1] = (int)(Math.random()*(Game.BOARD_HEIGHT));
+		tempX[2] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[2] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 		
 		
 		//Procedural generator for even distribution of stars
@@ -94,8 +94,8 @@ public class Stars implements Runnable {
 				int[] candidateY = new int[precission];
 	
 				for(int kk = 0; kk < precission; kk++) {
-					candidateX[kk] = (int)(Math.random()*(Game.width));
-					candidateY[kk] = (int)(Math.random()*(Game.height));
+					candidateX[kk] = (int)(Math.random()*(Game.BOARD_WIDTH));
+					candidateY[kk] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 				}
 				
 				//Selecting the best candidate between the generated ones
@@ -158,11 +158,11 @@ public class Stars implements Runnable {
 		int dx = Math.abs(Ax-Bx);
 		int dy = Math.abs(Ay-By);
 		
-		if(dx > Game.width) {
-			dx = dx - Game.width;
+		if(dx > Game.BOARD_WIDTH) {
+			dx = dx - Game.BOARD_WIDTH;
 		}
-		if(dy > Game.height) {
-			dy = dy - Game.height;
+		if(dy > Game.BOARD_HEIGHT) {
+			dy = dy - Game.BOARD_HEIGHT;
 		}
 		
 		double distance = Math.pow((dx*dx + dy*dy),(0.5));
@@ -233,13 +233,13 @@ public class Stars implements Runnable {
 		int[] tempY = new int[Y.length];
 		
 		//Creating one initial random point
-		tempX[0] = (int)(Math.random()*(Game.width));
-		tempY[0] = (int)(Math.random()*(Game.height));
+		tempX[0] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[0] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 		
-		tempX[1] = (int)(Math.random()*(Game.width));
-		tempY[1] = (int)(Math.random()*(Game.height));
-		tempX[2] = (int)(Math.random()*(Game.width));
-		tempY[2] = (int)(Math.random()*(Game.height));
+		tempX[1] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[1] = (int)(Math.random()*(Game.BOARD_HEIGHT));
+		tempX[2] = (int)(Math.random()*(Game.BOARD_WIDTH));
+		tempY[2] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 		
 		
 		//Procedural generator for even distribution of stars
@@ -254,8 +254,8 @@ public class Stars implements Runnable {
 				int[] candidateY = new int[precission];
 	
 				for(int kk = 0; kk < precission; kk++) {
-					candidateX[kk] = (int)(Math.random()*(Game.width));
-					candidateY[kk] = (int)(Math.random()*(Game.height));
+					candidateX[kk] = (int)(Math.random()*(Game.BOARD_WIDTH));
+					candidateY[kk] = (int)(Math.random()*(Game.BOARD_HEIGHT));
 				}
 				
 				//Selecting the best candidate between the generated ones
