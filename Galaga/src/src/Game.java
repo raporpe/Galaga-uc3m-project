@@ -45,6 +45,8 @@ public class Game implements KeyListener {
 	final static int TORPEDOES_SPEED = 1;
 	final static int SPRITE_WIDTH = 10;
 	final static int SPRITE_HEIGTH = 10;
+	final static int DEFAULT_SPRITE_POS_X = 0;
+	final static int DEFAULT_SPRITE_POS_Y = 0;
 
 	
 	
@@ -169,8 +171,15 @@ public class Game implements KeyListener {
 
 
 //----------------------THE MAIN WHILE-------------------------//
-
 		
+		
+	/* 			  ("`-''-/").___..--''"`-._
+				   `6_ 6  )   `-.  (     ).`-.__.`)
+				   (_Y_.)'  ._   )  `._ `. ``-..-'			//This cat will keep our code efficient, clean and organised.				   												
+				 _..`--'_..-_/  /--'_.' ,'					//She  likes to eat bugs.
+				(il),-''  (li),'  ((!.-'				
+		
+	*/
 		
 		do {
 			
@@ -212,7 +221,7 @@ public class Game implements KeyListener {
 			long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
 			
 			try {
-				Thread.sleep(sleepFor);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -237,6 +246,7 @@ public class Game implements KeyListener {
 	private void updateStars() {
 		
 	}
+	
 	static int m = 0;
 	
 	private static void shootTorpedo(Player player) { 
@@ -244,8 +254,8 @@ public class Game implements KeyListener {
 			m=0;
 		}
 		
-		if(Math.abs(torpedo[m].getY() - player.getY()) < 100) {
-			torpedo[m].initTorpedo(player.getX()-5, player.getY()-5);
+		if(true) {
+			torpedo[m].initTorpedo(player.getX(), player.getY()-5);
 			m++;
 		}
 		

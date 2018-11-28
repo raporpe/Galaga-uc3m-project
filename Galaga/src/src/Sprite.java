@@ -88,6 +88,13 @@ abstract public class Sprite {
 		
 		public void setVisibility(boolean visibility) {
 			this.visible = visibility;
+			board.gb_setSpriteVisible(getId(), visibility);
+		}
+		
+		//Functions
+		
+		public void moveSpriteTo(int x, int y) {
+			board.gb_moveSpriteCoord(getId(), x, y);
 		}
 	
 
