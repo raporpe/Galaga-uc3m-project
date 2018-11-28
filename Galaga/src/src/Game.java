@@ -141,17 +141,19 @@ public class Game implements KeyListener{
 
 
 
-
+//----------------------THE MAIN WHILE-------------------------
 
 		
 		
 		do {
 			
 			//we take at the beggining the time
-			
+			//THIS IS AN IMPLEMENTATION OF FPS SYSTEM
 			double initialTime = System.nanoTime();
 			
 	
+			
+			
 			
 			player.moveRight(Game.dx);			
 			
@@ -171,6 +173,9 @@ public class Game implements KeyListener{
 			}
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
+			
+			
+			
 			
 			
 			
