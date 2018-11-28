@@ -153,6 +153,8 @@ public class Game implements KeyListener{
 			
 	
 			
+			
+			
 			player.moveRight(Game.dx);			
 			
 			
@@ -171,6 +173,9 @@ public class Game implements KeyListener{
 			}
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
+			
+			
+			
 			
 			
 			
