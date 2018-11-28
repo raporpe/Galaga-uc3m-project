@@ -8,7 +8,7 @@ import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-public class Game implements KeyListener{
+public class Game implements KeyListener {
 
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
@@ -93,7 +93,7 @@ public class Game implements KeyListener{
 	
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  throws InterruptedException {
 		
 		String playerName;
 		
@@ -144,7 +144,7 @@ public class Game implements KeyListener{
 			}
 		}
 		
-		playerName = "Galagoncio";
+		playerName = "Galaga";
 	
 	//	Game.board.gb_showMessageDialog("Select your name");
 				
@@ -217,7 +217,9 @@ public class Game implements KeyListener{
 
 	}
 
+	
+}
 
 	
 
-}
+
