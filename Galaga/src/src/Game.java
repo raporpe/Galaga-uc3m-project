@@ -51,26 +51,8 @@ public class Game implements KeyListener {
 	
 	
 	//Testing
+	
 
-	@Override
-	public void keyTyped(KeyEvent e) {		
-		int test = e.getKeyCode();
-		if(test == KeyEvent.VK_0) {
-			goUp();
-		}
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	public void goUp() {
 		Player pepe = new Player("pepe", 3, board);
@@ -93,7 +75,10 @@ public class Game implements KeyListener {
 	private static Player player;
 	private static Torpedo[] torpedo;
 	static Enemy[] enemies;
+
 	
+	private static int rightFactor = 0;
+	private static int leftfactor = 0;
 	
 	
 	
@@ -171,6 +156,7 @@ public class Game implements KeyListener {
 		
 		double lastShotTime = 0;
 
+		//FOr the keylistener
 
 
 //----------------------THE MAIN WHILE-------------------------//
@@ -198,23 +184,26 @@ public class Game implements KeyListener {
 			
 			String lastAction;
 			lastAction = board.gb_getLastAction();
-			if(lastAction.equals("right")) {	
-				player.moveRight(1);
-
-			}
-			if(lastAction.equals("left")) {
-				player.moveLeft(1);
-			}
+//			if(lastAction.equals("right")) {	
+//				player.moveRight(righFactor);
+//
+//			}
+//			if(lastAction.equals("left")) {
+//				player.moveLeft(1);
+//			}
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (20*1000/Game.FPS)) {
 					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
 				
 			}
+			
+			player.moveLeft(leftfactor);
+			player.moveRight(rightFactor);
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
@@ -227,6 +216,10 @@ public class Game implements KeyListener {
 		
 					double computingTime = System.nanoTime() - initialTime;
 					long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
+					
+					if(sleepFor < 0) {
+						sleepFor = 0;
+					}
 					
 					try {
 						Thread.sleep(sleepFor);
@@ -243,6 +236,42 @@ public class Game implements KeyListener {
 		
 //----------------------END OF THE MAIN WHILE-------------------------//
 
+
+		
+//		board.addKeyListener(new KeyListener() {
+//			
+//			@Override
+//			public void keyTyped(KeyEvent e) {
+//
+//				
+//			}
+//			
+//			@Override
+//			public void keyReleased(KeyEvent e) {
+//				int key = e.getKeyCode();
+//						if(key == KeyEvent.VK_0) {
+//							rightFactor = 0;
+//						}	
+//						if(key == KeyEvent.VK_B) {
+//							leftfactor = 0;
+//						}				
+//			}
+//			
+//			@Override
+//			public void keyPressed(KeyEvent e) {
+//				int key = e.getKeyCode();
+//						if(key == KeyEvent.VK_0) {
+//							rightFactor = 1;
+//						}	
+//						if(key == KeyEvent.VK_B) {
+//							leftfactor = 1;
+//						}	
+//			}
+//		});
+		
+		
+		
+		
 		
 		
 		
