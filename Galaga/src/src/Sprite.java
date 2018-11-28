@@ -11,11 +11,13 @@ abstract public class Sprite {
 	protected GameBoardGUI board;
 	protected boolean visible;
 
-	public Sprite(int id, GameBoardGUI board, String imgPath) {
+	public Sprite(int id, GameBoardGUI board, String imgPath, int x, int y) {
 
 		setId(id);
 		setBoard(board);	
 		setImgPath(imgPath);
+		setX(x);
+		setY(y);
 		
 		//Creating sprite
 		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);

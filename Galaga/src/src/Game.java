@@ -149,7 +149,6 @@ public class Game {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			torpedo[ii] = new Torpedo((ii+50), board);
 		}
-		Torpedo pep = new Torpedo(90 , board);
 		
 		double lastShotTime = 0;
 
