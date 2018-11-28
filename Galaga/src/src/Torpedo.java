@@ -27,7 +27,8 @@ public class Torpedo {
 	public void initTorpedo(int posX, int posY) {
 		setX(posX);
 		setY(posY);
-		board.gb_moveSpriteCoord(getId(), x, y);
+		setVisibility(true);
+		board.gb_moveSpriteCoord(getId(), getX(), getY());
 		board.gb_setSpriteVisible(getId(), true);
 	}
 	
@@ -84,7 +85,8 @@ public class Torpedo {
 	//Functions
 	
 	public void moveStep() {
-		this.x = this.x + Game.TORPEDOES_SPEED;
+		setY(getY() - Game.TORPEDOES_SPEED);
+		board.gb_moveSpriteCoord(getId(), getX(), getY());
 	}
 	
 	

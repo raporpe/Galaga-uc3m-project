@@ -157,6 +157,9 @@ public class Game implements KeyListener {
 		
 		//Generate torpedoes array
 		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+		for(int ii = 0; ii < torpedo.length; ii++) {
+			torpedo[ii] = new Torpedo((ii+50), board);
+		}
 		
 		
 
@@ -195,6 +198,8 @@ public class Game implements KeyListener {
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
+			updateTorpedoes();
+
 			/*for(int ii = 11; ii < 20; ii++) {
 				Zako.moveZako(enemies[ii]);
 			}	*/		
@@ -214,7 +219,7 @@ public class Game implements KeyListener {
 
 	}
 	
-	private void updateTorpedoes() {
+	private static void updateTorpedoes() {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			if(torpedo[ii].isVisible()) {
 				torpedo[ii].moveStep();
@@ -230,8 +235,9 @@ public class Game implements KeyListener {
 		
 	}
 	static int m = 0;
+	
 	private static void shootTorpedo(Player player) { 
-		torpedo[m].initTorpedo(player.getX(), player.getY());
+		torpedo[m].initTorpedo(player.getX()-5, player.getY()-5);
 		m++;
 	}
 	
