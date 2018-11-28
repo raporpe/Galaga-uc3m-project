@@ -96,8 +96,8 @@ public class Game implements KeyListener{
 				enemies[ii] = new Goei(ii,board);
 			}
 		}*/
-		enemies[0]= new Zako(0,board);
-		enemies[1]= new Commander(1,board);
+		enemies[0]= new Zako(4,board);
+		enemies[1]= new Commander(0,board);
 		enemies[2]= new Goei(2,board);
 
 
