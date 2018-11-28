@@ -4,14 +4,13 @@ import java.awt.event.KeyEvent;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Player {
+public class Player extends Sprite{
 	
 	private int x = (int)(Game.BOARD_WIDTH/2);
 	private final int Y = (Game.BOARD_HEIGHT-20);
-	private int id= 1;
 	
-	private int lives;
-	private int maxLives = 3;
+	private final int MAX_LIVES = 3;
+	private int lives = 3;
 	private int score;
 	private String name = "NO_NAME";
 	
@@ -20,46 +19,24 @@ public class Player {
 	private int speed;
 	private int level = 1;
 	
-	private GameBoardGUI board;
-
 
 		
 	//Constructor
-	public Player (String name, int maxLives, GameBoardGUI b) {
+	public Player (String name, GameBoardGUI board) {
+		super(0, board, "player.png");
 		
-		if(maxLives > 0) {
-			this.maxLives = maxLives;
-		}
 		this.name = name;
 
-		this.lives = this.maxLives;
-		this.board=b;
 		//Creating player in board
-		this.board.gb_addSprite(1, "player.png", true);
-		this.board.gb_moveSpriteCoord(1, this.x, this.Y);
-		this.board.gb_setSpriteVisible(1, true);
-		
-		//Generating text
-		
-		this.board.gb_setValueHealthCurrent(this.lives);
-		this.board.gb_setValueHealthMax(this.maxLives);
-		this.board.gb_setTextPlayerName(this.name);
-		this.board.gb_setTextLevel("Level");
-		
-		this.board.gb_setTextAbility1("Shootings");
-		this.board.gb_setTextAbility2("Right Bullets");
-		this.board.gb_setValueAbility1(this.shoots);
-		this.board.gb_setValueAbility2(this.rightBullets);
-		
-		this.board.gb_setPortraitPlayer("portrait.png");
-		this.board.gb_setTextPointsUp("Score");
-		this.board.gb_setTextPointsDown("Speed");
-		this.board.gb_setValuePointsDown(this.speed);
-		//TODO: Invent another value different to speed
 
-		this.board.gb_setValueLevel(this.level);
+		setVisibility(true);
+		initializeStats();
+		
 
 	}
+	
+	
+	
 	
 	
 	//Public setters and getters
@@ -126,26 +103,29 @@ public class Player {
 		this.board.gb_setValueLevel(this.level);
 	}
 	
-	
-	//Testing
-	
-	//Testing
+	public void initializeStats() {
+		
+		//Generating text
+		this.board.gb_setValueHealthCurrent(this.lives);
+		this.board.gb_setValueHealthMax(this.MAX_LIVES);
+		this.board.gb_setTextPlayerName(this.name);
+		this.board.gb_setTextLevel("Level");
+		
+		this.board.gb_setTextAbility1("Shootings");
+		this.board.gb_setTextAbility2("Right Bullets");
+		this.board.gb_setValueAbility1(this.shoots);
+		this.board.gb_setValueAbility2(this.rightBullets);
+		
+		this.board.gb_setPortraitPlayer("portrait.png");
+		this.board.gb_setTextPointsUp("Score");
+		this.board.gb_setTextPointsDown("Speed");
+		this.board.gb_setValuePointsDown(this.speed);
+		//TODO: Invent another value different to speed
+		
+		this.board.gb_setValueLevel(this.level);
 
-	public void keyTyped(KeyEvent e) {		
-		int test = e.getKeyCode();
-		if(test == KeyEvent.VK_0) {
-			moveRight(1);
-		}
-	}
-
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 }

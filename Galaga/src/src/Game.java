@@ -8,7 +8,7 @@ import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-public class Game implements KeyListener {
+public class Game {
 
 	//We declare a GameBoardGUI object
 	private static GameBoardGUI board;
@@ -54,10 +54,7 @@ public class Game implements KeyListener {
 	
 
 	
-	public void goUp() {
-		Player pepe = new Player("pepe", 3, board);
-		pepe.moveLeft(1);
-	}
+
 	
 	
 	
@@ -145,7 +142,7 @@ public class Game implements KeyListener {
 		//Create planets
 		
 		//We create the player
-		player = new Player(playerName, 3, board);
+		player = new Player(playerName, board);
 		
 		//Generate torpedoes array
 		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];

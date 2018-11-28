@@ -2,7 +2,7 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Sprite {
+abstract public class Sprite {
 	
 	protected int id;
 	protected int x;
@@ -32,7 +32,7 @@ public class Sprite {
 	public boolean checkCollision(Sprite sprite) {
 		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
 			this.setVisibility(false);
-		//	sprite.destroy();
+			sprite.destroy(sprite);
 			return true;
 		} else {
 			return false;
@@ -101,16 +101,17 @@ public class Sprite {
 		
 		public void changeImgPath(String newImgpath) {
 			setImgPath(newImgpath);
-			board.gb_setSpriteImage(getId(), this.imgPath);
+			board.gb_setSpriteImage(this.getId(), this.imgPath);
 		}
 		
 		public void moveSpriteTo(int x, int y) {
 			board.gb_moveSpriteCoord(getId(), x, y);
 		}
 		
-		public void destroy() {
-			//animateExplosion();
-			setVisibility(false);
+		public void destroy(Sprite sprite) {
+			sprite.animateExplosion();
+			sprite.setVisibility(false);
+			sprite.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
 		}
 		
 		public void animateExplosion() {
