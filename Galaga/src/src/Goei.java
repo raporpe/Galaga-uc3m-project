@@ -7,7 +7,7 @@ public class Goei extends Enemy{
 	public Goei(int id,GameBoardGUI board){
 		
 		super(id, board, "enemy200.png");
-		
+
 	}
 	
 	public static void moveGoei(Enemy goei) {

@@ -4,7 +4,7 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Torpedo extends Sprite{
 
-		
+	
 	
 	public Torpedo(int id, GameBoardGUI board) {
 		super(id, board, "torpedo100.png", 0, 0);

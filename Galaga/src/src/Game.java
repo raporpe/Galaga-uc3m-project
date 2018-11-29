@@ -97,8 +97,8 @@ public class Game {
 
 		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
-
 		}
+		
 		for(int ii = 10; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
 		}
@@ -124,7 +124,7 @@ public class Game {
 		//Grid color setter
 		board.gb_setGridColor(80, 80, 80);		
 		
-		for(int ii = 0; ii<(BOARD_WIDTH_BIG_COORDINATES); ii++) {
+		for(int ii = 0; ii < (BOARD_WIDTH_BIG_COORDINATES); ii++) {
 			for(int jj = 0; jj < (BOARD_HEIGHT_BIG_COORDINATES); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
@@ -167,7 +167,7 @@ public class Game {
 		
 		do {
 			
-			//we take at the beggining the time
+			//we take at the beginning the time
 			//THIS IS AN IMPLEMENTATION OF FPS SYSTEM
 			double initialTime = System.nanoTime();
 			
@@ -180,17 +180,17 @@ public class Game {
 			
 			String lastAction;
 			lastAction = board.gb_getLastAction();
-//			if(lastAction.equals("right")) {	
-//				player.moveRight(righFactor);
-//
-//			}
-//			if(lastAction.equals("left")) {
-//				player.moveLeft(1);
-//			}
+			if(lastAction.equals("right")) {	
+				player.moveRight(1);
+
+			}
+			if(lastAction.equals("left")) {
+				player.moveLeft(1);
+			}
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (20*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (30*1000/Game.FPS)) {
 					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
@@ -215,6 +215,7 @@ public class Game {
 					
 					if(sleepFor < 0) {
 						sleepFor = 0;
+						System.out.println("FPS decrease");
 					}
 					
 					try {

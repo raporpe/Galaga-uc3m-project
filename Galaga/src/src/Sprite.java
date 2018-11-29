@@ -34,7 +34,9 @@ abstract public class Sprite {
 	public boolean checkCollision(Sprite sprite) {
 		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
 			this.setVisibility(false);
+			this.moveDefaultLocation();
 			sprite.destroy(sprite);
+			
 			return true;
 		} else {
 			return false;
@@ -42,8 +44,7 @@ abstract public class Sprite {
 	}
 	
 	
-	
-	
+
 	//Getters and setters
 		public int getId() {
 			return id;
@@ -107,7 +108,13 @@ abstract public class Sprite {
 		}
 		
 		public void moveSpriteTo(int x, int y) {
-			board.gb_moveSpriteCoord(getId(), x, y);
+			this.setX(x);												//
+			this.setY(y);												//
+			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
+		}
+		
+		public void moveDefaultLocation() {
+			board.gb_moveSpriteCoord(getId(), 0, 0);
 		}
 		
 		public void destroy(Sprite sprite) {
