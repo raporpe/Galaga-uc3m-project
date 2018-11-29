@@ -1,13 +1,16 @@
 package src;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
+import java.awt.geom.AffineTransform;
 //Importing the Locale object to change the default
 //configuration of the computer to English
 import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
+import javafx.animation.AnimationTimer;
+
+
 public class Game {
 
 	//We declare a GameBoardGUI object
@@ -31,7 +34,8 @@ public class Game {
 		}
 	}
 	
-	
+	static double initialTime;
+
 	//Responsive
 	public static final int BOARD_WIDTH = 170;
 	public static final int BOARD_HEIGHT = 220;
@@ -40,7 +44,7 @@ public class Game {
 	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
 	
-	final static int FPS = 120;
+	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
 	final static int TORPEDOES_SPEED = 1;
 	final static int SPRITE_WIDTH = 5;
@@ -154,7 +158,6 @@ public class Game {
 
 		//FOr the keylistener
 
-
 //----------------------THE MAIN WHILE-------------------------//
 		
 		
@@ -169,11 +172,9 @@ public class Game {
 			
 			//we take at the beginning the time
 			//THIS IS AN IMPLEMENTATION OF FPS SYSTEM
-			double initialTime = System.nanoTime();
+			initialTime = System.nanoTime();
 			
-	
-			
-			
+
 			
 			player.moveRight(Game.dx);			
 			
@@ -190,20 +191,20 @@ public class Game {
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (30*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
 					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
 				
 			}
-			
 			player.moveLeft(leftfactor);
 			player.moveRight(rightFactor);
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
+			updateEnemies();
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -223,6 +224,9 @@ public class Game {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
+					
+					//Displaying speed factor
+				//	System.out.println(EXPECTED_TIME/computingTime);
 				
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\
@@ -284,7 +288,18 @@ public class Game {
 		}
 	}
 	
-	private void updateSprites() {
+	
+	static double lastTimeExecution = System.currentTimeMillis();
+	private static void updateEnemies() {
+		if(System.currentTimeMillis() - lastTimeExecution > 1000) {
+
+		for(int ii = 0; ii < enemies.length; ii++) {
+				enemies[ii].animate();
+			}
+		lastTimeExecution = System.currentTimeMillis();
+
+
+		}
 	}
 	
 	private void updateStars() {
