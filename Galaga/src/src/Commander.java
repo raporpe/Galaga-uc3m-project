@@ -18,7 +18,7 @@ public class Commander extends Enemy{
 	
 	public static void damaged(Enemy commander) {
 		
-		commander.spriteImageFrame1="enemy900.png";
+		commander.defaultSpriteImage="enemy900.png";
 		
 	}
 }

@@ -1,14 +1,11 @@
 package src;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.geom.AffineTransform;
+
 //Importing the Locale object to change the default
 //configuration of the computer to English
 import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
-import javafx.animation.AnimationTimer;
 
 
 public class Game {
@@ -237,45 +234,7 @@ public class Game {
 		
 //----------------------END OF THE MAIN WHILE-------------------------//
 
-
-		
-//		board.addKeyListener(new KeyListener() {
-//			
-//			@Override
-//			public void keyTyped(KeyEvent e) {
-//
-//				
-//			}
-//			
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				int key = e.getKeyCode();
-//						if(key == KeyEvent.VK_0) {
-//							rightFactor = 0;
-//						}	
-//						if(key == KeyEvent.VK_B) {
-//							leftfactor = 0;
-//						}				
-//			}
-//			
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//				int key = e.getKeyCode();
-//						if(key == KeyEvent.VK_0) {
-//							rightFactor = 1;
-//						}	
-//						if(key == KeyEvent.VK_B) {
-//							leftfactor = 1;
-//						}	
-//			}
-//		});
-		
-		
-		
-		
-		
-		
-		
+	
 	}
 	
 	private static void updateTorpedoes() {

@@ -11,15 +11,15 @@ abstract public class Sprite {
 	protected boolean visible;
 	
 	//Animation and image change
-	protected String spriteImageFrame1;
-	protected String spriteImageFrame2;
+	protected String defaultSpriteImage;
+	protected String alternativeSpriteImage;
 	protected int animationState;
 
-	public Sprite(int id, GameBoardGUI board, String spriteImageFrame1, String spriteImageFrame2, int x, int y) {
+	public Sprite(int id, GameBoardGUI board, String defaultSpriteImage, String alternativeSpriteImage, int x, int y) {
 
 		setId(id);
 		setBoard(board);	
-		setSpriteImage(spriteImageFrame1, spriteImageFrame2);
+		setSpriteImage(defaultSpriteImage, alternativeSpriteImage);
 		
 		setX(x);
 		setY(y);
@@ -82,12 +82,12 @@ abstract public class Sprite {
 		}
 		
 		public String getImgPath() {
-			return spriteImageFrame1;
+			return defaultSpriteImage;
 		}
 
 		public void setSpriteImage(String spriteImageFrame1, String spriteImageFrame2) {
-			this.spriteImageFrame1 = spriteImageFrame1;
-			this.spriteImageFrame2 = spriteImageFrame2;
+			this.defaultSpriteImage = spriteImageFrame1;
+			this.alternativeSpriteImage = spriteImageFrame2;
 		}
 		
 		public GameBoardGUI getBoard() {
@@ -103,11 +103,11 @@ abstract public class Sprite {
 		}
 		
 		public String getSpriteImageFrame1() {
-			return this.spriteImageFrame1;
+			return this.defaultSpriteImage;
 		}
 
 		public String getSpriteImageFrame2() {
-			return this.spriteImageFrame2;
+			return this.alternativeSpriteImage;
 		}
 
 		
