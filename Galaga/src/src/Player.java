@@ -5,10 +5,7 @@ import java.awt.event.KeyEvent;
 import edu.uc3m.game.GameBoardGUI;
 
 public class Player extends Sprite{
-	
-	private int x = (int)(Game.BOARD_WIDTH/2);
-	private final int Y = (Game.BOARD_HEIGHT-20);
-	
+		
 	private final int MAX_LIVES = 3;
 	private int lives = 3;
 	private int score;
@@ -23,35 +20,19 @@ public class Player extends Sprite{
 		
 	//Constructor
 	public Player (String name, GameBoardGUI board) {
-		super(0, board, "player.png");
+		super(1000, board, "player.png", "player.png",(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
 		
 		this.name = name;
 
 		//Creating player in board
-
 		setVisibility(true);
 		initializeStats();
-		
 
 	}
-	
-	
-	
 	
 	
 	//Public setters and getters
-	
-	public int getX() {
-		return x;
-	}
-	public int getY() {
-		return Y;
-	}
-	public int getId() {
-		return id;
-	}
-
-	
+		
 	public int getLives() {
 		return this.lives;
 	}
@@ -64,10 +45,6 @@ public class Player extends Sprite{
 	public int getLevel() {
 		return this.level;
 	}
-	
-	
-	
-
 	
 		
 	//Functions

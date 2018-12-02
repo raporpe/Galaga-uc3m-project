@@ -4,13 +4,13 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Torpedo extends Sprite{
 
-		
+	
 	
 	public Torpedo(int id, GameBoardGUI board) {
-		super(id, board, "torpedo100.png");
+		super(id, board, "torpedo100.png", "torpedo100.png",  0, 0);
 
 	//	this.imgPath = "torpedo100.png"; // Por qué this.imgPath y no arriba poner String imgPath = "torpedo100.png"; ????????????????
-		setImgPath("torpedo100.png");  //POR QUÉ NO SE PUEDE PONER UN FIELD String imgPath = "torpedo100.png";  y hay que user setImagPath???
+	//	setImgPath("torpedo100.png");  //POR QUÉ NO SE PUEDE PONER UN FIELD String imgPath = "torpedo100.png";  y hay que user setImagPath???
 		
 
 

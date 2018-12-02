@@ -1,6 +1,4 @@
 package src;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 //Importing the Locale object to change the default
 //configuration of the computer to English
@@ -8,6 +6,8 @@ import java.util.Locale;
 
 //Importing the GameBoardGUI library
 import edu.uc3m.game.GameBoardGUI;
+
+
 public class Game {
 
 	//We declare a GameBoardGUI object
@@ -31,7 +31,8 @@ public class Game {
 		}
 	}
 	
-	
+	static double initialTime;
+
 	//Responsive
 	public static final int BOARD_WIDTH = 170;
 	public static final int BOARD_HEIGHT = 220;
@@ -40,7 +41,7 @@ public class Game {
 	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
 	
-	final static int FPS = 120;
+	final static int FPS = 60;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
 	final static int TORPEDOES_SPEED = 1;
 	final static int SPRITE_WIDTH = 5;
@@ -97,8 +98,8 @@ public class Game {
 
 		for(int ii = 0; ii < 10; ii++) {
 			enemies[ii] = new Goei(ii,board);
-
 		}
+		
 		for(int ii = 10; ii < 20; ii++) {
 			enemies[ii] = new Zako(ii,board);
 		}
@@ -124,7 +125,7 @@ public class Game {
 		//Grid color setter
 		board.gb_setGridColor(80, 80, 80);		
 		
-		for(int ii = 0; ii<(BOARD_WIDTH_BIG_COORDINATES); ii++) {
+		for(int ii = 0; ii < (BOARD_WIDTH_BIG_COORDINATES); ii++) {
 			for(int jj = 0; jj < (BOARD_HEIGHT_BIG_COORDINATES); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
@@ -149,12 +150,10 @@ public class Game {
 		for(int ii = 0; ii < torpedo.length; ii++) {
 			torpedo[ii] = new Torpedo((ii+50), board);
 		}
-		Torpedo pep = new Torpedo(90 , board);
 		
 		double lastShotTime = 0;
 
 		//FOr the keylistener
-
 
 //----------------------THE MAIN WHILE-------------------------//
 		
@@ -168,43 +167,41 @@ public class Game {
 		
 		do {
 			
-			//we take at the beggining the time
+			//we take at the beginning the time
 			//THIS IS AN IMPLEMENTATION OF FPS SYSTEM
-			double initialTime = System.nanoTime();
+			initialTime = System.nanoTime();
 			
-	
-			
-			
+
 			
 			player.moveRight(Game.dx);			
 			
 			
 			String lastAction;
 			lastAction = board.gb_getLastAction();
-//			if(lastAction.equals("right")) {	
-//				player.moveRight(righFactor);
-//
-//			}
-//			if(lastAction.equals("left")) {
-//				player.moveLeft(1);
-//			}
+			if(lastAction.equals("right")) {	
+				player.moveRight(1);
+
+			}
+			if(lastAction.equals("left")) {
+				player.moveLeft(1);
+			}
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (20*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
 					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
 				
 			}
-			
 			player.moveLeft(leftfactor);
 			player.moveRight(rightFactor);
 
 			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
+			updateEnemies();
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -216,6 +213,7 @@ public class Game {
 					
 					if(sleepFor < 0) {
 						sleepFor = 0;
+						System.out.println("FPS decrease");
 					}
 					
 					try {
@@ -223,6 +221,9 @@ public class Game {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
+					
+					//Displaying speed factor
+				//	System.out.println(EXPECTED_TIME/computingTime);
 				
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\
@@ -233,45 +234,7 @@ public class Game {
 		
 //----------------------END OF THE MAIN WHILE-------------------------//
 
-
-		
-//		board.addKeyListener(new KeyListener() {
-//			
-//			@Override
-//			public void keyTyped(KeyEvent e) {
-//
-//				
-//			}
-//			
-//			@Override
-//			public void keyReleased(KeyEvent e) {
-//				int key = e.getKeyCode();
-//						if(key == KeyEvent.VK_0) {
-//							rightFactor = 0;
-//						}	
-//						if(key == KeyEvent.VK_B) {
-//							leftfactor = 0;
-//						}				
-//			}
-//			
-//			@Override
-//			public void keyPressed(KeyEvent e) {
-//				int key = e.getKeyCode();
-//						if(key == KeyEvent.VK_0) {
-//							rightFactor = 1;
-//						}	
-//						if(key == KeyEvent.VK_B) {
-//							leftfactor = 1;
-//						}	
-//			}
-//		});
-		
-		
-		
-		
-		
-		
-		
+	
 	}
 	
 	private static void updateTorpedoes() {
@@ -284,7 +247,18 @@ public class Game {
 		}
 	}
 	
-	private void updateSprites() {
+	
+	static double lastTimeExecution = System.currentTimeMillis();
+	private static void updateEnemies() {
+		if(System.currentTimeMillis() - lastTimeExecution > 1000) {
+
+		for(int ii = 0; ii < enemies.length; ii++) {
+				enemies[ii].animate();
+			}
+		lastTimeExecution = System.currentTimeMillis();
+
+
+		}
 	}
 	
 	private void updateStars() {
