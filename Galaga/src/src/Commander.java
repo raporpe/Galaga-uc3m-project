@@ -9,6 +9,7 @@ public class Commander extends Enemy{
 	}
 	public static void moveZako(Enemy commander) {
 		commander.x = commander.getX()+(int) (Math.random()*10);
+		
 	}
 	
 	public static void damaged(Enemy commander) {
