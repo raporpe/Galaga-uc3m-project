@@ -11,7 +11,7 @@ abstract public class Sprite {
 	protected boolean visible;
 	
 	//Animation and image change
-	protected String defaultSpriteImage;
+	protected String defaultSpriteImage = "100";
 	protected String alternativeSpriteImage;
 	protected int animationState;
 

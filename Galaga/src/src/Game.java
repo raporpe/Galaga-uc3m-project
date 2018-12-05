@@ -48,6 +48,13 @@ public class Game {
 	final static int SPRITE_HEIGTH = 5;
 	final static int DEFAULT_SPRITE_POS_X = 0;
 	final static int DEFAULT_SPRITE_POS_Y = 0;
+	
+	final static int TORPEDO_OFFSET = 5;
+	
+	//Ids spectra
+	final static int PLAYER_TORPEDO_ID_OFFSET = 5000;
+	final static int ENEMY_TORPEDO_ID_OFFSET = 5500;
+	
 
 	
 	
