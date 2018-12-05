@@ -10,10 +10,4 @@ public class Zako extends Enemy{
 		
 	}
 	
-	public static void moveZako(Enemy zako) {
-		
-		zako.x = zako.getX()+(int) (Math.random()*10);
-		zako.y = zako.getY()+(int) (Math.random()*10);
-		
-	}
 }

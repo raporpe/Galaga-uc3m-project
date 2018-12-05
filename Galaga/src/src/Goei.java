@@ -10,11 +10,5 @@ public class Goei extends Enemy{
 
 	}
 	
-	public static void moveGoei(Enemy goei) {
-		
-		goei.x = goei.getX()+(int) (Math.random()*10);
-		goei.y = goei.getY()+(int) (Math.random()*10);
-		
-	}
 }
 
