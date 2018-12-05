@@ -37,6 +37,13 @@ public class Torpedo extends Sprite{
 			setVisibility(false);
 		}
 	}
+
+
+	@Override
+	protected void shootTorpedo() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

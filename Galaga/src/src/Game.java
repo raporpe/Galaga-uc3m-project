@@ -151,11 +151,11 @@ public class Game {
 		//We create the player
 		player = new Player(playerName, board);
 		
-		//Generate torpedoes array
-		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
-		for(int ii = 0; ii < torpedo.length; ii++) {
-			torpedo[ii] = new Torpedo((ii+50), board);
-		}
+//		//Generate torpedoes array
+//		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+//		for(int ii = 0; ii < torpedo.length; ii++) {
+//			torpedo[ii] = new Torpedo((ii+PLAYER_TORPEDO_ID_OFFSET), board);
+//		}
 		
 		double lastShotTime = 0;
 
