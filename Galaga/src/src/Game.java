@@ -81,7 +81,6 @@ public class Game {
 	
 	
 	
-	
 	public static void main(String[] args) {
 		
 		String playerName;
@@ -164,7 +163,6 @@ public class Game {
 				 _..`--'_..-_/  /--'_.' ,'					//She likes eating bugs.
 				(il),-''  (li),'  ((!.-'						
 */
-		
 		do {
 			
 			//we take at the beginning the time
@@ -189,7 +187,7 @@ public class Game {
 			if(lastAction.equals("space")) {
 				
 				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
-					shootTorpedo(player);
+					player.shootTorpedo();
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
@@ -237,6 +235,7 @@ public class Game {
 	
 	}
 	
+	
 	private static void updateTorpedoes() {
 		checkTorpedoesCollisions();
 		for(int ii = 0; ii < torpedo.length; ii++) {
@@ -266,20 +265,6 @@ public class Game {
 	}
 
 
-	
-	static int m = 0;
-	
-	private static void shootTorpedo(Player player) { 
-		if(m >= torpedo.length) {
-			m=0;
-		}
-		
-		if(true) {
-			torpedo[m].initTorpedo(player.getX(), player.getY()-5);
-			m++;
-		}
-		
-	}
 	
 	private static void checkTorpedoesCollisions() {
 		for(int ii = 0; ii < torpedo.length; ii++) {

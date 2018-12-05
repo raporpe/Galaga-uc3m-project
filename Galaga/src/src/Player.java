@@ -16,12 +16,20 @@ public class Player extends Sprite{
 	private int speed;
 	private int level = 1;
 	
+	Torpedo [] playerTorpedoes;
+	private int torpedoArrayCounter;
+
 
 		
 	//Constructor
 	public Player (String name, GameBoardGUI board) {
 		super(1000, board, "player.png", "player.png",(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
+		Torpedo [] playerTorpedoes = new Torpedo[Game.BOARD_HEIGHT];
 		
+		for(int ii=0; ii<playerTorpedoes.length;ii++) {
+			playerTorpedoes[ii] = new Torpedo(ii,board,"torpedo100.png");
+		}
+
 		this.name = name;
 
 		//Creating player in board
@@ -48,6 +56,16 @@ public class Player extends Sprite{
 	
 		
 	//Functions
+	
+	public void shootTorpedo() {
+		if(torpedoArrayCounter >= this.playerTorpedoes.length) {
+			torpedoArrayCounter=0;
+		}
+		
+		this.playerTorpedoes[torpedoArrayCounter].initTorpedo(this.getX(), this.getY()-5);
+		torpedoArrayCounter++;
+	}
+	
 	public void moveRight(int quantity) {
 		if(this.x < Game.BOARD_WIDTH-5) {
 			this.x = this.x + quantity;
@@ -103,6 +121,8 @@ public class Player extends Sprite{
 
 		
 	}
+	
+	
 
 	
 }
