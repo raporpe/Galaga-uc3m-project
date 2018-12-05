@@ -14,10 +14,6 @@ public class Commander extends Enemy{
 		
 	}
 	
-	@Override
-	private void destroy(Sprite sprite) {
-		
-	}
 	
 	
 

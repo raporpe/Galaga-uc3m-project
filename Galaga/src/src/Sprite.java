@@ -11,7 +11,7 @@ abstract public class Sprite {
 	protected boolean visible;
 	
 	//Animation and image change
-	protected String defaultSpriteImage = "100";
+	protected String defaultSpriteImage;
 	protected String alternativeSpriteImage;
 	protected int animationState;
 
@@ -155,7 +155,6 @@ abstract public class Sprite {
 			board.gb_setSpriteImage(this.getId(), image);
 		}
 		
-		abstract protected void shootTorpedo();
 		
 		public void animate() {
 

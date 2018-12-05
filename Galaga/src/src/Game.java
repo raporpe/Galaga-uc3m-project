@@ -48,13 +48,6 @@ public class Game {
 	final static int SPRITE_HEIGTH = 5;
 	final static int DEFAULT_SPRITE_POS_X = 0;
 	final static int DEFAULT_SPRITE_POS_Y = 0;
-	
-	final static int TORPEDO_OFFSET = 5;
-	
-	//Ids spectra
-	final static int PLAYER_TORPEDO_ID_OFFSET = 5000;
-	final static int ENEMY_TORPEDO_ID_OFFSET = 5500;
-	
 
 	
 	
@@ -84,6 +77,7 @@ public class Game {
 	
 	private static int rightFactor = 0;
 	private static int leftfactor = 0;
+	
 	
 	
 	
@@ -151,11 +145,11 @@ public class Game {
 		//We create the player
 		player = new Player(playerName, board);
 		
-//		//Generate torpedoes array
-//		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
-//		for(int ii = 0; ii < torpedo.length; ii++) {
-//			torpedo[ii] = new Torpedo((ii+PLAYER_TORPEDO_ID_OFFSET), board);
-//		}
+		//Generate torpedoes array
+		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+		for(int ii = 0; ii < torpedo.length; ii++) {
+			torpedo[ii] = new Torpedo((ii+50), board);
+		}
 		
 		double lastShotTime = 0;
 
@@ -170,6 +164,7 @@ public class Game {
 				 _..`--'_..-_/  /--'_.' ,'					//She likes eating bugs.
 				(il),-''  (li),'  ((!.-'						
 */
+		
 		do {
 			
 			//we take at the beginning the time
@@ -194,7 +189,7 @@ public class Game {
 			if(lastAction.equals("space")) {
 				
 				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
-					player.shootTorpedo();
+					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
@@ -242,7 +237,6 @@ public class Game {
 	
 	}
 	
-	
 	private static void updateTorpedoes() {
 		checkTorpedoesCollisions();
 		for(int ii = 0; ii < torpedo.length; ii++) {
@@ -272,6 +266,20 @@ public class Game {
 	}
 
 
+	
+	static int m = 0;
+	
+	private static void shootTorpedo(Player player) { 
+		if(m >= torpedo.length) {
+			m=0;
+		}
+		
+		if(true) {
+			torpedo[m].initTorpedo(player.getX(), player.getY()-5);
+			m++;
+		}
+		
+	}
 	
 	private static void checkTorpedoesCollisions() {
 		for(int ii = 0; ii < torpedo.length; ii++) {
