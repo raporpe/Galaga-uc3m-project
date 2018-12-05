@@ -20,6 +20,23 @@ abstract public class Enemy extends Sprite{
 	public Enemy() {
 		
 	}
+	boolean right =true;
+	public void moveToNextPosition() {
+		if(right==true) {
+			setX(getX()+1);
+		}
+		if(getX()==Game.BOARD_WIDTH-25) {
+			setY(getY()+5);
+			right=false;
+		}
+		if(right==false) {
+			setX(getX()-1);
+		}
+		if(getX()==25) {
+			setY(getY()+5);
+			right=true;
+		}
+	}
 
 
 
