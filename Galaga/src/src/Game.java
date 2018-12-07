@@ -123,7 +123,7 @@ public class Game {
 		
 		
 		//Grid color setter
-		board.gb_setGridColor(80, 80, 80);		
+		board.gb_setGridColor(40, 40, 40);		
 		
 		for(int ii = 0; ii < (BOARD_WIDTH_BIG_COORDINATES); ii++) {
 			for(int jj = 0; jj < (BOARD_HEIGHT_BIG_COORDINATES); jj++) {
@@ -158,7 +158,8 @@ public class Game {
 //----------------------THE MAIN WHILE-------------------------//
 		
 		
-/* 				  ("`-''-/").___..--''"`-._
+/* 
+ 				  ("`-''-/").___..--''"`-._
 				   `6_ 6  )   `-.  (     ).`-.__.`)
 				   (_Y_.)'  ._   )  `._ `. ``-..-'			//This cat will keep our code efficient, clean and organised.				   												
 				 _..`--'_..-_/  /--'_.' ,'					//She likes eating bugs.
@@ -223,7 +224,7 @@ public class Game {
 					}
 					
 					//Displaying speed factor
-				//	System.out.println(EXPECTED_TIME/computingTime);
+					System.out.println(EXPECTED_TIME/computingTime);
 				
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\
