@@ -199,7 +199,7 @@ public class Game {
 			player.moveLeft(leftfactor);
 			player.moveRight(rightFactor);
 
-			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
+//			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
 			updateEnemies();
