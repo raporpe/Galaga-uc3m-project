@@ -255,6 +255,7 @@ public class Game {
 
 		for(int ii = 0; ii < enemies.length; ii++) {
 				enemies[ii].animate();
+				enemies[ii].moveToNextPosition();
 			}
 		lastTimeExecution = System.currentTimeMillis();
 
