@@ -96,14 +96,14 @@ public class Game {
 		enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
 
-		for(int ii = 0; ii < 10; ii++) {
+		for(int ii = 0; ii < 11; ii++) {
 			enemies[ii] = new Goei(ii,board);
 		}
 		
-		for(int ii = 10; ii < 20; ii++) {
+		for(int ii = 11; ii < 22; ii++) {
 			enemies[ii] = new Zako(ii,board);
 		}
-		for(int ii = 20; ii < 23; ii++) {
+		for(int ii = 22; ii < 25; ii++) {
 			enemies[ii] = new Commander(ii,board);
 		}
 		
