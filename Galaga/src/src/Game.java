@@ -33,7 +33,7 @@ public class Game {
 	
 	static double initialTime;
 
-	//Responsive
+	//Responsiveness
 	public static final int BOARD_WIDTH = 170;
 	public static final int BOARD_HEIGHT = 220;
 	
@@ -48,7 +48,10 @@ public class Game {
 	final static int SPRITE_HEIGTH = 5;
 	final static int DEFAULT_SPRITE_POS_X = 0;
 	final static int DEFAULT_SPRITE_POS_Y = 0;
-
+	
+	final static int MAX_TORPEDOES_PER_SQAURE = 1;
+	
+	final static int PLAYER_TORPEDOES_OFFSET = 5;
 	
 	
 	//Testing
@@ -73,12 +76,8 @@ public class Game {
 	private static Player player;
 	private static Torpedo[] torpedo;
 	static Enemy[] enemies;
+	static Star[] star = new Star[Constants.StarPositions.length];
 
-	
-	private static int rightFactor = 0;
-	private static int leftfactor = 0;
-	
-	
 	
 	
 	
@@ -107,18 +106,22 @@ public class Game {
 			enemies[ii] = new Commander(ii,board);
 		}
 		
-
-		
-
-
-		
-		
-		
-		
-
-		
-		
 		board.setVisible(true);
+
+		//Stars initialization
+		for (int ii = 0; ii < star.length; ii++) {
+			star[ii] = new Star(1, 0, board);
+		}
+
+
+		
+		
+		
+		
+
+		
+		
+
 				
 		
 		
@@ -132,15 +135,9 @@ public class Game {
 		}
 		
 		playerName = "Galaga";
-	
-	//	Game.board.gb_showMessageDialog("Select your name");
-				
-
+			
 		
 		
-		
-		
-		//Create planets
 		
 		//We create the player
 		player = new Player(playerName, board);
@@ -153,7 +150,6 @@ public class Game {
 		
 		double lastShotTime = 0;
 
-		//FOr the keylistener
 
 //----------------------THE MAIN WHILE-------------------------//
 		
@@ -189,20 +185,19 @@ public class Game {
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (10*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (MAX_TORPEDOES_PER_SQAURE*10*1000/Game.FPS)) {
 					shootTorpedo(player);
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
 				
 			}
-			player.moveLeft(leftfactor);
-			player.moveRight(rightFactor);
 
 //			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
 			updateEnemies();
+			updateStars();
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -214,7 +209,7 @@ public class Game {
 					
 					if(sleepFor < 0) {
 						sleepFor = 0;
-						System.out.println("FPS decrease");
+						System.out.println("Warning: FPS decrease!");
 					}
 					
 					try {
@@ -263,8 +258,10 @@ public class Game {
 		}
 	}
 	
-	private void updateStars() {
-		
+	private static void updateStars() {
+		for(int ii = 0; ii < star.length; ii++) {
+			star[ii].moveStep();
+		}
 	}
 
 
@@ -277,7 +274,7 @@ public class Game {
 		}
 		
 		if(true) {
-			torpedo[m].initTorpedo(player.getX(), player.getY()-5);
+			torpedo[m].initTorpedo(player.getX(), player.getY()-PLAYER_TORPEDOES_OFFSET);
 			m++;
 		}
 		
