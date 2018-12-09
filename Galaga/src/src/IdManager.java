@@ -5,9 +5,9 @@ public class IdManager {
 	
 	public final static int STARS_ID_OFFSET = 4000;
 	public final static int TORPEDOES_ID_OFFSET = 5000;
-	private static int ZAKO_ID_OFFSET = 100;
-	private static int GOEI_ID_OFFSET=100;
-	private static int COMMANDER_ID_OFFSET = 100;
+	private static int ZAKO_ID_OFFSET = 1000;
+	private static int GOEI_ID_OFFSET= 1100;
+	private static int COMMANDER_ID_OFFSET = 1200;
 	
 	private static int starsIdCount = STARS_ID_OFFSET;
 	private static int torpedoesIdCount = TORPEDOES_ID_OFFSET;

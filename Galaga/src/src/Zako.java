@@ -4,9 +4,9 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Zako extends Enemy{
 		
-	public Zako(int id, GameBoardGUI board){
+	public Zako(GameBoardGUI board){
 		
-		super(id, board);
+		super(IdManager.getId("zako"), board);
 		
 	}
 	

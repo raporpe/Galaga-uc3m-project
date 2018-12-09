@@ -12,6 +12,7 @@ abstract public class Enemy extends Sprite{
 	protected int explodingSkin;
 	protected boolean attacking;
 	protected boolean defaultSwarmSkin;
+	protected double lastSystemTime;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		super(id, board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]);
@@ -45,13 +46,16 @@ abstract public class Enemy extends Sprite{
 				exploding= false;
 			}
 			
-		} else if (defaultSwarmSkin) {
-			setSpriteSkin(Constants.getSkin(this, 0));
-		} else if (!defaultSwarmSkin) {
-			setSpriteSkin(Constants.getSkin(this, -1));
+		} else {
+			if(System.currentTimeMillis() - lastSystemTime > 1000) {
+				if(defaultSwarmSkin) {
+					setSpriteSkin(Constants.getSkin(this, 0));
+				} else {
+					setSpriteSkin(Constants.getSkin(this, -1));
+				}
+				lastSystemTime = System.currentTimeMillis();
+			}
 		}
-
-		
 	}
 
 	

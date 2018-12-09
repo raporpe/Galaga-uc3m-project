@@ -96,14 +96,14 @@ public class Game {
 
 
 		for(int ii = 0; ii < 11; ii++) {
-			enemies[ii] = new Goei(ii,board);
+			enemies[ii] = new Goei(board);
 		}
 		
 		for(int ii = 11; ii < 22; ii++) {
-			enemies[ii] = new Zako(ii,board);
+			enemies[ii] = new Zako(board);
 		}
 		for(int ii = 22; ii < 25; ii++) {
-			enemies[ii] = new Commander(ii,board);
+			enemies[ii] = new Commander(board);
 		}
 		
 		board.setVisible(true);
@@ -145,7 +145,7 @@ public class Game {
 		//Generate torpedoes array
 		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
 		for(int ii = 0; ii < torpedo.length; ii++) {
-			torpedo[ii] = new Torpedo((ii+50), board);
+			torpedo[ii] = new Torpedo(board);
 		}
 		
 		double lastShotTime = 0;

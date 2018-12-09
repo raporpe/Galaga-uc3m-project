@@ -4,9 +4,9 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Goei extends Enemy{
 		
-	public Goei(int id,GameBoardGUI board){
+	public Goei(GameBoardGUI board){
 		
-		super(id, board);
+		super(IdManager.getId("goei"), board);
 
 	}
 	
