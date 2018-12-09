@@ -11,7 +11,7 @@ abstract public class Enemy extends Sprite{
 	protected boolean exploding;
 	protected int explodingSkin;
 	protected boolean attacking;
-	protected int lastSwarmSkin;
+	protected boolean defaultSwarmSkin;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		super(id, board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]);
@@ -28,7 +28,8 @@ abstract public class Enemy extends Sprite{
 	
 	public void moveToNextPosition() {
 		
-
+		changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],Constants.MOVES[temporalPathToFollow[pathPos]][1]);
+		setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
 
 	}
 	
@@ -36,18 +37,27 @@ abstract public class Enemy extends Sprite{
 	//Override this in every other Sprite
 	public void animate() {
 		if(exploding) {
+			setSpriteSkin(Constants.getSkin(this, explodingSkin++));
 			
-		} else if (attacking){
-			setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
-
-		} else {
-			if ()
-			setSpriteSkin(Constants.getSkin(this, lastSwarm));
-
+			//Reset the explosion state
+			if(explodingSkin >= 8) {
+				explodingSkin = 0;
+				exploding= false;
+			}
+			
+		} else if (defaultSwarmSkin) {
+			setSpriteSkin(Constants.getSkin(this, 0));
+		} else if (!defaultSwarmSkin) {
+			setSpriteSkin(Constants.getSkin(this, -1));
 		}
+
 		
 	}
 
+	
+	public void animateExplosion() {
+		exploding = true;
+	}
 
 
 }

@@ -10,6 +10,9 @@ abstract public class Sprite {
 	protected GameBoardGUI board;
 	protected boolean visible;
 	protected String defaultSkin = Constants.getSkin(this, 0);
+	protected int lifes = 1;
+	
+	
 	//Animation and image change
 	
 
@@ -96,6 +99,15 @@ abstract public class Sprite {
 			return visible;
 		}
 		
+		
+		public int getLifes() {
+			return lifes;
+		}
+
+		protected void setLifes(int lifes) {
+			this.lifes = lifes;
+		}
+		
 
 
 		
@@ -114,6 +126,13 @@ abstract public class Sprite {
 			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
 		}
 		
+		public void changeSpritePos(int dx, int dy) {
+			this.setX(x + dx);												//
+			this.setY(y + dy);												// Why?
+			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
+		}
+		
+		
 		public void moveDefaultLocation() {
 			board.gb_moveSpriteCoord(getId(), 0, 0);
 		}
@@ -131,9 +150,9 @@ abstract public class Sprite {
 		
 		//Temporal
 		public void animateExplosion() {
-			
-		}
-		
+		} //They dont have explosion by default
+
+
 
 		
 	
