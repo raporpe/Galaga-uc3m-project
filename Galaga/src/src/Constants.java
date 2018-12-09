@@ -60,6 +60,21 @@ public class Constants {
 																															   {Game.BOARD_WIDTH/2-20,15},{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}, {Game.BOARD_WIDTH/2+20,15}};
 	 
 	 public String getSkin(Sprite sprite, int a) {
+		 
+		 if(a == 20) {
+			 return "explosion20.png";
+		 }else if(a==21) {
+			 return "explosion21.png";
+		 }else if(a==22) {
+			 return "explosion22.png";
+		 }else if(a==23) {
+			 return "explosion23.png";
+		 }else if(a==24) {
+			 return "explosion24.png";
+		 }else if(a==25) {
+			 return "explosion25.png";
+		 }
+		 
 		 if (sprite instanceof Zako) {
 			 switch(a) {
 			 case -1:
