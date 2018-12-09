@@ -15,11 +15,10 @@ abstract public class Sprite {
 	protected String alternativeSpriteImage;
 	protected int animationState;
 
-	public Sprite(int id, GameBoardGUI board, String defaultSpriteImage, String alternativeSpriteImage, int x, int y) {
+	public Sprite(int id, GameBoardGUI board, int x, int y) {
 
 		setId(id);
 		setBoard(board);	
-		setSpriteImage(defaultSpriteImage, alternativeSpriteImage);
 		
 		setX(x);
 		setY(y);

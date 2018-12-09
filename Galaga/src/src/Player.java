@@ -20,7 +20,7 @@ public class Player extends Sprite{
 		
 	//Constructor
 	public Player (String name, GameBoardGUI board) {
-		super(1000, board, "player.png", "player.png",(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
+		super(1000, board,(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
 		
 		this.name = name;
 

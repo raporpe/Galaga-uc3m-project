@@ -9,7 +9,7 @@ public class Star extends Sprite{
 		
 	
 	public Star(int speed, int shift, GameBoardGUI board) {
-		super(IdManager.getId("star"), board, "star.png", "", Constants.getStarPosition()[0] + shift, Constants.getStarPosition()[1]);
+		super(IdManager.getId("star"), board, Constants.getStarPosition()[0] + shift, Constants.getStarPosition()[1]);
 		setSpeed(speed);
 		setShift(shift);
 		setVisibility(true);
