@@ -9,11 +9,13 @@ abstract public class Sprite {
 	protected int y;
 	protected GameBoardGUI board;
 	protected boolean visible;
+	protected String defaultSkin = Constants.getSkin(this, 0);
+	protected int lifes = 1;
+	
 	
 	//Animation and image change
-	protected String defaultSpriteImage;
-	protected String alternativeSpriteImage;
-	protected int animationState;
+	
+
 
 	public Sprite(int id, GameBoardGUI board, int x, int y) {
 
@@ -26,7 +28,7 @@ abstract public class Sprite {
 		
 		
 		//Creating sprite
-		this.board.gb_addSprite(this.getId(), this.getImgPath(), true);
+		this.board.gb_addSprite(this.getId(), this.getDefaultSkin(), true);
 		this.board.gb_moveSpriteCoord(this.getId(), getX(), getY());
 		
 	}
@@ -80,14 +82,10 @@ abstract public class Sprite {
 			this.y = y;
 		}
 		
-		public String getImgPath() {
-			return defaultSpriteImage;
+		public String getDefaultSkin() {
+			return defaultSkin;
 		}
 
-		public void setSpriteImage(String spriteImageFrame1, String spriteImageFrame2) {
-			this.defaultSpriteImage = spriteImageFrame1;
-			this.alternativeSpriteImage = spriteImageFrame2;
-		}
 		
 		public GameBoardGUI getBoard() {
 			return board;
@@ -101,40 +99,39 @@ abstract public class Sprite {
 			return visible;
 		}
 		
-		public String getSpriteImageFrame1() {
-			return this.defaultSpriteImage;
-		}
-
-		public String getSpriteImageFrame2() {
-			return this.alternativeSpriteImage;
-		}
-
 		
-		public int getAnimationState() {
-			return animationState;
+		public int getLifes() {
+			return lifes;
 		}
 
-		public void setAnimationState(int animationState) {
-			if(animationState >= 0 && 4 >= animationState) {
-				this.animationState = animationState;
-			}
+		protected void setLifes(int lifes) {
+			this.lifes = lifes;
 		}
+		
+
 
 		
 		//Functions
-		
 
-		
 		public void setVisibility(boolean visibility) {
 			this.visible = visibility;
 			board.gb_setSpriteVisible(getId(), visibility);
 		}
+		
+		
 		
 		public void moveSpriteTo(int x, int y) {
 			this.setX(x);												//
 			this.setY(y);												// Why?
 			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
 		}
+		
+		public void changeSpritePos(int dx, int dy) {
+			this.setX(x + dx);												//
+			this.setY(y + dy);												// Why?
+			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
+		}
+		
 		
 		public void moveDefaultLocation() {
 			board.gb_moveSpriteCoord(getId(), 0, 0);
@@ -146,47 +143,18 @@ abstract public class Sprite {
 			sprite.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
 		}
 		
-		public void animateExplosion() { //Must go before animate().
-			this.setAnimationState(2); //Change it for a direct variable change instead of setter. For learning purpose.
-		}
 		
-		public void setSpriteDisplayingImage(String image){
+		public void setSpriteSkin(String image){
 			board.gb_setSpriteImage(this.getId(), image);
 		}
 		
+		//Temporal
+		public void animateExplosion() {
+		} //They dont have explosion by default
+
+
+
 		
-		public void animate() {
-
-			switch(animationState){
-			case 0:
-				setSpriteDisplayingImage(this.getSpriteImageFrame1());
-				setAnimationState(1);
-				break;
-				
-			case 1:
-				setSpriteDisplayingImage(this.getSpriteImageFrame2());
-				setAnimationState(0);
-				break;
-
-			case 2:
-				setAnimationState(3);
-				break;
-
-			case 3:
-				setAnimationState(4);
-				break;
-
-			case 4:
-				setAnimationState(5);
-				break;
-				
-			case 5:
-				
-				setAnimationState(0);
-				break;
-				
-			}
-		}
 	
 
 }

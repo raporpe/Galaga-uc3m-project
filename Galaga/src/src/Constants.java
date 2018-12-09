@@ -58,7 +58,7 @@ public class Constants {
 				{Game.BOARD_WIDTH/2-60,35}, {Game.BOARD_WIDTH/2-50,35}, {Game.BOARD_WIDTH/2-40,35}, {Game.BOARD_WIDTH/2-30,35},{Game.BOARD_WIDTH/2-20,35},{Game.BOARD_WIDTH/2-10,35},{Game.BOARD_WIDTH/2,35},{Game.BOARD_WIDTH/2+10,35}, {Game.BOARD_WIDTH/2+20,35}, {Game.BOARD_WIDTH/2+30,35}, {Game.BOARD_WIDTH/2+40,35},{Game.BOARD_WIDTH/2+50,35},{Game.BOARD_WIDTH/2+60,35},
 				{Game.BOARD_WIDTH/2-60,45}, {Game.BOARD_WIDTH/2-50,45}, {Game.BOARD_WIDTH/2-40,45}, {Game.BOARD_WIDTH/2-30,45},{Game.BOARD_WIDTH/2-20,45},{Game.BOARD_WIDTH/2-10,45},{Game.BOARD_WIDTH/2,45},{Game.BOARD_WIDTH/2+10,45}, {Game.BOARD_WIDTH/2+20,45}, {Game.BOARD_WIDTH/2+30,45}, {Game.BOARD_WIDTH/2+40,45},{Game.BOARD_WIDTH/2+50,45},{Game.BOARD_WIDTH/2+60,45},
 																															   {Game.BOARD_WIDTH/2-20,15},{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}, {Game.BOARD_WIDTH/2+20,15}};
-	 
+	
 	 public static String getSkin(Sprite sprite, int a) {
 		 if(sprite.getLifes()==2) {
 			 switch(a) {
@@ -100,7 +100,6 @@ public class Constants {
 			 }
  
 		 }
-		 
 		 else if(sprite.getLifes()==1) {
 		 if(a == 20) {
 			 return "explosion20.png";

@@ -4,8 +4,14 @@ import edu.uc3m.game.GameBoardGUI;
 
 abstract public class Enemy extends Sprite{
 	
-	protected String[] explosion = new String[] {"explosion20", "explosion21", "explosion22", "explosion23", "explosion24"};
 
+	protected int pathPos;
+	protected int[] temporalPathToFollow; //Esto va en coordenadas de una sola dimension
+
+	protected boolean exploding;
+	protected int explodingSkin;
+	protected boolean attacking;
+	protected boolean defaultSwarmSkin;
 	
 	public Enemy(int id, GameBoardGUI board) {
 		super(id, board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]);
@@ -22,10 +28,36 @@ abstract public class Enemy extends Sprite{
 	
 	public void moveToNextPosition() {
 		
-
+		changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],Constants.MOVES[temporalPathToFollow[pathPos]][1]);
+		setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
 
 	}
+	
+	
+	//Override this in every other Sprite
+	public void animate() {
+		if(exploding) {
+			setSpriteSkin(Constants.getSkin(this, explodingSkin++));
+			
+			//Reset the explosion state
+			if(explodingSkin >= 8) {
+				explodingSkin = 0;
+				exploding= false;
+			}
+			
+		} else if (defaultSwarmSkin) {
+			setSpriteSkin(Constants.getSkin(this, 0));
+		} else if (!defaultSwarmSkin) {
+			setSpriteSkin(Constants.getSkin(this, -1));
+		}
 
+		
+	}
+
+	
+	public void animateExplosion() {
+		exploding = true;
+	}
 
 
 }
