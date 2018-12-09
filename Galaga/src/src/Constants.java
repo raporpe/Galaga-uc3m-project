@@ -59,8 +59,49 @@ public class Constants {
 				{Game.BOARD_WIDTH/2-60,45}, {Game.BOARD_WIDTH/2-50,45}, {Game.BOARD_WIDTH/2-40,45}, {Game.BOARD_WIDTH/2-30,45},{Game.BOARD_WIDTH/2-20,45},{Game.BOARD_WIDTH/2-10,45},{Game.BOARD_WIDTH/2,45},{Game.BOARD_WIDTH/2+10,45}, {Game.BOARD_WIDTH/2+20,45}, {Game.BOARD_WIDTH/2+30,45}, {Game.BOARD_WIDTH/2+40,45},{Game.BOARD_WIDTH/2+50,45},{Game.BOARD_WIDTH/2+60,45},
 																															   {Game.BOARD_WIDTH/2-20,15},{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}, {Game.BOARD_WIDTH/2+20,15}};
 	 
-	 public String getSkin(Sprite sprite, int a) {
+	 public static String getSkin(Sprite sprite, int a) {
+		 if(sprite.getLifes()==2) {
+			 switch(a) {
+			 case -1:
+				 return "enemy9G1.png";
+			 case DIR_N:
+		 		 return "enemy900.png";
+			 case DIR_NNE:
+				 return "enemy901.png";
+			 case DIR_NE:
+				 return "enemy902.png";
+			 case DIR_ENE:
+				 return "enemy903.png";
+			 case DIR_E:
+				 return "enemy904.png";
+			 case DIR_ESE:
+				 return "enemy905.png";
+			 case DIR_SE:
+				 return "enemy906.png";
+			 case DIR_SSE:
+				 return "enemy907.png";
+			 case DIR_S:
+				 return "enemy908.png";
+			 case DIR_SSW:
+				 return "enemy909.png";
+			 case DIR_SW:
+				 return "enemy910.png";
+			 case DIR_WSW:
+				 return "enemy911.png";
+			 case DIR_W:
+				 return "enemy912.png";
+			 case DIR_WNW:
+				 return "enemy913.png";
+			 case DIR_NW:
+				 return "enemy914.png";
+			 case DIR_NNW:
+				 return "enemy915.png";
+		 		 
+			 }
+ 
+		 }
 		 
+		 else if(sprite.getLifes()==1) {
 		 if(a == 20) {
 			 return "explosion20.png";
 		 }else if(a==21) {
@@ -191,6 +232,7 @@ public class Constants {
 			 return "torpedo200.png";
 		 }
 		 return "";
+		 }
 	 }
 	 
 	 
