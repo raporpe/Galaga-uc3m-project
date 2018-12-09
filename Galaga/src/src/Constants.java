@@ -95,12 +95,10 @@ public class Constants {
 			 case DIR_NW:
 				 return "enemy914.png";
 			 case DIR_NNW:
-				 return "enemy915.png";
-		 		 
+				 return "enemy915.png"; 
 			 }
  
-		 }
-		 else if(sprite.getLifes()==1) {
+		 }else if(sprite.getLifes()==1) {
 		 if(a == 20) {
 			 return "explosion20.png";
 		 }else if(a==21) {
@@ -230,8 +228,8 @@ public class Constants {
 		 }else if(sprite instanceof Torpedo) {
 			 return "torpedo200.png";
 		 }
-		 return "";
 		 }
+		 return "";
 	 }
 	 
 	 
