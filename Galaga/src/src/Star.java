@@ -2,32 +2,56 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Stars {
+public class Star extends Sprite{
 	
-	private int density;
 	private int speed;
-	private int[][] fastStars;
-	private int[][] slowStars;
-	private GameBoardGUI board;
-//	
-//	public void generateSky() {
-//		
-//		fastStars = new int[this.density];
-//		slowStars = new int[this.density];
-//		
-//		//Procedural generator
-//		positionGenerator(starPositionX, starPositionY, this.density, this.precission);
-//		
-//		
-//		for(int ii = 0; ii < this.density; ii++) {
-//			this.board.gb_addSprite((ii+5000), "Star.png", true);
-//			this.board.gb_moveSpriteCoord((ii+5000), starPositionX[ii], starPositionY[ii]);
-//			this.board.gb_setSpriteVisible((ii+5000), true);
-//		}
-//		
-//
-//	}
+	private int shift;
+		
 	
+	public Star(int speed, int shift, GameBoardGUI board) {
+		super(IdManager.getId("star"), board, Constants.getStarPosition()[0] + shift, Constants.getStarPosition()[1]);
+		setSpeed(speed);
+		setShift(shift);
+		setVisibility(true);
+		
+		
+		
+	}
+	
+	public void moveStep() {
+		setY(getY() + this.speed);
+		if(getY() == Game.BOARD_HEIGHT) {
+			setX(0);
+		}
+	}
+		
+	
+	
+	//Getters and setters
+	private void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
+	private int getSpeed() {
+		return this.speed;
+	}
+
+	private int getShift() {
+		return shift;
+	}
+
+	private void setShift(int shift) {
+		this.shift = shift;
+	}
+	
+	
+	
+	
+	
+	
+}
+	
+
 	
 	
 	
@@ -137,4 +161,3 @@ public class Stars {
 	
 	
 
-}

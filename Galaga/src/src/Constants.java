@@ -59,9 +59,32 @@ public class Constants {
 				{Game.BOARD_WIDTH/2-60,45}, {Game.BOARD_WIDTH/2-50,45}, {Game.BOARD_WIDTH/2-40,45}, {Game.BOARD_WIDTH/2-30,45},{Game.BOARD_WIDTH/2-20,45},{Game.BOARD_WIDTH/2-10,45},{Game.BOARD_WIDTH/2,45},{Game.BOARD_WIDTH/2+10,45}, {Game.BOARD_WIDTH/2+20,45}, {Game.BOARD_WIDTH/2+30,45}, {Game.BOARD_WIDTH/2+40,45},{Game.BOARD_WIDTH/2+50,45},{Game.BOARD_WIDTH/2+60,45},
 																															   {Game.BOARD_WIDTH/2-20,15},{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}, {Game.BOARD_WIDTH/2+20,15}};
 	 
-	public static final int[][] fastStars = {};
-	public static final int[][] slowStars = {};
-
+	 public String getSprite(Sprite sprite, int a) {
+		 
+		 switch(sprite) {
+		 case  (instanceof Zako):
+			 
+		 }
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	public static final int[][] StarPositions = {{11,11},{22,22},{33,33},{44,44}};
+	private static int StarPosCounter = 0;
+	
+	public static int[] getStarPosition() {
+		if(StarPosCounter >= StarPositions.length) {
+			StarPosCounter = 0;
+		}
+		return StarPositions[StarPosCounter++];
+	}
 
 }
 
