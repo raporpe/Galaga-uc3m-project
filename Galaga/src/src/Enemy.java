@@ -6,7 +6,7 @@ abstract public class Enemy extends Sprite{
 	
 
 	protected int pathPos;
-	protected int[] temporalPathToFollow;
+	protected int[] temporalPathToFollow; //Esto va en coordenadas de una sola dimension
 
 	protected boolean exploding;
 	protected int explodingSkin;
@@ -33,12 +33,13 @@ abstract public class Enemy extends Sprite{
 	}
 	
 	
-	//Override this in every other 
+	//Override this in every other Sprite
 	public void animate() {
 		if(exploding) {
-			setSpriteSkin(Constants.getSkin(this, ));
-		} else if (attacking){
 			
+		} else if (attacking){
+			setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
+
 		} else {
 			if ()
 			setSpriteSkin(Constants.getSkin(this, lastSwarm));

@@ -129,6 +129,11 @@ abstract public class Sprite {
 			board.gb_setSpriteImage(this.getId(), image);
 		}
 		
+		//Temporal
+		public void animateExplosion() {
+			
+		}
+		
 
 		
 	
