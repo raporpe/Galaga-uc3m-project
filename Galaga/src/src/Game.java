@@ -244,17 +244,10 @@ public class Game {
 	}
 	
 	
-	static double lastTimeExecution = System.currentTimeMillis();
 	private static void updateEnemies() {
-		if(System.currentTimeMillis() - lastTimeExecution > 1000) {
-
 		for(int ii = 0; ii < enemies.length; ii++) {
 				enemies[ii].animate();
 				enemies[ii].moveToNextPosition();
-			}
-		lastTimeExecution = System.currentTimeMillis();
-
-
 		}
 	}
 	

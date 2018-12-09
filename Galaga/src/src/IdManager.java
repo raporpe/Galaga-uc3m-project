@@ -23,7 +23,7 @@ public class IdManager {
 //		}
 //		
 //	}
-//	
+	
 	public static int getId(String sprite) {
 		
 		if(sprite.equals("star")) {
