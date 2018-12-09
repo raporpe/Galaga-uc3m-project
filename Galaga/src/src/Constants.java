@@ -64,37 +64,37 @@ public class Constants {
 			 switch(a) {
 			 case -1:
 				 return "enemy3G0.png";
-			 case 0:
+			 case DIR_N:
 				 return "enemy3G1.png";
-			 case 1:
+			 case DIR_NNE:
 				 return "enemy301.png";
-			 case 2:
+			 case DIR_NE:
 				 return "enemy302.png";
-			 case 3:
+			 case DIR_ENE:
 				 return "enemy303.png";
-			 case 4:
+			 case DIR_E:
 				 return "enemy304.png";
-			 case 5:
+			 case DIR_ESE:
 				 return "enemy305.png";
-			 case 6:
+			 case DIR_SE:
 				 return "enemy306.png";
-			 case 7:
+			 case DIR_SSE:
 				 return "enemy307.png";
-			 case 8:
+			 case DIR_S:
 				 return "enemy308.png";
-			 case 9:
+			 case DIR_SSW:
 				 return "enemy309.png";
-			 case 10:
+			 case DIR_SW:
 				 return "enemy310.png";
-			 case 11:
+			 case DIR_WSW:
 				 return "enemy311.png";
-			 case 12:
+			 case DIR_W:
 				 return "enemy312.png";
-			 case 13:
+			 case DIR_WNW:
 				 return "enemy313.png";
-			 case 14:
+			 case DIR_NW:
 				 return "enemy314.png";
-			 case 15:
+			 case DIR_NNW:
 				 return "enemy315.png";
 			 }
 			 
@@ -102,74 +102,74 @@ public class Constants {
 			 switch(a) {
 			 case -1:
 				 return "enemy200.png";
-			 case 0:
+			 case DIR_N:
 				 return "enemy2G0.png";
-			 case 1:
+			 case DIR_NNE:
 				 return "enemy201.png";
-			 case 2:
+			 case DIR_NE:
 				 return "enemy202.png";
-			 case 3:
+			 case DIR_ENE:
 				 return "enemy203.png";
-			 case 4:
+			 case DIR_E:
 				 return "enemy204.png";
-			 case 5:
+			 case DIR_ESE:
 				 return "enemy205.png";
-			 case 6:
+			 case DIR_SE:
 				 return "enemy206.png";
-			 case 7:
+			 case DIR_SSE:
 				 return "enemy207.png";
-			 case 8:
+			 case DIR_S:
 				 return "enemy208.png";
-			 case 9:
+			 case DIR_SSW:
 				 return "enemy209.png";
-			 case 10:
+			 case DIR_SW:
 				 return "enemy210.png";
-			 case 11:
+			 case DIR_WSW:
 				 return "enemy211.png";
-			 case 12:
+			 case DIR_W:
 				 return "enemy212.png";
-			 case 13:
+			 case DIR_WNW:
 				 return "enemy213.png";
-			 case 14:
+			 case DIR_NW:
 				 return "enemy214.png";
-			 case 15:
+			 case DIR_NNW:
 				 return "enemy215.png";
 			 }
 		 }else if(sprite instanceof Commander) {
 			 switch(a) {
 			 case -1:
 				 return "enemy1G1.png";
-			 case 0:
+			 case DIR_N:
 				 return "enemy100.png";
-			 case 1:
+			 case DIR_NNE:
 				 return "enemy101.png";
-			 case 2:
+			 case DIR_NE:
 				 return "enemy102.png";
-			 case 3:
+			 case DIR_ENE:
 				 return "enemy103.png";
-			 case 4:
+			 case DIR_E:
 				 return "enemy104.png";
-			 case 5:
+			 case DIR_ESE:
 				 return "enemy105.png";
-			 case 6:
+			 case DIR_SE:
 				 return "enemy106.png";
-			 case 7:
+			 case DIR_SSE:
 				 return "enemy107.png";
-			 case 8:
+			 case DIR_S:
 				 return "enemy108.png";
-			 case 9:
+			 case DIR_SSW:
 				 return "enemy109.png";
-			 case 10:
+			 case DIR_SW:
 				 return "enemy110.png";
-			 case 11:
+			 case DIR_WSW:
 				 return "enemy111.png";
-			 case 12:
+			 case DIR_W:
 				 return "enemy112.png";
-			 case 13:
+			 case DIR_WNW:
 				 return "enemy113.png";
-			 case 14:
+			 case DIR_NW:
 				 return "enemy114.png";
-			 case 15:
+			 case DIR_NNW:
 				 return "enemy115.png";
 			 }
 		 }else if(sprite instanceof Torpedo) {
