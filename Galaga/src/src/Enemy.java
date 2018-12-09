@@ -29,6 +29,7 @@ abstract public class Enemy extends Sprite{
 	public void moveToNextPosition() {
 		
 
+
 	}
 	
 	

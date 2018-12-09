@@ -59,7 +59,124 @@ public class Constants {
 				{Game.BOARD_WIDTH/2-60,45}, {Game.BOARD_WIDTH/2-50,45}, {Game.BOARD_WIDTH/2-40,45}, {Game.BOARD_WIDTH/2-30,45},{Game.BOARD_WIDTH/2-20,45},{Game.BOARD_WIDTH/2-10,45},{Game.BOARD_WIDTH/2,45},{Game.BOARD_WIDTH/2+10,45}, {Game.BOARD_WIDTH/2+20,45}, {Game.BOARD_WIDTH/2+30,45}, {Game.BOARD_WIDTH/2+40,45},{Game.BOARD_WIDTH/2+50,45},{Game.BOARD_WIDTH/2+60,45},
 																															   {Game.BOARD_WIDTH/2-20,15},{Game.BOARD_WIDTH/2-10,15},{Game.BOARD_WIDTH/2,15},{Game.BOARD_WIDTH/2+10,15}, {Game.BOARD_WIDTH/2+20,15}};
 	 
-	 
+	 public String getSkin(Sprite sprite, int a) {
+		 if (sprite instanceof Zako) {
+			 switch(a) {
+			 case -1:
+				 return "enemy3G0.png";
+			 case 0:
+				 return "enemy3G1.png";
+			 case 1:
+				 return "enemy301.png";
+			 case 2:
+				 return "enemy302.png";
+			 case 3:
+				 return "enemy303.png";
+			 case 4:
+				 return "enemy304.png";
+			 case 5:
+				 return "enemy305.png";
+			 case 6:
+				 return "enemy306.png";
+			 case 7:
+				 return "enemy307.png";
+			 case 8:
+				 return "enemy308.png";
+			 case 9:
+				 return "enemy309.png";
+			 case 10:
+				 return "enemy310.png";
+			 case 11:
+				 return "enemy311.png";
+			 case 12:
+				 return "enemy312.png";
+			 case 13:
+				 return "enemy313.png";
+			 case 14:
+				 return "enemy314.png";
+			 case 15:
+				 return "enemy315.png";
+			 }
+			 
+		 }else if(sprite instanceof Goei) {
+			 switch(a) {
+			 case -1:
+				 return "enemy200.png";
+			 case 0:
+				 return "enemy2G0.png";
+			 case 1:
+				 return "enemy201.png";
+			 case 2:
+				 return "enemy202.png";
+			 case 3:
+				 return "enemy203.png";
+			 case 4:
+				 return "enemy204.png";
+			 case 5:
+				 return "enemy205.png";
+			 case 6:
+				 return "enemy206.png";
+			 case 7:
+				 return "enemy207.png";
+			 case 8:
+				 return "enemy208.png";
+			 case 9:
+				 return "enemy209.png";
+			 case 10:
+				 return "enemy210.png";
+			 case 11:
+				 return "enemy211.png";
+			 case 12:
+				 return "enemy212.png";
+			 case 13:
+				 return "enemy213.png";
+			 case 14:
+				 return "enemy214.png";
+			 case 15:
+				 return "enemy215.png";
+			 }
+		 }else if(sprite instanceof Commander) {
+			 switch(a) {
+			 case -1:
+				 return "enemy1G1.png";
+			 case 0:
+				 return "enemy100.png";
+			 case 1:
+				 return "enemy101.png";
+			 case 2:
+				 return "enemy102.png";
+			 case 3:
+				 return "enemy103.png";
+			 case 4:
+				 return "enemy104.png";
+			 case 5:
+				 return "enemy105.png";
+			 case 6:
+				 return "enemy106.png";
+			 case 7:
+				 return "enemy107.png";
+			 case 8:
+				 return "enemy108.png";
+			 case 9:
+				 return "enemy109.png";
+			 case 10:
+				 return "enemy110.png";
+			 case 11:
+				 return "enemy111.png";
+			 case 12:
+				 return "enemy112.png";
+			 case 13:
+				 return "enemy113.png";
+			 case 14:
+				 return "enemy114.png";
+			 case 15:
+				 return "enemy115.png";
+			 }
+		 }else if(sprite instanceof Torpedo) {
+			 return "enemy100.png";
+		 }
+		 return "";
+	 }
 	 
 	 
 	 
