@@ -173,7 +173,9 @@ public class Constants {
 				 return "enemy115.png";
 			 }
 		 }else if(sprite instanceof Torpedo) {
-			 return "enemy100.png";
+			 return "torpedo100.png";
+		 }else if(sprite instanceof Torpedo) {
+			 return "torpedo200.png";
 		 }
 		 return "";
 	 }
