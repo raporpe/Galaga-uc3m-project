@@ -38,7 +38,7 @@ public class Commander extends Enemy{
 			x++;
 
 		}
-		if(getX()==Game.BOARD_WIDTH-25) {
+		if(getX()==Game.BOARD_WIDTH-55) {
 			y+=5;
 			right=false;
 

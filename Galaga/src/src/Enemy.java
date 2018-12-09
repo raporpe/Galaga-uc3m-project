@@ -36,7 +36,7 @@ abstract public class Enemy extends Sprite{
 			x++;
 
 		}
-		if(getX()==Game.BOARD_WIDTH-25) {
+		if(getX()==Game.BOARD_WIDTH-15) {
 			y+=5;
 			right=false;
 
