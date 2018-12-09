@@ -73,9 +73,7 @@ public class Constants {
 			 return "explosion24.png";
 		 }else if(a==25) {
 			 return "explosion25.png";
-		 }
-		 
-		 if (sprite instanceof Zako) {
+		 }else if (sprite instanceof Zako) {
 			 switch(a) {
 			 case -1:
 				 return "enemy3G0.png";
