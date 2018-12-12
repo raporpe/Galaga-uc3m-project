@@ -5,10 +5,13 @@ import edu.uc3m.game.GameBoardGUI;
 public class Commander extends Enemy{
 	
 	
+	private int id;
 	
-	public Commander(GameBoardGUI board){
+	
+	
+	public Commander(int id, GameBoardGUI board){
 		
-		super(IdManager.assignId("commander"), board);
+		super(id, board);
 		setLifes(2);
 		
 	}
