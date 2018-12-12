@@ -2,16 +2,11 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Commander extends Enemy{
+public class Commander extends Enemy{	
 	
-	
-	private int id;
-	
-	
-	
-	public Commander(int id, GameBoardGUI board){
+	public Commander(GameBoardGUI board){
 		
-		super(id, board);
+		super(IdManager.assignId("commander"), board);
 		setLifes(2);
 		
 	}
