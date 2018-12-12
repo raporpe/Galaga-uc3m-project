@@ -2,9 +2,7 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Commander extends Enemy{
-	
-	
+public class Commander extends Enemy{	
 	
 	public Commander(GameBoardGUI board){
 		
