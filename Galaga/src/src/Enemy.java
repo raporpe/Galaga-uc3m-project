@@ -14,7 +14,7 @@ abstract public class Enemy extends Sprite{
 	protected boolean defaultSwarmSkin;
 	protected double lastSystemTime;
 	
-	private 
+
 	
 	public Enemy(int id, GameBoardGUI board) {
 		super(id, board, Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Areglar esto mañana
