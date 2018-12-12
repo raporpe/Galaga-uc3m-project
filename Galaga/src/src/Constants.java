@@ -38,6 +38,8 @@ public class Constants {
 	  { -1,-4 }, // DIR_NNW
 	 };
 	 
+	 
+	 
 
 	 public static final int [][] enemyCoordinatesLevel1= {
 

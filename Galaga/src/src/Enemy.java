@@ -15,25 +15,20 @@ abstract public class Enemy extends Sprite{
 	protected double lastSystemTime;
 	
 	public Enemy(int id, GameBoardGUI board) {
-		super(id, board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]);
+		super(IdManager.getId("zako"), board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Areglar esto mañana
 		setVisibility(true);
 
 	}
 	
-
 	public Enemy() {
 		
 	}
 
-	
-	
 	public void moveToNextPosition() {
 		
 		changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],Constants.MOVES[temporalPathToFollow[pathPos]][1]);
 		setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
-
 	}
-	
 	
 	//Override this in every other Sprite
 	public void animate() {
