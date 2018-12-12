@@ -6,7 +6,7 @@ public class Goei extends Enemy{
 		
 	public Goei(GameBoardGUI board){
 		
-		super(IdManager.getId("goei"), board);
+		super(IdManager.assignId("goei"), board);
 
 	}
 	

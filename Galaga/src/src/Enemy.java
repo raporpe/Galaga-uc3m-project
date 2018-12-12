@@ -15,7 +15,7 @@ abstract public class Enemy extends Sprite{
 	protected double lastSystemTime;
 	
 	public Enemy(int id, GameBoardGUI board) {
-		super(IdManager.getId("zako"), board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Areglar esto mañana
+		super(IdManager.assignId("zako"), board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Areglar esto mañana
 		setVisibility(true);
 
 	}

@@ -15,7 +15,7 @@ public class IdManager {
 	private static int goeiIdCount = GOEI_ID_OFFSET;
 	private static int commanderIdCount = COMMANDER_ID_OFFSET;
 
-	public static int getId(String sprite) {
+	public static int assignId(String sprite) {
 		
 		if(sprite.equals("star")) {
 			return starsIdCount++;

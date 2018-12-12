@@ -8,7 +8,7 @@ public class Commander extends Enemy{
 	
 	public Commander(GameBoardGUI board){
 		
-		super(IdManager.getId("commander"), board);
+		super(IdManager.assignId("commander"), board);
 		setLifes(2);
 		
 	}

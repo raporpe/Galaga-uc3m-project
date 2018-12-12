@@ -6,7 +6,7 @@ public class Zako extends Enemy{
 		
 	public Zako(GameBoardGUI board){
 		
-		super(IdManager.getId("zako"), board);
+		super(IdManager.assignId("zako"), board);
 		
 	}
 	
