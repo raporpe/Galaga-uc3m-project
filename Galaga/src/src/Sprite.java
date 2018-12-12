@@ -28,8 +28,8 @@ abstract public class Sprite {
 		
 		
 		//Creating sprite
-		this.board.gb_addSprite(this.getId(), this.getDefaultSkin(), true);
-		this.board.gb_moveSpriteCoord(this.getId(), getX(), getY());
+		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		
 	}
 	
@@ -152,6 +152,9 @@ abstract public class Sprite {
 		public void animateExplosion() {
 		} //They dont have explosion by default
 
+		public void setLevel(int newLevel) {
+			
+		}
 
 
 		
