@@ -302,13 +302,24 @@ public class Constants {
 
 	public static final int[][] StarPositions = {{ 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 }};
 	private static int StarPosCounter = 0;
+	private boolean firstTime = true;
+
 
 	public static int[] getPosition(Sprite sprite) {
 		if (sprite instanceof Star) {
-			if (StarPosCounter >= StarPositions.length) {
-				StarPosCounter = 0;
+			
+			if(firstTime) { //Implement the stars shifting
+				if (StarPosCounter >= StarPositions.length) {
+					StarPosCounter = 0;
+				}
+				fistTime = !fistTime;
+				return StarPositions[StarPosCounter++];
+			} else {
+				
 			}
-			return StarPositions[StarPosCounter++];
+			
+			
+
 
 		}
 

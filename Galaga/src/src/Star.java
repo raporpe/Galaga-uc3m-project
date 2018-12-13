@@ -6,8 +6,7 @@ public class Star extends Sprite {
 
 	private double speed;
 	private int shift;
-	private int[] starPos;
-	private double lastSystemTime = System.currentTimeMillis();
+	private double lastSystemTime = System.currentTimeMillis(); //TODO: DO SOMETHING WITH THIS
 
 	public Star(GameBoardGUI board, double speed, int shift) {
 		super(board);
@@ -19,9 +18,9 @@ public class Star extends Sprite {
 
 	public void moveStep() {
 		if (System.currentTimeMillis() - lastSystemTime > 1/speed) {
-			setY(getY() + 1);
+			setY(this.y + 1);
 			
-			if (getY() == Game.BOARD_HEIGHT) {
+			if (this.y == Game.BOARD_HEIGHT) {								//Use the function moveSpriteTo() ?
 				setY(0);
 			}
 			
@@ -42,7 +41,7 @@ public class Star extends Sprite {
 
 
 	private void setShift(int shift) {
-		if(shift > 0) {
+		if(shift > 0 && shift < Game.BOARD_WIDTH) {
 			this.shift = shift;
 		}
 	}

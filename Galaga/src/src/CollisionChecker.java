@@ -53,15 +53,14 @@ public class CollisionChecker {
 				for (int jj = 0; jj < spriteB.length; jj++) {
 					if (spriteB[jj].isVisible()) {
 
-						if(spriteADeath) {
+						if (spriteADeath) {
 							spriteA[ii].destroy();
 						}
-						
-						if(spriteBDeath) {
+
+						if (spriteBDeath) {
 							spriteB[jj].destroy();
 						}
-						
-						
+
 					}
 				}
 			}

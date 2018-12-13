@@ -4,13 +4,13 @@ import edu.uc3m.game.GameBoardGUI;
 
 abstract public class Sprite {
 	
+	protected GameBoardGUI board;
 	protected int id;
 	protected int x;
 	protected int y;
-	protected GameBoardGUI board;
 	protected boolean visible;
 	protected int lifes = 1;
-	protected String defaultSkin = Constants.getSkin(this, 0);
+	protected String defaultSkin = "noSkin.png";
 
 	
 	
@@ -32,6 +32,8 @@ abstract public class Sprite {
 
 		setBoard(board);
 		setId(IdManager.assignId(this));
+		Constants.getSkin(this, 0);
+		
 		
 		int[] tempInitialCoordinates = Constants.getPosition(this);
 		setX(tempInitialCoordinates[0]);
@@ -115,10 +117,6 @@ abstract public class Sprite {
 			return defaultSkin;
 		}
 
-		
-		public GameBoardGUI getBoard() {
-			return board;
-		}
 
 		public void setBoard(GameBoardGUI board) {
 			this.board = board;
