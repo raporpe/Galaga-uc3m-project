@@ -11,11 +11,7 @@ import edu.uc3m.game.GameBoardGUI;
 
 public class Game {
 
-	//We declare a GameBoardGUI object
-	private static GameBoardGUI board;
-	public int i = 0;
-	public static final int COLLISION_RADIUS = 10;
-	public static int dx = 0;
+
 
 	
 	private static boolean running = true;
@@ -32,8 +28,12 @@ public class Game {
 		}
 	}
 	
+	
+	//Great variables declaration
+	
 	static double initialTime;
 
+	
 	//Responsiveness
 	public static final int BOARD_WIDTH = 170;
 	public static final int BOARD_HEIGHT = 220;
@@ -56,46 +56,50 @@ public class Game {
 	
 	final static int PLAYER_MOVEMENT_SPACE = 2;
 	
+	//Collisions
+	public static final int COLLISION_RADIUS = 10;
+
+	
 	//Testing
 	
 
 	
+	
+	
+	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	private static Player player;
-	public final static Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
-
-	static Enemy[] enemies;
 
 	
 	
 	
 	public static void main(String[] args) {
 		
-		String playerName;
+		String playerName = "test";
 		
 		
 		//To change the GUI to English
 		Locale.setDefault(new Locale("en"));
 
-		//Create a 17x22 board
-		board = new GameBoardGUI(Game.BOARD_WIDTH_BIG_COORDINATES,Game.BOARD_HEIGHT_BIG_COORDINATES);
 		
-		enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
+		
+		//Create a 17x22 board
+		GameBoardGUI board = new GameBoardGUI(Game.BOARD_WIDTH_BIG_COORDINATES, Game.BOARD_HEIGHT_BIG_COORDINATES);
+		
+		Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
 
+		Player player = new Player(board, playerName, playerTorpedo);
+		
+		
+		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
+
+
+
+		//Initialize torpedoes array
+		for(int ii = 0; ii < playerTorpedo.length; ii++) {
+			playerTorpedo[ii] = new Torpedo(board);
+		}
+		
+		
 		
 		//Star declaration
 		
@@ -105,18 +109,19 @@ public class Game {
 
 		Star[] slowStar = new Star[constants.StarPositions.length];
 		
+		
 		//Stars initialization
 		for (int ii = 0; ii < fastStar.length; ii++) {
-			fastStar[ii] = new Star(0.01, 60, board);
+			fastStar[ii] = new Star(board, 0.01, 60);
 		}
 		
 		for (int ii = 0; ii < slowStar.length; ii++) {
-			slowStar[ii] = new Star(1, 0, board);
+			slowStar[ii] = new Star(board, 1, 0);
 		}
 		
 		
 		
-		
+		//Enemies initialization
 		for(int ii = 0; ii < 11; ii++) {
 			enemies[ii] = new Goei(board);
 		}
@@ -128,6 +133,10 @@ public class Game {
 			enemies[ii] = new Commander(board);
 		}
 		
+		
+		
+		
+		//After startup, setting board visible.
 		board.setVisible(true);
 
 
@@ -153,18 +162,11 @@ public class Game {
 			}
 		}
 		
-		playerName = "Galaga";
-			
 		
 		
 		
-		//We create the player
-		player = new Player(board, playerName);
-		
-		//Generate torpedoes array
-		for(int ii = 0; ii < playerTorpedo.length; ii++) {
-			playerTorpedo[ii] = new Torpedo(board);
-		}
+				
+
 		
 		double lastShotTime = 0;
 
@@ -187,9 +189,7 @@ public class Game {
 			initialTime = System.nanoTime();
 			
 			
-			
-			player.moveRight(Game.dx);			
-			
+						
 			
 			String lastAction;
 			lastAction = board.gb_getLastAction();
@@ -204,7 +204,7 @@ public class Game {
 			if(lastAction.equals("space")) {
 				
 				if(System.currentTimeMillis() - lastShotTime > (MAX_TORPEDOES_PER_SQAURE*10*1000/Game.FPS)) {
-					shootTorpedo(player);
+					player.shootTorpedo();
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
 				}
@@ -213,9 +213,10 @@ public class Game {
 
 			Game game = new Game();
 			
-			updateTorpedoes();
-			updateEnemies();
+			game.updateTorpedoes(playerTorpedo);
+			game.updateEnemies(enemies);
 			game.updateStars(slowStar, fastStar);
+			game.checkTorpedoesCollisions(playerTorpedo, enemies);
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -251,18 +252,17 @@ public class Game {
 	
 	}
 	
-	private static void updateTorpedoes() {
-		checkTorpedoesCollisions();
+	private void updateTorpedoes(Torpedo[] playerTorpedo) {
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
 			if(playerTorpedo[ii].isVisible()) {
 				playerTorpedo[ii].moveStep();
-//				torpedo[ii].checkEnd();
+//				playerTorpedo[ii].checkEnd();
 			}
 		}
 	}
 	
 	
-	private static void updateEnemies() {
+	private void updateEnemies(Enemy[] enemies) {
 		for(int ii = 0; ii < enemies.length; ii++) {
 				enemies[ii].animate();
 			//	enemies[ii].moveToNextPosition();
@@ -276,23 +276,10 @@ public class Game {
 		}
 	}
 
+	
 
 	
-	static int m = 0;
-	
-	private static void shootTorpedo(Player player) { 
-		if(m >= playerTorpedo.length) {
-			m=0;
-		}
-		
-		if(true) {
-			playerTorpedo[m].initTorpedo(player.getX(), player.getY()-PLAYER_TORPEDOES_OFFSET);
-			m++;
-		}
-		
-	}
-	
-	private static void checkTorpedoesCollisions() {
+	private void checkTorpedoesCollisions(Torpedo[] playerTorpedo, Enemy[] enemies) {
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
 			for(int jj = 0; jj < enemies.length; jj++) {
 				playerTorpedo[ii].checkCollision(enemies[jj]);

@@ -300,33 +300,27 @@ public class Constants {
 		return "";
 	}
 
-	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 } };
+	public static final int[][] StarPositions = {{ 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 }};
 	private static int StarPosCounter = 0;
 
-	
-
-	
-	
 	public static int[] getPosition(Sprite sprite) {
-		if(sprite instanceof Star) {
+		if (sprite instanceof Star) {
 			if (StarPosCounter >= StarPositions.length) {
 				StarPosCounter = 0;
 			}
 			return StarPositions[StarPosCounter++];
 
 		}
-		
-		if(sprite instanceof Player) {
-			
-			int[] playerPosition = {(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20)};
+
+		if (sprite instanceof Player) {
+
+			int[] playerPosition = { (Game.BOARD_WIDTH / 2), (Game.BOARD_HEIGHT - 20) };
 			return playerPosition;
-			
+
 		}
-		
+
 		return null;
 
 	}
-
-
 
 }

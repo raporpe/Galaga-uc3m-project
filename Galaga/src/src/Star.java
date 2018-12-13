@@ -9,7 +9,7 @@ public class Star extends Sprite {
 	private int[] starPos;
 	private double lastSystemTime = System.currentTimeMillis();
 
-	public Star(double speed, int shift, GameBoardGUI board) {
+	public Star(GameBoardGUI board, double speed, int shift) {
 		super(board);
 		
 		setSpeed(speed);

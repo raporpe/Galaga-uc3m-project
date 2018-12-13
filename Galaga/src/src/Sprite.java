@@ -87,6 +87,12 @@ abstract public class Sprite {
 		public int getY() {
 			return y;
 		}
+		
+		
+		public int[] getCoordinates() {
+			int[] coord = {this.x, this.y};
+			return coord;
+		}
 
 
 		public void setId(int id) {
@@ -160,10 +166,10 @@ abstract public class Sprite {
 			board.gb_moveSpriteCoord(getId(), 0, 0);
 		}
 		
-		public void destroy(Sprite sprite) {
-			sprite.animateExplosion();
-			sprite.setVisibility(false);
-			sprite.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
+		public void destroy() {
+			this.animateExplosion();
+			this.setVisibility(false);
+			this.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
 		}
 		
 		

@@ -5,7 +5,7 @@ import edu.uc3m.game.GameBoardGUI;
 public class Player extends Sprite{
 		
 	private final int MAX_LIVES = 3;
-	private int lives = 3;
+	private int lives = MAX_LIVES;
 	private int score;
 	private String name = "NO_NAME";
 	
@@ -14,14 +14,17 @@ public class Player extends Sprite{
 	private int speed;
 	private int level = 1;
 	
+	Torpedo[] torpedo;
+	private int torpedoIndex;
+	
 
 		
 	//Constructor
-	public Player (GameBoardGUI board, String name) {
+	public Player (GameBoardGUI board, String name, Torpedo[] playerTorpedoes) {
 		super(board);
 		setName(name);
-		
 		initializeStats();
+		this.torpedo = playerTorpedoes;
 
 	}
 	
@@ -34,7 +37,7 @@ public class Player extends Sprite{
 	}
 	
 		
-	//Functions
+	//Moving
 	public void moveRight(int quantity) {
 		if(this.x < Game.BOARD_WIDTH-5) {
 			this.x = this.x + quantity;
@@ -64,10 +67,19 @@ public class Player extends Sprite{
 		this.board.gb_setValuePointsUp(this.score);
 	}
 	
+	
+	
 	public void nextLevel() {
 		this.level++;
 		this.board.gb_setValueLevel(this.level);
 	}
+	
+	
+	//Torpedo shooting
+	public void shootTorpedo() {
+		this.torpedo[torpedoIndex++].initTorpedo(this.x, this.y - Game.PLAYER_TORPEDOES_OFFSET);
+	}
+	
 	
 	public void initializeStats() {
 		

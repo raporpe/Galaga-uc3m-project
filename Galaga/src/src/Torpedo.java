@@ -24,12 +24,12 @@ public class Torpedo extends Sprite{
 	//Functions
 	
 	public void moveStep() {
-		setY(getY() - Game.TORPEDOES_SPEED);
-		board.gb_moveSpriteCoord(getId(), getX(), getY());
+		setY(this.y - Game.TORPEDOES_SPEED);
+		board.gb_moveSpriteCoord(this.id, this.x, this.y);
 	}
 	
 	public void checkEnd() {
-		if(getY() <= 10) {
+		if(this.y <= 10) {
 			setVisibility(false);
 		}
 	}
