@@ -49,7 +49,7 @@ public class Constants {
 
 	public static int getInitialCoordinatesY(int level) {
 		if (level == 1) {
-			return enemyCoordinatesLevel1[counterL1Y++][0];
+			return enemyCoordinatesLevel1[counterL1Y++][1];
 		}
 		return 0;
 	}
@@ -109,45 +109,9 @@ public class Constants {
 	public static String getSkin(Sprite sprite, int a) {
 		if(sprite instanceof Player) {
 			return "player.png";
-		} else if (sprite.getLifes() == 2) {
-			switch (a) {
-			case -1:
-				return "enemy9G1.png";
-			case DIR_N:
-				return "enemy900.png";
-			case DIR_NNE:
-				return "enemy901.png";
-			case DIR_NE:
-				return "enemy902.png";
-			case DIR_ENE:
-				return "enemy903.png";
-			case DIR_E:
-				return "enemy904.png";
-			case DIR_ESE:
-				return "enemy905.png";
-			case DIR_SE:
-				return "enemy906.png";
-			case DIR_SSE:
-				return "enemy907.png";
-			case DIR_S:
-				return "enemy908.png";
-			case DIR_SSW:
-				return "enemy909.png";
-			case DIR_SW:
-				return "enemy910.png";
-			case DIR_WSW:
-				return "enemy911.png";
-			case DIR_W:
-				return "enemy912.png";
-			case DIR_WNW:
-				return "enemy913.png";
-			case DIR_NW:
-				return "enemy914.png";
-			case DIR_NNW:
-				return "enemy915.png";
-			}
-
-		} else if (sprite.getLifes() == 1) {
+		}
+		
+		if (sprite.getLifes() == 0) {
 			if (a == 20) {
 				return "explosion20.png";
 			} else if (a == 21) {
@@ -160,7 +124,10 @@ public class Constants {
 				return "explosion24.png";
 			} else if (a == 25) {
 				return "explosion25.png";
-			} else if (sprite instanceof Zako) {
+			}
+		}
+		
+				if (sprite instanceof Zako) {
 				switch (a) {
 				case -1:
 					return "enemy3G0.png";
@@ -197,8 +164,9 @@ public class Constants {
 				case DIR_NNW:
 					return "enemy315.png";
 				}
+			}
 
-			} else if (sprite instanceof Goei) {
+			if (sprite instanceof Goei) {
 				switch (a) {
 				case -1:
 					return "enemy200.png";
@@ -235,7 +203,49 @@ public class Constants {
 				case DIR_NNW:
 					return "enemy215.png";
 				}
-			} else if (sprite instanceof Commander) {
+			}
+			
+			if (sprite instanceof Commander) {
+				
+				if (sprite.getLifes() == 1) {
+					switch (a) {
+					case -1:
+						return "enemy9G1.png";
+					case DIR_N:
+						return "enemy900.png";
+					case DIR_NNE:
+						return "enemy901.png";
+					case DIR_NE:
+						return "enemy902.png";
+					case DIR_ENE:
+						return "enemy903.png";
+					case DIR_E:
+						return "enemy904.png";
+					case DIR_ESE:
+						return "enemy905.png";
+					case DIR_SE:
+						return "enemy906.png";
+					case DIR_SSE:
+						return "enemy907.png";
+					case DIR_S:
+						return "enemy908.png";
+					case DIR_SSW:
+						return "enemy909.png";
+					case DIR_SW:
+						return "enemy910.png";
+					case DIR_WSW:
+						return "enemy911.png";
+					case DIR_W:
+						return "enemy912.png";
+					case DIR_WNW:
+						return "enemy913.png";
+					case DIR_NW:
+						return "enemy914.png";
+					case DIR_NNW:
+						return "enemy915.png";
+					}
+				}
+				
 				switch (a) {
 				case -1:
 					return "enemy1G1.png";
@@ -272,14 +282,24 @@ public class Constants {
 				case DIR_NNW:
 					return "enemy115.png";
 				}
-			} else if (sprite instanceof Torpedo) {
+			}
+			
+			if (sprite instanceof Torpedo) {
 				return "torpedo100.png";
-			} else if (sprite instanceof Torpedo) {
+			}
+			
+			if (sprite instanceof Torpedo) {
 				return "torpedo200.png";
 			}
-		}
+			
+			if (sprite instanceof Star) {
+				return "star.png";
+			}
+			
+			
+
 		return "";
-	}
+		}
 
 	public static final int[][] StarPositions = { { 11, 11 }, { 22, 22 }, { 33, 33 }, { 44, 44 } };
 	private static int StarPosCounter = 0;

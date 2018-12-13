@@ -9,8 +9,9 @@ abstract public class Sprite {
 	protected int y;
 	protected GameBoardGUI board;
 	protected boolean visible;
-	protected String defaultSkin = Constants.getSkin(this, 0);
 	protected int lifes = 1;
+	protected String defaultSkin = Constants.getSkin(this, 0);
+
 	
 	
 	//Animation and image change
@@ -145,7 +146,7 @@ abstract public class Sprite {
 		
 		
 		public void setSpriteSkin(String image){
-			board.gb_setSpriteImage(this.getId(), image);
+			board.gb_setSpriteImage(this.id, image);
 		}
 		
 		//Temporal

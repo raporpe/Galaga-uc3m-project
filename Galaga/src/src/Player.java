@@ -1,7 +1,5 @@
 package src;
 
-import java.awt.event.KeyEvent;
-
 import edu.uc3m.game.GameBoardGUI;
 
 public class Player extends Sprite{
@@ -20,7 +18,7 @@ public class Player extends Sprite{
 		
 	//Constructor
 	public Player (String name, GameBoardGUI board) {
-		super(1000, board,(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
+		super(IdManager.assignId("player"), board,(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
 		
 		this.name = name;
 
@@ -33,17 +31,9 @@ public class Player extends Sprite{
 	
 	//Public setters and getters
 		
-	public int getLives() {
-		return this.lives;
-	}
-	
 	public void setName(String name) {
 		this.name = name;
 		this.board.gb_setTextPlayerName(this.name);
-	}
-	
-	public int getLevel() {
-		return this.level;
 	}
 	
 		
@@ -51,12 +41,14 @@ public class Player extends Sprite{
 	public void moveRight(int quantity) {
 		if(this.x < Game.BOARD_WIDTH-5) {
 			this.x = this.x + quantity;
+			board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		}
 	}
 	
 	public void moveLeft(int quantity) {
 		if(this.x > 6) {
 			this.x = this.x - quantity;
+			board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		}
 	}
 	

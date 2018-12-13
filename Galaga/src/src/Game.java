@@ -53,6 +53,7 @@ public class Game {
 	
 	final static int PLAYER_TORPEDOES_OFFSET = 5;
 	
+	final static int PLAYER_MOVEMENT_SPACE = 2;
 	
 	//Testing
 	
@@ -176,11 +177,11 @@ public class Game {
 			String lastAction;
 			lastAction = board.gb_getLastAction();
 			if(lastAction.equals("right")) {	
-				player.moveRight(1);
+				player.moveRight(PLAYER_MOVEMENT_SPACE);
 
 			}
 			if(lastAction.equals("left")) {
-				player.moveLeft(1);
+				player.moveLeft(PLAYER_MOVEMENT_SPACE);
 			}
 			
 			if(lastAction.equals("space")) {
