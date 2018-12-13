@@ -51,8 +51,11 @@ abstract public class Enemy extends Sprite {
 			if (System.currentTimeMillis() - lastSystemTime > 1000) {
 				if (defaultSwarmSkin) {
 					setSpriteSkin(Constants.getSkin(this, 0));
+					defaultSwarmSkin = !defaultSwarmSkin;
 				} else {
 					setSpriteSkin(Constants.getSkin(this, -1));
+					defaultSwarmSkin = !defaultSwarmSkin;
+
 				}
 				lastSystemTime = System.currentTimeMillis();
 			}
