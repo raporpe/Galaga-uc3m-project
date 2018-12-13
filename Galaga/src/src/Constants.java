@@ -107,7 +107,9 @@ public class Constants {
 	}
 
 	public static String getSkin(Sprite sprite, int a) {
-		if (sprite.getLifes() == 2) {
+		if(sprite instanceof Player) {
+			return "player.png";
+		} else if (sprite.getLifes() == 2) {
 			switch (a) {
 			case -1:
 				return "enemy9G1.png";
