@@ -74,7 +74,8 @@ public class Game {
 	
 	
 	private static Player player;
-	private static Torpedo[] torpedo;
+	public final static Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+
 	static Enemy[] enemies;
 	static Star[] star = new Star[Constants.StarPositions.length];
 
@@ -143,9 +144,8 @@ public class Game {
 		player = new Player(playerName, board);
 		
 		//Generate torpedoes array
-		torpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
-		for(int ii = 0; ii < torpedo.length; ii++) {
-			torpedo[ii] = new Torpedo(board);
+		for(int ii = 0; ii < playerTorpedo.length; ii++) {
+			playerTorpedo[ii] = new Torpedo(board);
 		}
 		
 		double lastShotTime = 0;
@@ -193,7 +193,6 @@ public class Game {
 				
 			}
 
-//			board.gb_moveSpriteCoord(player.getId(), player.getX(), player.getY());
 			
 			updateTorpedoes();
 			updateEnemies();
@@ -235,9 +234,9 @@ public class Game {
 	
 	private static void updateTorpedoes() {
 		checkTorpedoesCollisions();
-		for(int ii = 0; ii < torpedo.length; ii++) {
-			if(torpedo[ii].isVisible()) {
-				torpedo[ii].moveStep();
+		for(int ii = 0; ii < playerTorpedo.length; ii++) {
+			if(playerTorpedo[ii].isVisible()) {
+				playerTorpedo[ii].moveStep();
 				//torpedo[ii].checkEnd();
 			}
 		}
@@ -262,21 +261,21 @@ public class Game {
 	static int m = 0;
 	
 	private static void shootTorpedo(Player player) { 
-		if(m >= torpedo.length) {
+		if(m >= playerTorpedo.length) {
 			m=0;
 		}
 		
 		if(true) {
-			torpedo[m].initTorpedo(player.getX(), player.getY()-PLAYER_TORPEDOES_OFFSET);
+			playerTorpedo[m].initTorpedo(player.getX(), player.getY()-PLAYER_TORPEDOES_OFFSET);
 			m++;
 		}
 		
 	}
 	
 	private static void checkTorpedoesCollisions() {
-		for(int ii = 0; ii < torpedo.length; ii++) {
+		for(int ii = 0; ii < playerTorpedo.length; ii++) {
 			for(int jj = 0; jj < enemies.length; jj++) {
-				torpedo[ii].checkCollision(enemies[jj]);
+				playerTorpedo[ii].checkCollision(enemies[jj]);
 			}
 		}
 	}
