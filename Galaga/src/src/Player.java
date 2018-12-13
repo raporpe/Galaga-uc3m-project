@@ -61,7 +61,7 @@ public class Player extends Sprite{
 	}
 	
 	
-	public void loseLife() {
+	public void loseLive() {
 		this.lives = this.lives-1;
 		if(this.lives == 0) {
 			Game.stopGame();

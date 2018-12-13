@@ -15,7 +15,7 @@ abstract public class Enemy extends Sprite{
 	protected double lastSystemTime;
 	
 	public Enemy(int id, GameBoardGUI board) {
-		super(IdManager.assignId("zako"), board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Areglar esto mañana
+		super(IdManager.assignId("zako"), board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Arreglar esto mañana
 		setVisibility(true);
 
 	}
@@ -52,6 +52,10 @@ abstract public class Enemy extends Sprite{
 			}
 		}
 	}
+	
+	public void getStandardPath() {
+			this.moveSpriteTo(this.getX(), explodingSkin);
+	 }
 
 	
 	public void animateExplosion() {

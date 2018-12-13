@@ -129,7 +129,7 @@ abstract public class Sprite {
 		public void changeSpritePos(int dx, int dy) {
 			this.setX(x + dx);												//
 			this.setY(y + dy);												// Why?
-			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);		//
+			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);	     	//
 		}
 		
 		
