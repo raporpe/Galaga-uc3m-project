@@ -11,16 +11,9 @@ public class Star extends Sprite {
 
 	public Star(double speed, int shift, GameBoardGUI board) {
 		super(board);
-	//	super(IdManager.assignId("star"), board, Constants.getStarPositionX() + shift, Constants.getStarPositionY());
-		
 		
 		setSpeed(speed);
 		setShift(shift);
-		
-		//starPos = Constants.getPosition(this);
-		
-		super.initializeSprite(IdManager.assignId(this), starPos[0] + shift, starPos[1], true);
-
 
 	}
 
@@ -49,7 +42,9 @@ public class Star extends Sprite {
 
 
 	private void setShift(int shift) {
-		this.shift = shift;
+		if(shift > 0) {
+			this.shift = shift;
+		}
 	}
 
 }
@@ -142,4 +137,4 @@ public class Star extends Sprite {
 //		System.arraycopy(tempY, 0, Y, 0, Y.length);
 //
 //	}
-//	
+	

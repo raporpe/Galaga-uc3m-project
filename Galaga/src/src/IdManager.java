@@ -7,39 +7,45 @@ public class IdManager {
 	public static int ZAKO_ID_OFFSET = 1000;
 	public static int GOEI_ID_OFFSET = 1100;
 	public static int COMMANDER_ID_OFFSET = 1200;
+	public static int NOT_IDENTIFIES_OFFSET = 1200;
+
 
 	private static int starsIdCount = STARS_ID_OFFSET;
 	private static int torpedoesIdCount = TORPEDOES_ID_OFFSET;
 	private static int zakoIdCount = ZAKO_ID_OFFSET;
 	private static int goeiIdCount = GOEI_ID_OFFSET;
 	private static int commanderIdCount = COMMANDER_ID_OFFSET;
-
-	public static int assignId(String sprite) {
-
-		if (sprite.equals("star")) {
-			return starsIdCount++;
-		} else if (sprite.equals("torpedo")) {
-			return torpedoesIdCount++;
-		} else if (sprite.equals("zako")) {
-			return zakoIdCount++;
-		} else if (sprite.equals("goei")) {
-			return goeiIdCount++;
-		} else if (sprite.equals("commander")) {
-			return commanderIdCount++;
-		} else if (sprite.equals("player")) {
-			return 1;
-		}
-		return 0;
-	}
+	
+	private static int notIndetified = NOT_IDENTIFIES_OFFSET;
 
 	public static int assignId(Sprite sprite) {
 
 		if (sprite instanceof Star) {
 			return starsIdCount++;
-		} else {
-			return 0;
 		}
-
+		
+		if (sprite instanceof Torpedo) {
+			return torpedoesIdCount++;
+		}
+		
+		if (sprite instanceof Zako) {
+			return zakoIdCount++;
+		}
+		
+		if (sprite instanceof Goei) {
+			return goeiIdCount++;
+		}
+		
+		if (sprite instanceof Commander) {
+			return commanderIdCount++;
+		}
+		
+		if (sprite instanceof Player) {
+			return 1;
+		}
+		
+		return notIndetified++;
 	}
+
 
 }

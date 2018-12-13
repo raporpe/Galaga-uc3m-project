@@ -14,12 +14,9 @@ abstract public class Enemy extends Sprite {
 	protected boolean defaultSwarmSkin = true;
 	protected double lastSystemTime;
 
-//	protected int[] test = Constants.getInitialCoordinates(1);
-//	Constants.getInitialCoordinates(1)
 
-	public Enemy(int id, GameBoardGUI board) {
-		super(id, board, Constants.getInitialCoordinatesX(1), Constants.getInitialCoordinatesY(1));
-		setVisibility(true);
+	public Enemy(GameBoardGUI board) {
+		super(board);
 
 	}
 
@@ -27,14 +24,7 @@ abstract public class Enemy extends Sprite {
 
 	}
 
-	//public void moveToNextPosition() {
-//
-	//	changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],
-		//		Constants.MOVES[temporalPathToFollow[pathPos]][1]);
-		//setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
-	//}
 
-	// Override this in every other Sprite
 
 	public void animate() {
 		if (exploding) {

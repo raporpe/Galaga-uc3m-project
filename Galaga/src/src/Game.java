@@ -42,7 +42,7 @@ public class Game {
 	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
 	
-	final static int FPS = 60;
+	final static int FPS = 120;
 	final static int EXPECTED_TIME = 1000000000 / FPS;
 	final static int TORPEDOES_SPEED = 1;
 	final static int SPRITE_WIDTH = 5;
@@ -159,7 +159,7 @@ public class Game {
 		
 		
 		//We create the player
-		player = new Player(playerName, board);
+		player = new Player(board, playerName);
 		
 		//Generate torpedoes array
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
@@ -256,7 +256,7 @@ public class Game {
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
 			if(playerTorpedo[ii].isVisible()) {
 				playerTorpedo[ii].moveStep();
-				//torpedo[ii].checkEnd();
+//				torpedo[ii].checkEnd();
 			}
 		}
 	}

@@ -17,13 +17,10 @@ public class Player extends Sprite{
 
 		
 	//Constructor
-	public Player (String name, GameBoardGUI board) {
-		super(IdManager.assignId("player"), board,(int)(Game.BOARD_WIDTH/2), (Game.BOARD_HEIGHT-20));
+	public Player (GameBoardGUI board, String name) {
+		super(board);
+		setName(name);
 		
-		this.name = name;
-
-		//Creating player in board
-		setVisibility(true);
 		initializeStats();
 
 	}

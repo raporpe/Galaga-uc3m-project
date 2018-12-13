@@ -6,18 +6,11 @@ public class Commander extends Enemy{
 	
 	public Commander(GameBoardGUI board){
 		
-		super(IdManager.assignId("commander"), board);
+		super(board);
 		setLifes(2);
 		
 	}
-	
-	
-	
-	
-//	@Override
-//	public void moveToNextPosition() {
-//	
-//	}
+
 
 
 }

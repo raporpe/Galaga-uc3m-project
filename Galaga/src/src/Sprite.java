@@ -14,41 +14,47 @@ abstract public class Sprite {
 
 	
 	
-	//Animation and image change
-	
 
-
-	public Sprite(int id, GameBoardGUI board, int x, int y) {
-
-		setId(id);
-		setBoard(board);	
-		
-		setX(x);
-		setY(y);
-		
-		//Creating sprite
-		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-		
-	}
+//	public Sprite(int id, GameBoardGUI board, int x, int y) {
+//
+//		setId(id);
+//		setBoard(board);	
+//		setX(x);
+//		setY(y);														Deprecated
+//		
+//		//Creating sprite
+//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+//		
+//	}
 		
 	public Sprite(GameBoardGUI board) {
 
-		setBoard(board);	
+		setBoard(board);
+		setId(IdManager.assignId(this));
+		
+		int[] tempInitialCoordinates = Constants.getPosition(this);
+		setX(tempInitialCoordinates[0]);
+		setY(tempInitialCoordinates[1]);
+
+		//Initializing sprite
+		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+		setVisibility(true);
 		
 	}
 	
 	
-	protected void initializeSprite(int id, int x, int y, boolean visibility) {
-		setId(id);
-		setX(x);
-		setY(y);
-
-		//Creating sprite
-		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-		setVisibility(visibility);
-	}
+//	protected void initializeSprite(int id, int x, int y, boolean visibility) {
+//		setId(id);
+//		setX(x);
+//		setY(y);
+//
+//		//Creating sprite
+//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+//		setVisibility(visibility);
+//	}
 		
 	public boolean checkCollision(Sprite sprite) {
 		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
@@ -84,7 +90,9 @@ abstract public class Sprite {
 
 
 		public void setId(int id) {
-			this.id = id;
+			if(id > 0) {
+				this.id = id;
+			}
 		}
 
 
