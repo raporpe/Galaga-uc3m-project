@@ -167,8 +167,7 @@ abstract public class Sprite {
 		}
 		
 		public void destroy() {
-			this.animateExplosion();
-			this.setVisibility(false);
+			this.death();
 			this.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
 		}
 		
@@ -178,15 +177,11 @@ abstract public class Sprite {
 		}
 		
 		//Temporal
-		public void animateExplosion() {		
-			
-		} //They dont have explosion by default
-
-		public void setLevel(int newLevel) {
-			
-		}
-
-
+		//They don't have explosion by default
+		
+		public void death() {
+			this.setVisibility(false);
+		} 
 		
 	
 

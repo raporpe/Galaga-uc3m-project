@@ -55,8 +55,9 @@ abstract public class Enemy extends Sprite {
 		this.moveSpriteTo(this.getX(), explodingSkin);
 	}
 
-	public void animateExplosion() {
+	public void death() {
 		exploding = true;
+		//Visibility is disabled after exploding animation
 	}
 
 }

@@ -81,8 +81,9 @@ public class Player extends Sprite{
 	}
 	
 	@Override
-	public void animateExplosion() {
+	public void death() {
 		setVisibility(false);
+		loseLive();
 	}
 	
 	

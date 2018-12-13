@@ -35,7 +35,7 @@ public class Torpedo extends Sprite{
 	}
 	
 	@Override
-	public void animateExplosion() {
+	public void death() {
 		setVisibility(false);
 	}
 	
