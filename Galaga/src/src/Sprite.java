@@ -26,20 +26,30 @@ abstract public class Sprite {
 		setX(x);
 		setY(y);
 		
-		
-		
 		//Creating sprite
 		this.board.gb_addSprite(this.id, this.defaultSkin, true);
 		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		
 	}
-	
-	public Sprite() {
+		
+	public Sprite(GameBoardGUI board) {
+
+		setBoard(board);	
 		
 	}
 	
 	
-	
+	protected void initializeSprite(int id, int x, int y, boolean visibility) {
+		setId(id);
+		setX(x);
+		setY(y);
+
+		//Creating sprite
+		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+		setVisibility(visibility);
+	}
+		
 	public boolean checkCollision(Sprite sprite) {
 		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
 			this.setVisibility(false);
@@ -52,6 +62,10 @@ abstract public class Sprite {
 		}
 	}
 	
+	
+	public Sprite() {
+		
+	}
 	
 
 	//Getters and setters

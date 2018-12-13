@@ -2,6 +2,7 @@ package src;
 
 //Importing the Locale object to change the default
 //configuration of the computer to English
+
 import java.util.Locale;
 
 //Importing the GameBoardGUI library
@@ -78,7 +79,6 @@ public class Game {
 	public final static Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
 
 	static Enemy[] enemies;
-	static Star[] star = new Star[Constants.StarPositions.length];
 
 	
 	
@@ -96,7 +96,27 @@ public class Game {
 		
 		enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 
+		
+		//Star declaration
+		
+		Constants constants = new Constants();
+		
+		Star[] fastStar = new Star[constants.StarPositions.length];
 
+		Star[] slowStar = new Star[constants.StarPositions.length];
+		
+		//Stars initialization
+		for (int ii = 0; ii < fastStar.length; ii++) {
+			fastStar[ii] = new Star(0.01, 60, board);
+		}
+		
+		for (int ii = 0; ii < slowStar.length; ii++) {
+			slowStar[ii] = new Star(1, 0, board);
+		}
+		
+		
+		
+		
 		for(int ii = 0; ii < 11; ii++) {
 			enemies[ii] = new Goei(board);
 		}
@@ -110,10 +130,7 @@ public class Game {
 		
 		board.setVisible(true);
 
-		//Stars initialization
-		for (int ii = 0; ii < star.length; ii++) {
-			star[ii] = new Star(1, 0, board);
-		}
+
 
 
 		
@@ -169,7 +186,7 @@ public class Game {
 			//THIS IS AN IMPLEMENTATION OF FPS SYSTEM
 			initialTime = System.nanoTime();
 			
-
+			
 			
 			player.moveRight(Game.dx);			
 			
@@ -194,10 +211,11 @@ public class Game {
 				
 			}
 
+			Game game = new Game();
 			
 			updateTorpedoes();
 			updateEnemies();
-			updateStars();
+			game.updateStars(slowStar, fastStar);
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -251,9 +269,10 @@ public class Game {
 		}
 	}
 	
-	private static void updateStars() {
-		for(int ii = 0; ii < star.length; ii++) {
-			star[ii].moveStep();
+	private void updateStars(Star[] fastStar, Star[] slowStar) {
+		for(int ii = 0; ii < slowStar.length; ii++) {
+			slowStar[ii].moveStep();
+			fastStar[ii].moveStep();
 		}
 	}
 

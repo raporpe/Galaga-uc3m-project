@@ -2,88 +2,74 @@ package src;
 
 import edu.uc3m.game.GameBoardGUI;
 
-public class Star extends Sprite{
-	
-	private int speed;
+public class Star extends Sprite {
+
+	private double speed;
 	private int shift;
+	private int[] starPos;
+	private double lastSystemTime = System.currentTimeMillis();
+
+	public Star(double speed, int shift, GameBoardGUI board) {
+		super(board);
+	//	super(IdManager.assignId("star"), board, Constants.getStarPositionX() + shift, Constants.getStarPositionY());
 		
-	
-	public Star(int speed, int shift, GameBoardGUI board) {
-		super(IdManager.assignId("star"), board, Constants.getStarPosition()[0] + shift, Constants.getStarPosition()[1]);
+		
 		setSpeed(speed);
 		setShift(shift);
-		setVisibility(true);
 		
+		//starPos = Constants.getPosition(this);
 		
-		
-	}
-	
-	public void moveStep() {
-		setY(getY() + this.speed);
-		if(getY() == Game.BOARD_HEIGHT) {
-			setX(0);
-		}
-	}
-		
-	
-	
-	//Getters and setters
-	private void setSpeed(int speed) {
-		this.speed = speed;
-	}
-	
-	private int getSpeed() {
-		return this.speed;
+		super.initializeSprite(IdManager.assignId(this), starPos[0] + shift, starPos[1], true);
+
+
 	}
 
-	private int getShift() {
-		return shift;
+	public void moveStep() {
+		if (System.currentTimeMillis() - lastSystemTime > 1/speed) {
+			setY(getY() + 1);
+			
+			if (getY() == Game.BOARD_HEIGHT) {
+				setY(0);
+			}
+			
+			board.gb_moveSpriteCoord(this.id, this.x, this.y);
+			lastSystemTime = System.currentTimeMillis();
+		}
+
 	}
+
+	// Getters and setters
+	private void setSpeed(double speed) {
+		if(speed > 0 && speed <= 1) {
+			this.speed = speed;
+		} else {
+			this.speed = 1;
+		}
+	}
+
 
 	private void setShift(int shift) {
 		this.shift = shift;
 	}
-	
-	
-	
-	
-	
-	
-}
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //	//Procedural generator of stars position
 //	
 //	//TODO: add in the memory: We attempted several times to design an algorithm capable of creating nice-evenly distributed stars position.
@@ -157,7 +143,3 @@ public class Star extends Sprite{
 //
 //	}
 //	
-
-	
-	
-
