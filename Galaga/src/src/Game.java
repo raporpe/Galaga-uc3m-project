@@ -246,7 +246,7 @@ public class Game {
 	private static void updateEnemies() {
 		for(int ii = 0; ii < enemies.length; ii++) {
 				enemies[ii].animate();
-				enemies[ii].moveToNextPosition();
+			//	enemies[ii].moveToNextPosition();
 		}
 	}
 	

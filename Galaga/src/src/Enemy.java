@@ -14,10 +14,12 @@ abstract public class Enemy extends Sprite{
 	protected boolean defaultSwarmSkin;
 	protected double lastSystemTime;
 	
+//	protected int[] test = Constants.getInitialCoordinates(1);
+//	Constants.getInitialCoordinates(1)
 
 	
 	public Enemy(int id, GameBoardGUI board) {
-		super(id, board , Constants.enemyCoordinatesLevel1[id][0], Constants.enemyCoordinatesLevel1[id][1]); //Arreglar esto mañana
+		super(id, board , Constants.getInitialCoordinatesX(1), Constants.getInitialCoordinatesY(1)); //Arreglar esto mañana
 		setVisibility(true);
 
 	}
