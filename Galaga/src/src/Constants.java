@@ -281,6 +281,7 @@ public class Constants {
 				return "enemy114.png";
 			case DIR_NNW:
 				return "enemy115.png";
+
 			}
 		}
 

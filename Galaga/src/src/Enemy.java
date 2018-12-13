@@ -18,8 +18,7 @@ abstract public class Enemy extends Sprite {
 //	Constants.getInitialCoordinates(1)
 
 	public Enemy(int id, GameBoardGUI board) {
-		super(id, board, Constants.getInitialCoordinatesX(1), Constants.getInitialCoordinatesY(1)); // Arreglar esto
-																									// mañana
+		super(id, board, Constants.getInitialCoordinatesX(1), Constants.getInitialCoordinatesY(1));
 		setVisibility(true);
 
 	}
@@ -28,12 +27,12 @@ abstract public class Enemy extends Sprite {
 
 	}
 
-//	public void moveToNextPosition() {
+	//public void moveToNextPosition() {
 //
-//		changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],
-//				Constants.MOVES[temporalPathToFollow[pathPos]][1]);
-//		setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
-//	}
+	//	changeSpritePos(Constants.MOVES[temporalPathToFollow[pathPos]][0],
+		//		Constants.MOVES[temporalPathToFollow[pathPos]][1]);
+		//setSpriteSkin(Constants.getSkin(this, temporalPathToFollow[pathPos]));
+	//}
 
 	// Override this in every other Sprite
 
