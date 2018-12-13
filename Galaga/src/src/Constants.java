@@ -107,7 +107,7 @@ public class Constants {
 	}
 
 	public static String getSkin(Sprite sprite, int a) {
-		if (sprite instanceof Goei) {
+		if (sprite instanceof Player) {
 			return "player.png";
 		}
 
@@ -127,7 +127,7 @@ public class Constants {
 			}
 		}
 
-		if (sprite instanceof Torpedo) {
+		if (sprite instanceof Zako) {
 			switch (a) {
 			case -1:
 				return "enemy3G0.png";
@@ -166,7 +166,7 @@ public class Constants {
 			}
 		}
 
-		if (sprite instanceof Zako) {
+		if (sprite instanceof Goei) {
 			switch (a) {
 			case -1:
 				return "enemy200.png";
@@ -205,7 +205,7 @@ public class Constants {
 			}
 		}
 
-		if (sprite instanceof Torpedo) {
+		if (sprite instanceof Commander) {
 
 			if (sprite.getLifes() == 1) {
 				switch (a) {
@@ -285,7 +285,7 @@ public class Constants {
 			}
 		}
 
-		if (sprite instanceof Commander) {
+		if (sprite instanceof Torpedo) {
 			return "torpedo100.png";
 		}
 
