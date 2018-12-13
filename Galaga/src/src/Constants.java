@@ -169,9 +169,10 @@ public class Constants {
 			if (sprite instanceof Goei) {
 				switch (a) {
 				case -1:
-					return "enemy200.png";
-				case DIR_N:
 					return "enemy2G0.png";
+				case DIR_N:
+					return "enemy200.png";
+
 				case DIR_NNE:
 					return "enemy201.png";
 				case DIR_NE:
