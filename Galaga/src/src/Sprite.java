@@ -56,17 +56,17 @@ abstract public class Sprite {
 //		setVisibility(visibility);
 //	}
 		
-	public boolean checkCollision(Sprite sprite) {
-		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
-			this.setVisibility(false);
-			this.moveDefaultLocation();
-			sprite.destroy(sprite);
-			
-			return true;
-		} else {
-			return false;
-		}
-	}
+//	public boolean checkCollision(Sprite sprite) {
+//		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
+//			this.setVisibility(false);
+//			this.moveDefaultLocation();
+//			sprite.destroy(sprite);					//Deprecated
+//			
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
 	
 	
 	public Sprite() {
@@ -178,7 +178,8 @@ abstract public class Sprite {
 		}
 		
 		//Temporal
-		public void animateExplosion() {
+		public void animateExplosion() {		
+			
 		} //They dont have explosion by default
 
 		public void setLevel(int newLevel) {

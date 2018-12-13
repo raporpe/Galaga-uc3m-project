@@ -34,6 +34,11 @@ public class Torpedo extends Sprite{
 		}
 	}
 	
+	@Override
+	public void animateExplosion() {
+		setVisibility(false);
+	}
+	
 	
 	
 	

@@ -212,11 +212,17 @@ public class Game {
 			}
 
 			Game game = new Game();
+			CollisionChecker collisionChecker = new CollisionChecker(board, COLLISION_RADIUS);
 			
 			game.updateTorpedoes(playerTorpedo);
 			game.updateEnemies(enemies);
 			game.updateStars(slowStar, fastStar);
-			game.checkTorpedoesCollisions(playerTorpedo, enemies);
+//			game.checkTorpedoesCollisions(playerTorpedo, enemies);  				//Deprecated
+			
+			//Checking all possible collisions
+			
+			collisionChecker.check(playerTorpedo, enemies, true, true);
+			collisionChecker.check(player, enemies, true, true);
 	
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
@@ -245,7 +251,7 @@ public class Game {
 			  '      `--'      `.-'      `--'      `--'      `--'      `-.'      `--'      ` */
 			
 			
-		}while(Game.isRunning());
+		}while (Game.isRunning());
 		
 //----------------------END OF THE MAIN WHILE-------------------------//
 
@@ -279,13 +285,13 @@ public class Game {
 	
 
 	
-	private void checkTorpedoesCollisions(Torpedo[] playerTorpedo, Enemy[] enemies) {
-		for(int ii = 0; ii < playerTorpedo.length; ii++) {
-			for(int jj = 0; jj < enemies.length; jj++) {
-				playerTorpedo[ii].checkCollision(enemies[jj]);
-			}
-		}
-	}
+//	private void checkTorpedoesCollisions(Torpedo[] playerTorpedo, Enemy[] enemies) {
+//		for(int ii = 0; ii < playerTorpedo.length; ii++) {
+//			for(int jj = 0; jj < enemies.length; jj++) {
+//				playerTorpedo[ii].checkCollision(enemies[jj]);
+//			}
+//		}
+//	}
 	
 }
 

@@ -80,6 +80,11 @@ public class Player extends Sprite{
 		this.torpedo[torpedoIndex++].initTorpedo(this.x, this.y - Game.PLAYER_TORPEDOES_OFFSET);
 	}
 	
+	@Override
+	public void animateExplosion() {
+		setVisibility(false);
+	}
+	
 	
 	public void initializeStats() {
 		
