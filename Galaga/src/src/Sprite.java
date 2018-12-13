@@ -141,6 +141,7 @@ abstract public class Sprite {
 		public void destroy(Sprite sprite) {
 			sprite.animateExplosion();
 			sprite.setVisibility(false);
+			sprite.setLifes(lifes-1);
 			sprite.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
 		}
 		

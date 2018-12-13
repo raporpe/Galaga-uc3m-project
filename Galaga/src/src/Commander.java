@@ -14,10 +14,10 @@ public class Commander extends Enemy{
 	
 	
 	
-	@Override
-	public void moveToNextPosition() {
+	//@Override
+	//public void moveToNextPosition() {
 	
-	}
+	//}
 
 
 }
