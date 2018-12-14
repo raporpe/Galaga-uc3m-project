@@ -88,11 +88,11 @@ public class Game {
 		Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
 
 		Player player = new Player(board, playerName, playerTorpedo);
-		
-		
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
-
-
+		Game game = new Game();
+		CollisionChecker collisionChecker = new CollisionChecker(board, COLLISION_RADIUS);
+		
+		
 
 		//Initialize torpedoes array
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
@@ -205,13 +205,11 @@ public class Game {
 				
 			}
 
-			Game game = new Game();
-			CollisionChecker collisionChecker = new CollisionChecker(board, COLLISION_RADIUS);
+
 			
 			game.updateTorpedoes(playerTorpedo);
 			game.updateEnemies(enemies);
 			game.updateStars(slowStar, fastStar);
-//			game.checkTorpedoesCollisions(playerTorpedo, enemies);  				//Deprecated
 			
 			//Checking all possible collisions
 			
@@ -279,13 +277,6 @@ public class Game {
 	
 
 	
-//	private void checkTorpedoesCollisions(Torpedo[] playerTorpedo, Enemy[] enemies) {
-//		for(int ii = 0; ii < playerTorpedo.length; ii++) {
-//			for(int jj = 0; jj < enemies.length; jj++) {
-//				playerTorpedo[ii].checkCollision(enemies[jj]);
-//			}
-//		}
-//	}
 	
 }
 
