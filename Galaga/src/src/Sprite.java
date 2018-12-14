@@ -159,7 +159,7 @@ abstract public class Sprite {
 		
 		public void destroy() {
 			this.death();
-			this.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
+			this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
 		}
 		
 		//Temporal

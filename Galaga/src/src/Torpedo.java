@@ -24,7 +24,7 @@ public class Torpedo extends Sprite{
 	//Functions
 	
 	public void moveStep() {
-		setY(this.y - Game.TORPEDOES_SPEED);
+		setY(this.y - Constants.TORPEDOES_SPEED);
 		board.gb_moveSpriteCoord(this.id, this.x, this.y);
 	}
 	

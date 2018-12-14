@@ -64,55 +64,52 @@ public class Constants {
 	public static final int COLLISION_RADIUS = 10;
 	
 	
-	
-	
-
 
 	public static final int[][] enemyCoordinatesLevel1 = {
 
-			{ Game.BOARD_WIDTH / 2 - 50, 25 }, { Game.BOARD_WIDTH / 2 - 40, 25 }, { Game.BOARD_WIDTH / 2 - 30, 25 },
+			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
 
-			{ Game.BOARD_WIDTH / 2 - 20, 25 }, { Game.BOARD_WIDTH / 2 - 10, 25 }, { Game.BOARD_WIDTH / 2, 25 },
-			{ Game.BOARD_WIDTH / 2 + 10, 25 }, { Game.BOARD_WIDTH / 2 + 20, 25 }, { Game.BOARD_WIDTH / 2 + 30, 25 },
-			{ Game.BOARD_WIDTH / 2 + 40, 25 }, { Game.BOARD_WIDTH / 2 + 50, 25 }, { Game.BOARD_WIDTH / 2 - 50, 35 },
-			{ Game.BOARD_WIDTH / 2 - 40, 35 }, { Game.BOARD_WIDTH / 2 - 30, 35 }, { Game.BOARD_WIDTH / 2 - 20, 35 },
-			{ Game.BOARD_WIDTH / 2 - 10, 35 }, { Game.BOARD_WIDTH / 2, 35 }, { Game.BOARD_WIDTH / 2 + 10, 35 },
-			{ Game.BOARD_WIDTH / 2 + 20, 35 }, { Game.BOARD_WIDTH / 2 + 30, 35 }, { Game.BOARD_WIDTH / 2 + 40, 35 },
-			{ Game.BOARD_WIDTH / 2 + 50, 35 }, { Game.BOARD_WIDTH / 2 - 10, 15 }, { Game.BOARD_WIDTH / 2, 15 },
-			{ Game.BOARD_WIDTH / 2 + 10, 15 } };
+			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
+			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
+			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }, { BOARD_WIDTH / 2 - 50, 35 },
+			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
+			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
+			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
+			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
+			{ BOARD_WIDTH / 2 + 10, 15 } };
 
 	public static final int[][] enemyCoordinatesLevel2 = {
 
-			{ Game.BOARD_WIDTH / 2 - 50, 25 }, { Game.BOARD_WIDTH / 2 - 40, 25 }, { Game.BOARD_WIDTH / 2 - 30, 25 },
-			{ Game.BOARD_WIDTH / 2 - 20, 25 }, { Game.BOARD_WIDTH / 2 - 10, 25 }, { Game.BOARD_WIDTH / 2, 25 },
-			{ Game.BOARD_WIDTH / 2 + 10, 25 }, { Game.BOARD_WIDTH / 2 + 20, 25 }, { Game.BOARD_WIDTH / 2 + 30, 25 },
-			{ Game.BOARD_WIDTH / 2 + 40, 25 }, { Game.BOARD_WIDTH / 2 + 50, 25 }, { Game.BOARD_WIDTH / 2 - 50, 35 },
-			{ Game.BOARD_WIDTH / 2 - 40, 35 }, { Game.BOARD_WIDTH / 2 - 30, 35 }, { Game.BOARD_WIDTH / 2 - 20, 35 },
-			{ Game.BOARD_WIDTH / 2 - 10, 35 }, { Game.BOARD_WIDTH / 2, 35 }, { Game.BOARD_WIDTH / 2 + 10, 35 },
-			{ Game.BOARD_WIDTH / 2 + 20, 35 }, { Game.BOARD_WIDTH / 2 + 30, 35 }, { Game.BOARD_WIDTH / 2 + 40, 35 },
-			{ Game.BOARD_WIDTH / 2 + 50, 35 }, { Game.BOARD_WIDTH / 2 - 50, 45 }, { Game.BOARD_WIDTH / 2 - 40, 45 },
-			{ Game.BOARD_WIDTH / 2 - 30, 45 }, { Game.BOARD_WIDTH / 2 - 20, 45 }, { Game.BOARD_WIDTH / 2 - 10, 45 },
-			{ Game.BOARD_WIDTH / 2, 45 }, { Game.BOARD_WIDTH / 2 + 10, 45 }, { Game.BOARD_WIDTH / 2 + 20, 45 },
-			{ Game.BOARD_WIDTH / 2 + 30, 45 }, { Game.BOARD_WIDTH / 2 + 40, 45 }, { Game.BOARD_WIDTH / 2 + 50, 45 },
-			{ Game.BOARD_WIDTH / 2 - 10, 15 }, { Game.BOARD_WIDTH / 2, 15 }, { Game.BOARD_WIDTH / 2 + 10, 15 } };
+			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
+			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
+			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
+			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }, { BOARD_WIDTH / 2 - 50, 35 },
+			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
+			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
+			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
+			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 - 50, 45 }, { BOARD_WIDTH / 2 - 40, 45 },
+			{ BOARD_WIDTH / 2 - 30, 45 }, { BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 },
+			{ BOARD_WIDTH / 2, 45 }, { BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 },
+			{ BOARD_WIDTH / 2 + 30, 45 }, { BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 },
+			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 }, { BOARD_WIDTH / 2 + 10, 15 } };
 
 	public static final int[][] enemyCoordinatesLevel3 = {
 
-			{ Game.BOARD_WIDTH / 2 - 60, 25 }, { Game.BOARD_WIDTH / 2 - 50, 25 }, { Game.BOARD_WIDTH / 2 - 40, 25 },
-			{ Game.BOARD_WIDTH / 2 - 30, 25 }, { Game.BOARD_WIDTH / 2 - 20, 25 }, { Game.BOARD_WIDTH / 2 - 10, 25 },
-			{ Game.BOARD_WIDTH / 2, 25 }, { Game.BOARD_WIDTH / 2 + 10, 25 }, { Game.BOARD_WIDTH / 2 + 20, 25 },
-			{ Game.BOARD_WIDTH / 2 + 30, 25 }, { Game.BOARD_WIDTH / 2 + 40, 25 }, { Game.BOARD_WIDTH / 2 + 50, 25 },
-			{ Game.BOARD_WIDTH / 2 + 60, 25 }, { Game.BOARD_WIDTH / 2 - 60, 35 }, { Game.BOARD_WIDTH / 2 - 50, 35 },
-			{ Game.BOARD_WIDTH / 2 - 40, 35 }, { Game.BOARD_WIDTH / 2 - 30, 35 }, { Game.BOARD_WIDTH / 2 - 20, 35 },
-			{ Game.BOARD_WIDTH / 2 - 10, 35 }, { Game.BOARD_WIDTH / 2, 35 }, { Game.BOARD_WIDTH / 2 + 10, 35 },
-			{ Game.BOARD_WIDTH / 2 + 20, 35 }, { Game.BOARD_WIDTH / 2 + 30, 35 }, { Game.BOARD_WIDTH / 2 + 40, 35 },
-			{ Game.BOARD_WIDTH / 2 + 50, 35 }, { Game.BOARD_WIDTH / 2 + 60, 35 }, { Game.BOARD_WIDTH / 2 - 60, 45 },
-			{ Game.BOARD_WIDTH / 2 - 50, 45 }, { Game.BOARD_WIDTH / 2 - 40, 45 }, { Game.BOARD_WIDTH / 2 - 30, 45 },
-			{ Game.BOARD_WIDTH / 2 - 20, 45 }, { Game.BOARD_WIDTH / 2 - 10, 45 }, { Game.BOARD_WIDTH / 2, 45 },
-			{ Game.BOARD_WIDTH / 2 + 10, 45 }, { Game.BOARD_WIDTH / 2 + 20, 45 }, { Game.BOARD_WIDTH / 2 + 30, 45 },
-			{ Game.BOARD_WIDTH / 2 + 40, 45 }, { Game.BOARD_WIDTH / 2 + 50, 45 }, { Game.BOARD_WIDTH / 2 + 60, 45 },
-			{ Game.BOARD_WIDTH / 2 - 20, 15 }, { Game.BOARD_WIDTH / 2 - 10, 15 }, { Game.BOARD_WIDTH / 2, 15 },
-			{ Game.BOARD_WIDTH / 2 + 10, 15 }, { Game.BOARD_WIDTH / 2 + 20, 15 } };
+			{ BOARD_WIDTH / 2 - 60, 25 }, { BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 },
+			{ BOARD_WIDTH / 2 - 30, 25 }, { BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 },
+			{ BOARD_WIDTH / 2, 25 }, { BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 },
+			{ BOARD_WIDTH / 2 + 30, 25 }, { BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 },
+			{ BOARD_WIDTH / 2 + 60, 25 }, { BOARD_WIDTH / 2 - 60, 35 }, { BOARD_WIDTH / 2 - 50, 35 },
+			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
+			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
+			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
+			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 + 60, 35 }, { BOARD_WIDTH / 2 - 60, 45 },
+			{ BOARD_WIDTH / 2 - 50, 45 }, { BOARD_WIDTH / 2 - 40, 45 }, { BOARD_WIDTH / 2 - 30, 45 },
+			{ BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 }, { BOARD_WIDTH / 2, 45 },
+			{ BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 }, { BOARD_WIDTH / 2 + 30, 45 },
+			{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 },
+			{ BOARD_WIDTH / 2 - 20, 15 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
+			{ BOARD_WIDTH / 2 + 10, 15 }, { BOARD_WIDTH / 2 + 20, 15 } };
 
 	public int cont = 0;
 
@@ -353,7 +350,7 @@ public class Constants {
 
 		if (sprite instanceof Player) {
 
-			int[] playerPosition = { (Game.BOARD_WIDTH / 2), (Game.BOARD_HEIGHT - 20) };
+			int[] playerPosition = { (BOARD_WIDTH / 2), (BOARD_HEIGHT - 20) };
 			return playerPosition;
 
 		}

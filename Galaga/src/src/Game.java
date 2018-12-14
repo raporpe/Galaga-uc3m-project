@@ -60,14 +60,14 @@ public class Game {
 		
 		
 		//Create a 17x22 board
-		GameBoardGUI board = new GameBoardGUI(Game.BOARD_WIDTH_BIG_COORDINATES, Game.BOARD_HEIGHT_BIG_COORDINATES);
+		GameBoardGUI board = new GameBoardGUI(Constants.BOARD_WIDTH_BIG_COORDINATES, Constants.BOARD_HEIGHT_BIG_COORDINATES);
 		
-		Torpedo[] playerTorpedo = new Torpedo[Game.BOARD_HEIGHT_BIG_COORDINATES];
+		Torpedo[] playerTorpedo = new Torpedo[Constants.BOARD_HEIGHT_BIG_COORDINATES];
 
 		Player player = new Player(board, playerName, playerTorpedo);
 		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 		Game game = new Game();
-		CollisionChecker collisionChecker = new CollisionChecker(board, COLLISION_RADIUS);
+		CollisionChecker collisionChecker = new CollisionChecker(board, Constants.COLLISION_RADIUS);
 		
 		
 
@@ -127,8 +127,8 @@ public class Game {
 		//Grid color setter
 		board.gb_setGridColor(40, 40, 40);		
 		
-		for(int ii = 0; ii < (BOARD_WIDTH_BIG_COORDINATES); ii++) {
-			for(int jj = 0; jj < (BOARD_HEIGHT_BIG_COORDINATES); jj++) {
+		for(int ii = 0; ii < (Constants.BOARD_WIDTH_BIG_COORDINATES); ii++) {
+			for(int jj = 0; jj < (Constants.BOARD_HEIGHT_BIG_COORDINATES); jj++) {
 				board.gb_setSquareColor(ii, jj, 0, 0, 0);
 			}
 		}
@@ -165,16 +165,16 @@ public class Game {
 			String lastAction;
 			lastAction = board.gb_getLastAction();
 			if(lastAction.equals("right")) {	
-				player.moveRight(PLAYER_MOVEMENT_SPACE);
+				player.moveRight(Constants.PLAYER_MOVEMENT_SPACE);
 
 			}
 			if(lastAction.equals("left")) {
-				player.moveLeft(PLAYER_MOVEMENT_SPACE);
+				player.moveLeft(Constants.PLAYER_MOVEMENT_SPACE);
 			}
 			
 			if(lastAction.equals("space")) {
 				
-				if(System.currentTimeMillis() - lastShotTime > (MAX_TORPEDOES_PER_SQAURE*10*1000/Game.FPS)) {
+				if(System.currentTimeMillis() - lastShotTime > (Constants.MAX_TORPEDOES_PER_SQAURE*10*1000/Constants.FPS)) {
 					player.shootTorpedo();
 					lastShotTime = System.currentTimeMillis();
 					System.out.println(lastShotTime);
@@ -199,7 +199,7 @@ public class Game {
 			  '      `--'      `.-'      `--'      `--'      `--'      `-.'      `--'      ` */
 		
 					double computingTime = System.nanoTime() - initialTime;
-					long sleepFor = (long)(EXPECTED_TIME - computingTime) / 1000000;
+					long sleepFor = (long)(Constants.EXPECTED_TIME - computingTime) / 1000000;
 					
 					if(sleepFor < 0) {
 						sleepFor = 0;
@@ -213,7 +213,7 @@ public class Game {
 					}
 					
 					//Displaying speed factor
-					System.out.println(EXPECTED_TIME/computingTime);
+					System.out.println(Constants.EXPECTED_TIME/computingTime);
 				
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\::::::::.\

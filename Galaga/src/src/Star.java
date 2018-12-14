@@ -20,7 +20,7 @@ public class Star extends Sprite {
 		if (System.currentTimeMillis() - lastSystemTime > 1/speed) {
 			setY(this.y + 1);
 			
-			if (this.y == Game.BOARD_HEIGHT) {								//Use the function moveSpriteTo() ?
+			if (this.y == Constants.BOARD_HEIGHT) {								//Use the function moveSpriteTo() ?
 				setY(0);
 			}
 			
@@ -41,7 +41,7 @@ public class Star extends Sprite {
 
 
 	private void setShift(int shift) {
-		if(shift > 0 && shift < Game.BOARD_WIDTH) {
+		if(shift > 0 && shift < Constants.BOARD_WIDTH) {
 			this.shift = shift;
 		}
 	}
