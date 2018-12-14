@@ -405,37 +405,37 @@ public class Constants {
 
 	}
 	//AÑADIR CONSTANTS PARA SABER CUANTAS POSICIONES DISPONIBLES HAY PARA CADA SPRITE Y PARA CADA NIVEL
-	public int getNumberOfAvailablePositions(Sprite sprite, int level) {
+	public int getNumberOfAvailablePositions(String sprite, int level) {
 		if(level==1) {
-			if(sprite instanceof Commander) {
+			if(sprite.equals("Commander")){
 				return commanderCoordinatesLevel1.length;
 			}
-			if(sprite instanceof Goei) {
+			if(sprite.equals("Goei")) {
 				return goeiCoordinatesLevel1.length;
 			}
-			if(sprite instanceof Zako) {
+			if(sprite.equals("Zako")) {
 				return zakoCoordinatesLevel1.length;
 			}
 		}
 		if(level==2) {
-			if(sprite instanceof Commander) {
+			if(sprite.equals("Commander")) {
 				return commanderCoordinatesLevel2.length;
 			}
-			if(sprite instanceof Goei) {
+			if(sprite.equals("Goei")) {
 				return goeiCoordinatesLevel2.length;
 			}
-			if(sprite instanceof Zako) {
+			if(sprite.equals("Zako")) {
 				return zakoCoordinatesLevel2.length;
 			}
 		}
 		if(level==3) {
-			if(sprite instanceof Commander) {
+			if(sprite.equals("Commander")) {
 				return commanderCoordinatesLevel3.length;
 			}
-			if(sprite instanceof Goei) {
+			if(sprite.equals("Goei")) {
 				return goeiCoordinatesLevel3.length;
 			}
-			if(sprite instanceof Zako) {
+			if(sprite.equals("Zako")) {
 				return zakoCoordinatesLevel3.length;
 			}
 		}
