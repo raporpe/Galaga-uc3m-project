@@ -5,14 +5,12 @@ import edu.uc3m.game.GameBoardGUI;
 public class Star extends Sprite {
 
 	private double speed;
-	private int shift;
 	private double lastSystemTime = System.currentTimeMillis(); //TODO: DO SOMETHING WITH THIS
 
 	public Star(GameBoardGUI board, double speed, int shift) {
 		super(board);
 		
 		setSpeed(speed);
-		setShift(shift);
 
 	}
 
@@ -39,12 +37,6 @@ public class Star extends Sprite {
 		}
 	}
 
-
-	private void setShift(int shift) {
-		if(shift > 0 && shift < Constants.BOARD_WIDTH) {
-			this.shift = shift;
-		}
-	}
 	
 	public void update() {
 		moveStep();
