@@ -416,6 +416,10 @@ public class Constants {
 	
 	//AÑADIR CONSTANTS PARA SABER CUANTAS POSICIONES DISPONIBLES HAY PARA CADA SPRITE Y PARA CADA NIVEL
 	public int getNumberOfAvailablePositions(String sprite, int level) {
+		if(sprite.equals("Star")) {
+			return StarPositions.length;
+		}
+		
 		if(level==1) {
 			if(sprite.equals("Commander")){
 				return commanderCoordinatesLevel1.length;
