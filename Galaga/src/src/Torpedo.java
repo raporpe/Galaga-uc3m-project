@@ -8,6 +8,7 @@ public class Torpedo extends Sprite{
 	
 	public Torpedo(GameBoardGUI board) {
 		super(board);
+		
 		setVisibility(false);
 
 	}
@@ -16,8 +17,8 @@ public class Torpedo extends Sprite{
 	public void initTorpedo(int posX, int posY) {
 		setX(posX);
 		setY(posY);
-		setVisibility(true);
 		moveSpriteTo(posX, posY);
+		setVisibility(true);
 	}
 	
 	
@@ -41,7 +42,7 @@ public class Torpedo extends Sprite{
 	
 	public void update() {
 		moveStep();
-		checkEnd();
+	//	checkEnd();
 	}
 	
 	

@@ -401,9 +401,19 @@ public class Constants {
 			}
 
 		}
+		
+		if (sprite instanceof Player) {
+			int[] playerPosition = { (BOARD_WIDTH / 2), (BOARD_HEIGHT - 20) };
+			return playerPosition;
+		}
+
+		
+		
 		return null;
 
 	}
+	
+	
 	//AÑADIR CONSTANTS PARA SABER CUANTAS POSICIONES DISPONIBLES HAY PARA CADA SPRITE Y PARA CADA NIVEL
 	public int getNumberOfAvailablePositions(String sprite, int level) {
 		if(level==1) {

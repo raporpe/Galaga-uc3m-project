@@ -62,6 +62,7 @@ abstract public class Enemy extends Sprite {
 
 	public void death() {
 		exploding = true;
+		setVisibility(false);
 		//Visibility is disabled after exploding animation
 	}
 

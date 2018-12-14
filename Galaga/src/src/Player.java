@@ -77,7 +77,11 @@ public class Player extends Sprite{
 	
 	//Torpedo shooting
 	public void shootTorpedo() {
-		this.torpedo[torpedoIndex++].initTorpedo(this.x, this.y - Constants.PLAYER_TORPEDOES_OFFSET);
+		if(torpedoIndex >= torpedo.length) {
+			torpedoIndex = 0;
+		}
+		this.torpedo[torpedoIndex].initTorpedo(this.x, this.y - Constants.PLAYER_TORPEDOES_OFFSET);
+		torpedoIndex++;
 	}
 	
 	@Override

@@ -62,6 +62,19 @@ public class Game {
 		//Create a 17x22 board
 		GameBoardGUI board = new GameBoardGUI(Constants.BOARD_WIDTH_BIG_COORDINATES, Constants.BOARD_HEIGHT_BIG_COORDINATES);
 		
+		//After startup, setting board visible.
+		board.setVisible(true);
+		
+		//Grid color setter
+		board.gb_setGridColor(40, 40, 40);		
+		
+		for(int ii = 0; ii < (Constants.BOARD_WIDTH_BIG_COORDINATES); ii++) {
+			for(int jj = 0; jj < (Constants.BOARD_HEIGHT_BIG_COORDINATES); jj++) {
+				board.gb_setSquareColor(ii, jj, 0, 0, 0);
+			}
+		}
+		
+		
 		Torpedo[] playerTorpedo = new Torpedo[Constants.BOARD_HEIGHT_BIG_COORDINATES];
 		Player player = new Player(board, playerName, playerTorpedo);
 		Game game = new Game();
@@ -70,9 +83,9 @@ public class Game {
 		
 		Constants positionAssingner = new Constants();
 
-		Zako[] zako = new Zako[positionAssingner.getNumberOfAvailablePositions(Zako.class.getName(),1)];
-		Goei[] goei = new Goei[positionAssingner.getNumberOfAvailablePositions(Goei.class.getName(),1)];
-		Commander[] commander = new Commander[positionAssingner.getNumberOfAvailablePositions(Commander.class.getName(),1)];
+		Zako[] zako = new Zako[positionAssingner.getNumberOfAvailablePositions("Zako",1)];
+		Goei[] goei = new Goei[positionAssingner.getNumberOfAvailablePositions("Goei",1)];
+		Commander[] commander = new Commander[positionAssingner.getNumberOfAvailablePositions("Commander",1)];
 
 
 		//Initialize torpedoes array
@@ -102,17 +115,18 @@ public class Game {
 		
 		
 		//Enemies initialization
-		for(Zako zakoToInitialise : zako) {
-			zakoToInitialise = new Zako(board);
+		for(int ii = 0; ii < zako.length; ii++){
+			zako[ii] = new Zako(board);
 		}
 		
-		for(Goei goeiToInitialise : goei) {
-			goeiToInitialise = new Goei(board);
+		for(int ii = 0; ii < goei.length; ii++){
+			goei[ii] = new Goei(board);
 		}
 		
-		for(Commander commanderToInitialise : commander) {
-			commanderToInitialise = new Commander(board);
+		for(int ii = 0; ii < commander.length; ii++){
+			commander[ii] = new Commander(board);
 		}
+
 		
 		
 		
@@ -120,8 +134,8 @@ public class Game {
 		
 		
 		
-		//After startup, setting board visible.
-		board.setVisible(true);
+		
+
 
 
 
@@ -129,14 +143,7 @@ public class Game {
 				
 		
 		
-		//Grid color setter
-		board.gb_setGridColor(40, 40, 40);		
-		
-		for(int ii = 0; ii < (Constants.BOARD_WIDTH_BIG_COORDINATES); ii++) {
-			for(int jj = 0; jj < (Constants.BOARD_HEIGHT_BIG_COORDINATES); jj++) {
-				board.gb_setSquareColor(ii, jj, 0, 0, 0);
-			}
-		}
+
 		
 		
 		
@@ -182,7 +189,7 @@ public class Game {
 				if(System.currentTimeMillis() - lastShotTime > (Constants.MAX_TORPEDOES_PER_SQAURE*10*1000/Constants.FPS)) {
 					player.shootTorpedo();
 					lastShotTime = System.currentTimeMillis();
-					System.out.println(lastShotTime);
+					System.out.println(lastShotTime + "    s");
 				}
 				
 			}
@@ -202,6 +209,7 @@ public class Game {
 			collisionChecker.check(playerTorpedo, goei, true, true);
 			collisionChecker.check(playerTorpedo, commander, true, true);
 
+			
 			collisionChecker.check(player, zako, true, true);
 			collisionChecker.check(player, goei, true, true);
 			collisionChecker.check(player, commander, true, true);

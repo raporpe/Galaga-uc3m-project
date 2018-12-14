@@ -18,17 +18,19 @@ abstract public class Sprite {
 
 
 		
-	public Sprite(GameBoardGUI board) {
+ 	public Sprite(GameBoardGUI board) {
 
 		setBoard(board);
 		setId(IdManager.assignId(this));
 		setSpriteSkin(Constants.getSkin(this, 0));
 		Constants constants = new Constants();
 		
-		
-		int[] tempInitialCoordinates = constants.getInitialCoordinatesVector(this);
-		setX(tempInitialCoordinates[0]);
-		setY(tempInitialCoordinates[1]);
+		if(!(this instanceof Enemy || this instanceof Torpedo)) { //Find better implementation
+			int[] tempInitialCoordinates = constants.getInitialCoordinatesVector(this);
+			setX(tempInitialCoordinates[0]);
+			setY(tempInitialCoordinates[1]);
+		}
+
 
 		//Initializing sprite
 		this.board.gb_addSprite(this.id, this.defaultSkin, true);
@@ -140,7 +142,7 @@ abstract public class Sprite {
 
 		public void setVisibility(boolean visibility) {
 			this.visible = visibility;
-			board.gb_setSpriteVisible(getId(), visibility);
+			board.gb_setSpriteVisible(this.id, visibility);
 		}
 		
 		
@@ -159,7 +161,6 @@ abstract public class Sprite {
 		
 		public void setSpriteSkin(String image){
 			this.defaultSkin = image;
-			board.gb_setSpriteImage(this.id, image);
 		}
 		
 		
@@ -174,6 +175,13 @@ abstract public class Sprite {
 		public void death() {
 			this.setVisibility(false);
 		} 
+		
+		public boolean equals(String string) {
+			if(string.equals(this.getClass().getName())) {
+				return true;
+			}
+			return false;
+		}
 		
 	
 

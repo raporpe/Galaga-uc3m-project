@@ -52,15 +52,15 @@ public class CollisionChecker {
 			if (spriteA[ii].isVisible()) {
 				for (int jj = 0; jj < spriteB.length; jj++) {
 					if (spriteB[jj].isVisible()) {
+						if(calculateDistance(spriteB[jj], spriteA[ii]) < distanceThresold) {
+							if (spriteADeath) {
+								spriteA[ii].destroy();
+							}
 
-						if (spriteADeath) {
-							spriteA[ii].destroy();
+							if (spriteBDeath) {
+								spriteB[jj].destroy();
+							}
 						}
-
-						if (spriteBDeath) {
-							spriteB[jj].destroy();
-						}
-
 					}
 				}
 			}
