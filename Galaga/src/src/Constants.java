@@ -77,8 +77,6 @@ public class Constants {
 		return 0;
 	}
 
-
-
 	public static final int[][] enemyCoordinatesLevel1 = {
 
 			{ Game.BOARD_WIDTH / 2 - 50, 25 }, { Game.BOARD_WIDTH / 2 - 40, 25 }, { Game.BOARD_WIDTH / 2 - 30, 25 },
