@@ -66,28 +66,17 @@ public class Constants {
 	
 	//COORDINATES FOR LEVEL 1
 	
-	/*public static final int[][] enemyCoordinatesLevel1 = {
-
-			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
-			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
-			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
-			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }, { BOARD_WIDTH / 2 - 50, 35 },
-			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
-			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
-			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
-			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
-			{ BOARD_WIDTH / 2 + 10, 15 } }; */
 	
-	public static final int [][] CommanderCoordinatesLevel1 = {	
+	public static final int [][] commanderCoordinatesLevel1 = {	
 			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },{ BOARD_WIDTH / 2 + 10, 15 } };
 	
-	public static final int [][] GoeiCoordinatesLevel1 = {
+	public static final int [][] goeiCoordinatesLevel1 = {
 			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
 			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
 			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
 			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }};
 	
-	public static final int [][] ZakoCoordinatesLevel1 = {
+	public static final int [][] zakoCoordinatesLevel1 = {
 			{ BOARD_WIDTH / 2 - 50, 35 },
 			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
 			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
@@ -96,33 +85,17 @@ public class Constants {
 	
 	
 	//COORDINATES FOR LEVEL2
-	
-	/*public static final int[][] enemyCoordinatesLevel2 = {
-
-			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
-			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
-			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
-			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }, { BOARD_WIDTH / 2 - 50, 35 },
-			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
-			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
-			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
-			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 - 50, 45 }, { BOARD_WIDTH / 2 - 40, 45 },
-			{ BOARD_WIDTH / 2 - 30, 45 }, { BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 },
-			{ BOARD_WIDTH / 2, 45 }, { BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 },
-			{ BOARD_WIDTH / 2 + 30, 45 }, { BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 },
-			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 }, { BOARD_WIDTH / 2 + 10, 15 } };*/
-	
-	public static final int [][] CommanderCoordinatesLevel2 = {	
+	public static final int [][] commanderCoordinatesLevel2 = {	
 			{ BOARD_WIDTH / 2 - 30, 15 },{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
 			{ BOARD_WIDTH / 2 + 10, 15 },{ BOARD_WIDTH / 2 + 30, 15 } };
 	
-	public static final int [][] GoeiCoordinatesLevel2 = {
+	public static final int [][] goeiCoordinatesLevel2 = {
 			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
 			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
 			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
 			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }};
 	
-	public static final int [][] ZakoCoordinatesLevel2 = {
+	public static final int [][] zakoCoordinatesLevel2 = {
 			{ BOARD_WIDTH / 2 - 50, 35 },
 			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
 			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
@@ -133,18 +106,18 @@ public class Constants {
 			{ BOARD_WIDTH / 2 + 30, 45 }, { BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }};
 	
 	//COORDINATES LEVEL 3
-	public static final int [][] CommanderCoordinatesLevel3 = {	
+	public static final int [][] commanderCoordinatesLevel3 = {	
 			{ BOARD_WIDTH / 2 - 50, 15 },{ BOARD_WIDTH / 2 - 30, 15 },{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
 			{ BOARD_WIDTH / 2 + 10, 15 },{ BOARD_WIDTH / 2 + 30, 15 },{ BOARD_WIDTH / 2 + 50, 15 }};
 	
-	public static final int [][] GoeiCoordinatesLevel3 = {
+	public static final int [][] goeiCoordinatesLevel3 = {
 			{ BOARD_WIDTH / 2 - 60, 25 }, { BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 },
 			{ BOARD_WIDTH / 2 - 30, 25 }, { BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 },
 			{ BOARD_WIDTH / 2, 25 }, { BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 },
 			{ BOARD_WIDTH / 2 + 30, 25 }, { BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 },
 			{ BOARD_WIDTH / 2 + 60, 25 }};
 	
-	public static final int [][] ZakoCoordinatesLevel3 = {
+	public static final int [][] zakoCoordinatesLevel3 = {
 			{ BOARD_WIDTH / 2 - 60, 35 }, { BOARD_WIDTH / 2 - 50, 35 },
 			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
 			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
@@ -156,8 +129,7 @@ public class Constants {
 			{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 }};
 	
 	//Star coordinates
-	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 },
-			{ 1, 80 } };
+	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 }, { 1, 80 } };
 
 	public static String getSkin(Sprite sprite, int a) {
 		if (sprite instanceof Player) {
@@ -353,29 +325,50 @@ public class Constants {
 		return "";
 	}
 	
-	
-
-	
-
-	
-	
-	
-	
 	private int counterL1 = 0;
 
-	public int[] getInitialCoordinatesArray(Sprite sprite) {
-
+	//FOR ENEMIES
+	public int[] [] getInitialCoordinatesArray(Sprite sprite, int level) {
+		if(level==1) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel1;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel1;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel1;
+			}
+		}
+		if(level==2) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel2;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel2;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel2;
+			}
+		}
+		if(level==3) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel3;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel3;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel3;
+			}
+		}
 		return null;
-		
 	}
 	
-	
-	
-
-
 	private int StarPosCounter = 0;
 	private boolean firstTime = true;
 	
+	//FOR PLAYER AND STARS
 	public int[] getInitialCoordinatesVector(Sprite sprite) {
 		//Stars coordinates assigner
 		if (sprite instanceof Star) {
@@ -408,22 +401,7 @@ public class Constants {
 			}
 
 		}
-
-		//Player coordinates
-		if (sprite instanceof Player) {
-
-			int[] playerPosition = { (BOARD_WIDTH / 2), (BOARD_HEIGHT - 20) };
-			return playerPosition;
-
-		}
-
 		return null;
 
 	}
-	
-	
-
-
-
-
 }
