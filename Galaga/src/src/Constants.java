@@ -321,10 +321,9 @@ public class Constants {
 	private static int counterL1 = 0;
 
 	public static int[] getInitialCoordinatesArray(Sprite sprite) {
-		if (level == 1) {
-			return enemyCoordinatesLevel1[counterL1X++][0];
-		}
-		return 0;
+
+		
+		return null;
 	}
 	
 	
@@ -334,20 +333,39 @@ public class Constants {
 	private static boolean firstTime = true;
 
 	public static int[] getInitialCoordinatesVector(Sprite sprite) {
+		//Stars coordinates assigner
 		if (sprite instanceof Star) {
 
-			if(firstTime) { //Implement the stars shifting
+			if(firstTime) {
+				if (StarPosCounter >= StarPositions.length) {
+					StarPosCounter = 0;
+					firstTime = false;
+
+				}
+				return StarPositions[StarPosCounter++];
+			} else {
 				if (StarPosCounter >= StarPositions.length) {
 					StarPosCounter = 0;
 				}
-				fistTime = !fistTime;
-				return StarPositions[StarPosCounter++];
-			} else {
+				
+				int[] returnVector = StarPositions[StarPosCounter++];
+
+				int shift = (int)(Math.random()*60+20);
+				
+				//Analysisng shift in x
+				if(returnVector[0] + shift > BOARD_WIDTH) {
+					returnVector[0] = returnVector[0] + shift - BOARD_WIDTH;
+				} else {
+					returnVector[0] = returnVector[0] + shift;
+				}
+								
+				return returnVector;
 				
 			}
 
 		}
 
+		//Player coordinates
 		if (sprite instanceof Player) {
 
 			int[] playerPosition = { (BOARD_WIDTH / 2), (BOARD_HEIGHT - 20) };
