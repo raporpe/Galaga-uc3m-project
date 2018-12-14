@@ -51,9 +51,6 @@ abstract public class Enemy extends Sprite {
 		}
 	}
 
-	public void getStandardPath() {
-		this.moveSpriteTo(this.getX(), explodingSkin);
-	}
 
 	public void death() {
 		exploding = true;

@@ -15,25 +15,13 @@ abstract public class Sprite {
 	
 	
 
-//	public Sprite(int id, GameBoardGUI board, int x, int y) {
-//
-//		setId(id);
-//		setBoard(board);	
-//		setX(x);
-//		setY(y);														Deprecated
-//		
-//		//Creating sprite
-//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-//		
-//	}
+
 		
 	public Sprite(GameBoardGUI board) {
 
 		setBoard(board);
 		setId(IdManager.assignId(this));
-		Constants.getSkin(this, 0);
-		
+		setSpriteSkin(Constants.getSkin(this, 0));
 		
 		int[] tempInitialCoordinates = Constants.getPosition(this);
 		setX(tempInitialCoordinates[0]);
@@ -58,17 +46,20 @@ abstract public class Sprite {
 //		setVisibility(visibility);
 //	}
 		
-//	public boolean checkCollision(Sprite sprite) {
-//		if(Math.abs(sprite.getX() - this.getX()) < Game.SPRITE_WIDTH && Math.abs(sprite.getY() - this.getY()) < Game.SPRITE_WIDTH) {
-//			this.setVisibility(false);
-//			this.moveDefaultLocation();
-//			sprite.destroy(sprite);					//Deprecated
-//			
-//			return true;
-//		} else {
-//			return false;
-//		}
+	
+//	public Sprite(int id, GameBoardGUI board, int x, int y) {
+//
+//		setId(id);
+//		setBoard(board);	
+//		setX(x);
+//		setY(y);														Deprecated
+//		
+//		//Creating sprite
+//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
+//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
+//		
 //	}
+
 	
 	
 	public Sprite() {
@@ -146,7 +137,6 @@ abstract public class Sprite {
 		}
 		
 		
-		
 		public void moveSpriteTo(int x, int y) {
 			this.setX(x);												//
 			this.setY(y);												// Why?
@@ -158,20 +148,17 @@ abstract public class Sprite {
 			this.setY(y + dy);												// Why?
 			board.gb_moveSpriteCoord(this.getId(), this.x, this.y);	     	//
 		}
+
 		
-		
-		public void moveDefaultLocation() {
-			board.gb_moveSpriteCoord(getId(), 0, 0);
+		public void setSpriteSkin(String image){
+			this.defaultSkin = image;
+			board.gb_setSpriteImage(this.id, image);
 		}
+		
 		
 		public void destroy() {
 			this.death();
 			this.moveSpriteTo(Game.DEFAULT_SPRITE_POS_X, Game.DEFAULT_SPRITE_POS_Y);
-		}
-		
-		
-		public void setSpriteSkin(String image){
-			board.gb_setSpriteImage(this.id, image);
 		}
 		
 		//Temporal

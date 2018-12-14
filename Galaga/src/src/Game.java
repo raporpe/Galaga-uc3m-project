@@ -136,19 +136,13 @@ public class Game {
 		
 		
 		
+		
+		
 		//After startup, setting board visible.
 		board.setVisible(true);
 
 
 
-
-		
-		
-		
-		
-
-		
-		
 
 				
 		
