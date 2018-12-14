@@ -39,7 +39,7 @@ public class Player extends Sprite{
 		
 	//Moving
 	public void moveRight(int quantity) {
-		if(this.x < Game.BOARD_WIDTH-5) {
+		if(this.x < Constants.BOARD_WIDTH-5) {
 			this.x = this.x + quantity;
 			board.gb_moveSpriteCoord(this.id, this.x, this.y);
 		}
@@ -77,7 +77,7 @@ public class Player extends Sprite{
 	
 	//Torpedo shooting
 	public void shootTorpedo() {
-		this.torpedo[torpedoIndex++].initTorpedo(this.x, this.y - Game.PLAYER_TORPEDOES_OFFSET);
+		this.torpedo[torpedoIndex++].initTorpedo(this.x, this.y - Constants.PLAYER_TORPEDOES_OFFSET);
 	}
 	
 	@Override
