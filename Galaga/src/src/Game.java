@@ -34,30 +34,7 @@ public class Game {
 	static double initialTime;
 
 	
-	//Responsiveness
-	public static final int BOARD_WIDTH = 170;
-	public static final int BOARD_HEIGHT = 220;
-	
-	public static final int BOARD_WIDTH_BIG_COORDINATES = BOARD_WIDTH/10;
-	public static final int BOARD_HEIGHT_BIG_COORDINATES = BOARD_HEIGHT/10;
 
-	
-	final static int FPS = 120;
-	final static int EXPECTED_TIME = 1000000000 / FPS;
-	final static int TORPEDOES_SPEED = 1;
-	final static int SPRITE_WIDTH = 5;
-	final static int SPRITE_HEIGTH = 5;
-	final static int DEFAULT_SPRITE_POS_X = 0;
-	final static int DEFAULT_SPRITE_POS_Y = 0;
-	
-	final static int MAX_TORPEDOES_PER_SQAURE = 1;
-	
-	final static int PLAYER_TORPEDOES_OFFSET = 5;
-	
-	final static int PLAYER_MOVEMENT_SPACE = 2;
-	
-	//Collisions
-	public static final int COLLISION_RADIUS = 10;
 
 	
 	//Testing
