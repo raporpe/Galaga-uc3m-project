@@ -155,14 +155,9 @@ public class Constants {
 			{ BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 }, { BOARD_WIDTH / 2 + 30, 45 },
 			{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 }};
 	
-	
-	public int cont = 0;
-
-	public int[] assignCoordinates(Sprite sprite, int level) {
-
-		cont++;
-		return enemyCoordinatesLevel1[cont];
-	}
+	//Star coordinates
+	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 },
+			{ 1, 80 } };
 
 	public static String getSkin(Sprite sprite, int a) {
 		if (sprite instanceof Player) {
@@ -359,8 +354,7 @@ public class Constants {
 	}
 	
 	
-	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 },
-			{ 1, 80 } };
+
 	
 
 	
@@ -371,16 +365,17 @@ public class Constants {
 
 	public int[] getInitialCoordinatesArray(Sprite sprite) {
 
-		
 		return null;
+		
 	}
+	
 	
 	
 
 
 	private int StarPosCounter = 0;
 	private boolean firstTime = true;
-
+	
 	public int[] getInitialCoordinatesVector(Sprite sprite) {
 		//Stars coordinates assigner
 		if (sprite instanceof Star) {
@@ -425,5 +420,10 @@ public class Constants {
 		return null;
 
 	}
+	
+	
+
+
+
 
 }
