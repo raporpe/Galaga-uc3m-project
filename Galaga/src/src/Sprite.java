@@ -44,30 +44,6 @@ abstract public class Sprite {
 		
 	}
 	
-//	protected void initializeSprite(int id, int x, int y, boolean visibility) {
-//		setId(id);
-//		setX(x);
-//		setY(y);
-//
-//		//Creating sprite
-//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-//		setVisibility(visibility);
-//	}
-		
-	
-//	public Sprite(int id, GameBoardGUI board, int x, int y) {
-//
-//		setId(id);
-//		setBoard(board);	
-//		setX(x);
-//		setY(y);														Deprecated
-//		
-//		//Creating sprite
-//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-//		
-//	}
 
 	
 	

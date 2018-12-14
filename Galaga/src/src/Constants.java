@@ -322,7 +322,7 @@ public class Constants {
 			return "star.png";
 		}
 
-		return "";
+		return "SkinFailed.png";
 	}
 	
 	private int counterL1 = 0;
