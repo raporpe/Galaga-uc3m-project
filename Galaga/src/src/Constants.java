@@ -321,7 +321,7 @@ public class Constants {
 		if (sprite instanceof Star) {
 			return "star.png";
 		}
-
+ 
 		return "SkinFailed.png";
 	}
 	
@@ -365,11 +365,11 @@ public class Constants {
 		return null;
 	}
 	
-	private int StarPosCounter = 0;
-	private boolean firstTime = true;
+	private static int StarPosCounter = 0;
+	private static boolean firstTime = true;
 	
 	//FOR PLAYER AND STARS
-	public int[] getInitialCoordinatesVector(Sprite sprite) {
+	public static int[] getInitialCoordinatesVector(Sprite sprite) {
 		//Stars coordinates assigner
 		if (sprite instanceof Star) {
 

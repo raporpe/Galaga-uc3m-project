@@ -12,7 +12,7 @@ abstract public class Enemy extends Sprite {
 	protected boolean attacking;
 	protected boolean defaultSwarmSkin = true;
 	protected double lastSystemTime;
-	protected boolean swarm;
+	protected boolean swarm = true;
 	protected int explodingSkin;
 
 
@@ -42,9 +42,11 @@ abstract public class Enemy extends Sprite {
 			if (explodingSkin >= 8) {
 				explodingSkin = 0;
 				exploding = false;
+				setVisibility(false);
+
 			}
 
-		} else {
+		} else if (swarm) {
 			if (System.currentTimeMillis() - lastSystemTime > 1000) {
 				if (defaultSwarmSkin) {
 					setSpriteSkin(Constants.getSkin(this, 0));
@@ -62,7 +64,6 @@ abstract public class Enemy extends Sprite {
 
 	public void death() {
 		exploding = true;
-		setVisibility(false);
 		//Visibility is disabled after exploding animation
 	}
 

@@ -98,9 +98,9 @@ public class Game {
 		//Star declaration
 		
 		
-		Star[] fastStar = new Star[positionAssingner.getNumberOfAvailablePositions(Star.class.getName(),1)];
+		Star[] fastStar = new Star[positionAssingner.getNumberOfAvailablePositions("Star",1)];
 
-		Star[] slowStar = new Star[positionAssingner.getNumberOfAvailablePositions(Star.class.getName(),1)];
+		Star[] slowStar = new Star[positionAssingner.getNumberOfAvailablePositions("Star",1)];
 		
 		
 		//Stars initialization
@@ -251,7 +251,7 @@ public class Game {
 
 	private void update(Sprite[] sprite) {
 		for(Sprite spriteToUpdate : sprite) {
-			if(spriteToUpdate.isVisible()) {
+			if(spriteToUpdate.isVisible() && spriteToUpdate != null) {
 				spriteToUpdate.update();
 			}
 		}
