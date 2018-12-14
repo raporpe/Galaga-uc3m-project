@@ -308,15 +308,15 @@ public class Constants {
 	public static int[] getPosition(Sprite sprite) {
 		if (sprite instanceof Star) {
 			
-			if(firstTime) { //Implement the stars shifting
-				if (StarPosCounter >= StarPositions.length) {
-					StarPosCounter = 0;
-				}
-				fistTime = !fistTime;
-				return StarPositions[StarPosCounter++];
-			} else {
-				
-			}
+//			if(firstTime) { //Implement the stars shifting
+//				if (StarPosCounter >= StarPositions.length) {
+//					StarPosCounter = 0;
+//				}
+//				fistTime = !fistTime;
+//				return StarPositions[StarPosCounter++];
+//			} else {
+//				
+//			}
 			
 			
 
