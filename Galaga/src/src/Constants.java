@@ -404,4 +404,41 @@ public class Constants {
 		return null;
 
 	}
+	//AÑADIR CONSTANTS PARA SABER CUANTAS POSICIONES DISPONIBLES HAY PARA CADA SPRITE Y PARA CADA NIVEL
+	public int getNumberOfAvailablePositions(Sprite sprite, int level) {
+		if(level==1) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel1.length;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel1.length;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel1.length;
+			}
+		}
+		if(level==2) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel2.length;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel2.length;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel2.length;
+			}
+		}
+		if(level==3) {
+			if(sprite instanceof Commander) {
+				return commanderCoordinatesLevel3.length;
+			}
+			if(sprite instanceof Goei) {
+				return goeiCoordinatesLevel3.length;
+			}
+			if(sprite instanceof Zako) {
+				return zakoCoordinatesLevel3.length;
+			}
+		}
+		return 0;
+	}
 }
