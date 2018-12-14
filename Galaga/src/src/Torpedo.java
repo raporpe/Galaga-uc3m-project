@@ -39,6 +39,11 @@ public class Torpedo extends Sprite{
 		setVisibility(false);
 	}
 	
+	public void update() {
+		moveStep();
+		checkEnd();
+	}
+	
 	
 	
 	

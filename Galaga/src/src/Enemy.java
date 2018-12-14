@@ -9,10 +9,11 @@ abstract public class Enemy extends Sprite {
 	protected int[] temporalPathToFollow; // Esto va en coordenadas de una sola dimension
 
 	protected boolean exploding;
-	protected int explodingSkin;
 	protected boolean attacking;
 	protected boolean defaultSwarmSkin = true;
 	protected double lastSystemTime;
+	protected boolean swarm;
+	protected int explodingSkin;
 
 
 	public Enemy(GameBoardGUI board) {
@@ -22,6 +23,13 @@ abstract public class Enemy extends Sprite {
 
 	public Enemy() {
 
+	}
+	
+	protected void update() {
+		animate();
+//		if(swarm) {
+//			moveSpriteTo()
+//		}
 	}
 
 

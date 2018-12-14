@@ -23,8 +23,10 @@ abstract public class Sprite {
 		setBoard(board);
 		setId(IdManager.assignId(this));
 		setSpriteSkin(Constants.getSkin(this, 0));
+		Constants constants = new Constants();
 		
-		int[] tempInitialCoordinates = Constants.getInitialCoordinatesVector(this);
+		
+		int[] tempInitialCoordinates = constants.getInitialCoordinatesVector(this);
 		setX(tempInitialCoordinates[0]);
 		setY(tempInitialCoordinates[1]);
 
@@ -34,7 +36,11 @@ abstract public class Sprite {
 		setVisibility(true);
 		
 	}
+
 	
+	protected void update() {
+		
+	}
 	
 //	protected void initializeSprite(int id, int x, int y, boolean visibility) {
 //		setId(id);

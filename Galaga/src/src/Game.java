@@ -63,13 +63,17 @@ public class Game {
 		GameBoardGUI board = new GameBoardGUI(Constants.BOARD_WIDTH_BIG_COORDINATES, Constants.BOARD_HEIGHT_BIG_COORDINATES);
 		
 		Torpedo[] playerTorpedo = new Torpedo[Constants.BOARD_HEIGHT_BIG_COORDINATES];
-
 		Player player = new Player(board, playerName, playerTorpedo);
-		Enemy[] enemies = new Enemy[Constants.enemyCoordinatesLevel1.length];
 		Game game = new Game();
 		CollisionChecker collisionChecker = new CollisionChecker(board, Constants.COLLISION_RADIUS);
 		
 		
+		Constants positionAssingner = new Constants();
+
+		Zako[] zako = new Zako[positionAssingner.getNumberOfAvailablePositions(Zako.class.getName(),1)];
+		Goei[] goei = new Goei[positionAssingner.getNumberOfAvailablePositions(Goei.class.getName(),1)];
+		Commander[] commander = new Commander[positionAssingner.getNumberOfAvailablePositions(Commander.class.getName(),1)];
+
 
 		//Initialize torpedoes array
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
@@ -80,11 +84,10 @@ public class Game {
 		
 		//Star declaration
 		
-		Constants positionAssingner = new Constants();
 		
-		Star[] fastStar = new Star[positionAssingner.StarPositions.length];
+		Star[] fastStar = new Star[positionAssingner.getNumberOfAvailablePositions(Star.class.getName(),1)];
 
-		Star[] slowStar = new Star[positionAssingner.StarPositions.length];
+		Star[] slowStar = new Star[positionAssingner.getNumberOfAvailablePositions(Star.class.getName(),1)];
 		
 		
 		//Stars initialization
@@ -99,16 +102,18 @@ public class Game {
 		
 		
 		//Enemies initialization
-		for(int ii = 0; ii < 11; ii++) {
-			enemies[ii] = new Goei(board);
+		for(Zako zakoToInitialise : zako) {
+			zakoToInitialise = new Zako(board);
 		}
 		
-		for(int ii = 11; ii < 22; ii++) {
-			enemies[ii] = new Zako(board);
+		for(Goei goeiToInitialise : goei) {
+			goeiToInitialise = new Goei(board);
 		}
-		for(int ii = 22; ii < 25; ii++) {
-			enemies[ii] = new Commander(board);
+		
+		for(Commander commanderToInitialise : commander) {
+			commanderToInitialise = new Commander(board);
 		}
+		
 		
 		
 		
@@ -183,16 +188,24 @@ public class Game {
 			}
 
 
-			
-			game.updateTorpedoes(playerTorpedo);
-			game.updateEnemies(enemies);
-			game.updateStars(slowStar, fastStar);
-			
+			game.update(playerTorpedo);
+			game.update(slowStar);
+			game.update(fastStar);
+
+			game.update(zako);
+			game.update(commander);
+			game.update(goei);
+
 			//Checking all possible collisions
 			
-			collisionChecker.check(playerTorpedo, enemies, true, true);
-			collisionChecker.check(player, enemies, true, true);
-	
+			collisionChecker.check(playerTorpedo, zako, true, true);
+			collisionChecker.check(playerTorpedo, goei, true, true);
+			collisionChecker.check(playerTorpedo, commander, true, true);
+
+			collisionChecker.check(player, zako, true, true);
+			collisionChecker.check(player, goei, true, true);
+			collisionChecker.check(player, commander, true, true);
+
 			
 			 /* .--.      .-'.      .--.      .--.      .--.      .--.      .`-.      .--.
 			  :::::.\::::::::.\::::::::.\   FPS CONTROLLER  \::::::::.\::::::::.\::::::::.\
@@ -227,37 +240,14 @@ public class Game {
 	
 	}
 	
-	private void updateTorpedoes(Torpedo[] playerTorpedo) {
-		for(int ii = 0; ii < playerTorpedo.length; ii++) {
-			if(playerTorpedo[ii].isVisible()) {
-				playerTorpedo[ii].moveStep();
-//				playerTorpedo[ii].checkEnd();
+
+	private void update(Sprite[] sprite) {
+		for(Sprite spriteToUpdate : sprite) {
+			if(spriteToUpdate.isVisible()) {
+				spriteToUpdate.update();
 			}
 		}
 	}
-	
-	
-	private void updateEnemies(Enemy[] enemies) {
-		for(int ii = 0; ii < enemies.length; ii++) {
-				enemies[ii].animate();
-			//	enemies[ii].moveToNextPosition();
-		}
-	}
-	
-	private void updateStars(Star[] fastStar, Star[] slowStar) {
-		for(int ii = 0; ii < slowStar.length; ii++) {
-			slowStar[ii].moveStep();
-			fastStar[ii].moveStep();
-		}
-	}
 
-	
-
-	
 	
 }
-
-
-	
-
-

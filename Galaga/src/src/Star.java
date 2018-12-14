@@ -45,6 +45,10 @@ public class Star extends Sprite {
 			this.shift = shift;
 		}
 	}
+	
+	public void update() {
+		moveStep();
+	}
 
 }
 

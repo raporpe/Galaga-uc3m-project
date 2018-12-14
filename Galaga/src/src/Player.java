@@ -87,6 +87,11 @@ public class Player extends Sprite{
 	}
 	
 	
+	protected void update() {
+		
+	}
+	
+	
 	public void initializeStats() {
 		
 		//Generating text
