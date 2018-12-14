@@ -18,7 +18,7 @@ public class Constants {
 	public static final int DIR_NW = 14;
 	public static final int DIR_NNW = 15;
 
-	// The move deltas for the directions: dX,dY}
+	// The move deltas for the directions: dX,dY
 	public static final int[][] MOVES = { { 0, -4 }, // DIR_N
 			{ 1, -4 }, // DIR_NNE
 			{ 3, -3 }, // DIR_NE
@@ -363,9 +363,13 @@ public class Constants {
 			{ 1, 80 } };
 	
 
-	private static int counterL1 = 0;
+	
+	
+	
+	
+	private int counterL1 = 0;
 
-	public static int[] getInitialCoordinatesArray(Sprite sprite) {
+	public int[] getInitialCoordinatesArray(Sprite sprite) {
 
 		
 		return null;
@@ -374,10 +378,10 @@ public class Constants {
 	
 
 
-	private static int StarPosCounter = 0;
-	private static boolean firstTime = true;
+	private int StarPosCounter = 0;
+	private boolean firstTime = true;
 
-	public static int[] getInitialCoordinatesVector(Sprite sprite) {
+	public int[] getInitialCoordinatesVector(Sprite sprite) {
 		//Stars coordinates assigner
 		if (sprite instanceof Star) {
 

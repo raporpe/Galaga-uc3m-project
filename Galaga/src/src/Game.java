@@ -80,11 +80,11 @@ public class Game {
 		
 		//Star declaration
 		
-		Constants constants = new Constants();
+		Constants positionAssingner = new Constants();
 		
-		Star[] fastStar = new Star[constants.StarPositions.length];
+		Star[] fastStar = new Star[positionAssingner.StarPositions.length];
 
-		Star[] slowStar = new Star[constants.StarPositions.length];
+		Star[] slowStar = new Star[positionAssingner.StarPositions.length];
 		
 		
 		//Stars initialization
