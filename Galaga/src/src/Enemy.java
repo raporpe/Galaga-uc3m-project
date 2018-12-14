@@ -12,9 +12,10 @@ abstract public class Enemy extends Sprite {
 	protected boolean attacking;
 	protected boolean defaultSwarmSkin = true;
 	protected double lastSystemTime;
-	protected boolean swarm = true;
-	protected int explodingSkin;
+	protected double lastSystemTime2;
 
+	protected boolean swarm = true;
+	protected int explodingSkin = 20;
 
 	public Enemy(GameBoardGUI board) {
 		super(board);
@@ -24,7 +25,7 @@ abstract public class Enemy extends Sprite {
 	public Enemy() {
 
 	}
-	
+
 	protected void update() {
 		animate();
 //		if(swarm) {
@@ -32,22 +33,27 @@ abstract public class Enemy extends Sprite {
 //		}
 	}
 
-
-
 	public void animate() {
-		if (exploding) {
-			setSpriteSkin(Constants.getSkin(this, explodingSkin++));
 
-			// Reset the explosion state
-			if (explodingSkin >= 8) {
-				explodingSkin = 0;
-				exploding = false;
-				setVisibility(false);
+		if (exploding) {
+			if (System.currentTimeMillis() - lastSystemTime2 > 30) {
+
+				setSpriteSkin(Constants.getSkin(this, explodingSkin++));
+
+				// Reset the explosion state
+				if (explodingSkin >= 26) {
+					explodingSkin = 20;
+					exploding = false;
+					setVisibility(false);
+					this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
+				}
+				lastSystemTime2 = System.currentTimeMillis();
 
 			}
 
 		} else if (swarm) {
 			if (System.currentTimeMillis() - lastSystemTime > 1000) {
+
 				if (defaultSwarmSkin) {
 					setSpriteSkin(Constants.getSkin(this, 0));
 					defaultSwarmSkin = !defaultSwarmSkin;
@@ -61,10 +67,9 @@ abstract public class Enemy extends Sprite {
 		}
 	}
 
-
 	public void death() {
 		exploding = true;
-		//Visibility is disabled after exploding animation
+		// Visibility is disabled after exploding animation
 	}
 
 }

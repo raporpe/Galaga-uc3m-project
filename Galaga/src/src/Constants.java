@@ -136,7 +136,6 @@ public class Constants {
 			return "player.png";
 		}
 
-		if (sprite.getLifes() == 0) {
 			if (a == 20) {
 				return "explosion20.png";
 			} else if (a == 21) {
@@ -150,7 +149,7 @@ public class Constants {
 			} else if (a == 25) {
 				return "explosion25.png";
 			}
-		}
+
 
 		if (sprite instanceof Zako) {
 			switch (a) {

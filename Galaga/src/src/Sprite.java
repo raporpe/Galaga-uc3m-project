@@ -6,8 +6,8 @@ abstract public class Sprite {
 	
 	protected GameBoardGUI board;
 	protected int id;
-	protected int x;
-	protected int y;
+	protected int x = 50;
+	protected int y = 50;
 	protected boolean visible;
 	protected int lifes = 1;
 	protected String defaultSkin = "noSkin.png";
@@ -143,7 +143,7 @@ abstract public class Sprite {
 		
 		public void destroy() {
 			this.death();
-			this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
+		//	this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
 		}
 		
 		//Temporal
