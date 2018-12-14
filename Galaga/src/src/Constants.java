@@ -64,11 +64,11 @@ public class Constants {
 	public static final int COLLISION_RADIUS = 10;
 	
 	
-
-	public static final int[][] enemyCoordinatesLevel1 = {
+	//COORDINATES FOR LEVEL 1
+	
+	/*public static final int[][] enemyCoordinatesLevel1 = {
 
 			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
-
 			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
 			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
 			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }, { BOARD_WIDTH / 2 - 50, 35 },
@@ -76,9 +76,28 @@ public class Constants {
 			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
 			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
 			{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
-			{ BOARD_WIDTH / 2 + 10, 15 } };
-
-	public static final int[][] enemyCoordinatesLevel2 = {
+			{ BOARD_WIDTH / 2 + 10, 15 } }; */
+	
+	public static final int [][] CommanderCoordinatesLevel1 = {	
+			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },{ BOARD_WIDTH / 2 + 10, 15 } };
+	
+	public static final int [][] GoeiCoordinatesLevel1 = {
+			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
+			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
+			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
+			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }};
+	
+	public static final int [][] ZakoCoordinatesLevel1 = {
+			{ BOARD_WIDTH / 2 - 50, 35 },
+			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
+			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
+			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
+			{ BOARD_WIDTH / 2 + 50, 35 }};
+	
+	
+	//COORDINATES FOR LEVEL2
+	
+	/*public static final int[][] enemyCoordinatesLevel2 = {
 
 			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
 			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
@@ -91,15 +110,52 @@ public class Constants {
 			{ BOARD_WIDTH / 2 - 30, 45 }, { BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 },
 			{ BOARD_WIDTH / 2, 45 }, { BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 },
 			{ BOARD_WIDTH / 2 + 30, 45 }, { BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 },
-			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 }, { BOARD_WIDTH / 2 + 10, 15 } };
+			{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 }, { BOARD_WIDTH / 2 + 10, 15 } };*/
+	
+	public static final int [][] CommanderCoordinatesLevel2 = {	
+			{ BOARD_WIDTH / 2 - 30, 15 },{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
+			{ BOARD_WIDTH / 2 + 10, 15 },{ BOARD_WIDTH / 2 + 30, 15 } };
+	
+	public static final int [][] GoeiCoordinatesLevel2 = {
+			{ BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 }, { BOARD_WIDTH / 2 - 30, 25 },
+			{ BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 }, { BOARD_WIDTH / 2, 25 },
+			{ BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 }, { BOARD_WIDTH / 2 + 30, 25 },
+			{ BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 }};
+	
+	//COORDINATES FOR LEVEL3
+	
+	/*public static final int[][] enemyCoordinatesLevel3 = {
 
-	public static final int[][] enemyCoordinatesLevel3 = {
+	{ BOARD_WIDTH / 2 - 60, 25 }, { BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 },
+	{ BOARD_WIDTH / 2 - 30, 25 }, { BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 },
+	{ BOARD_WIDTH / 2, 25 }, { BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 },
+	{ BOARD_WIDTH / 2 + 30, 25 }, { BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 },
+	{ BOARD_WIDTH / 2 + 60, 25 }, { BOARD_WIDTH / 2 - 60, 35 }, { BOARD_WIDTH / 2 - 50, 35 },
+	{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
+	{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
+	{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
+	{ BOARD_WIDTH / 2 + 50, 35 }, { BOARD_WIDTH / 2 + 60, 35 }, { BOARD_WIDTH / 2 - 60, 45 },
+	{ BOARD_WIDTH / 2 - 50, 45 }, { BOARD_WIDTH / 2 - 40, 45 }, { BOARD_WIDTH / 2 - 30, 45 },
+	{ BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 }, { BOARD_WIDTH / 2, 45 },
+	{ BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 }, { BOARD_WIDTH / 2 + 30, 45 },
+	{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 },
+	{ BOARD_WIDTH / 2 - 20, 15 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
+	{ BOARD_WIDTH / 2 + 10, 15 }, { BOARD_WIDTH / 2 + 20, 15 } };*/
+	
 
+	public static final int [][] CommanderCoordinatesLevel3 = {	
+			{ BOARD_WIDTH / 2 - 50, 15 },{ BOARD_WIDTH / 2 - 30, 15 },{ BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
+			{ BOARD_WIDTH / 2 + 10, 15 },{ BOARD_WIDTH / 2 + 30, 15 },{ BOARD_WIDTH / 2 + 50, 15 }};
+	
+	public static final int [][] GoeiCoordinatesLevel3 = {
 			{ BOARD_WIDTH / 2 - 60, 25 }, { BOARD_WIDTH / 2 - 50, 25 }, { BOARD_WIDTH / 2 - 40, 25 },
 			{ BOARD_WIDTH / 2 - 30, 25 }, { BOARD_WIDTH / 2 - 20, 25 }, { BOARD_WIDTH / 2 - 10, 25 },
 			{ BOARD_WIDTH / 2, 25 }, { BOARD_WIDTH / 2 + 10, 25 }, { BOARD_WIDTH / 2 + 20, 25 },
 			{ BOARD_WIDTH / 2 + 30, 25 }, { BOARD_WIDTH / 2 + 40, 25 }, { BOARD_WIDTH / 2 + 50, 25 },
-			{ BOARD_WIDTH / 2 + 60, 25 }, { BOARD_WIDTH / 2 - 60, 35 }, { BOARD_WIDTH / 2 - 50, 35 },
+			{ BOARD_WIDTH / 2 + 60, 25 }};
+	
+	public static final int [][] ZakoCoordinatesLevel3 = {
+			{ BOARD_WIDTH / 2 - 60, 35 }, { BOARD_WIDTH / 2 - 50, 35 },
 			{ BOARD_WIDTH / 2 - 40, 35 }, { BOARD_WIDTH / 2 - 30, 35 }, { BOARD_WIDTH / 2 - 20, 35 },
 			{ BOARD_WIDTH / 2 - 10, 35 }, { BOARD_WIDTH / 2, 35 }, { BOARD_WIDTH / 2 + 10, 35 },
 			{ BOARD_WIDTH / 2 + 20, 35 }, { BOARD_WIDTH / 2 + 30, 35 }, { BOARD_WIDTH / 2 + 40, 35 },
@@ -107,10 +163,9 @@ public class Constants {
 			{ BOARD_WIDTH / 2 - 50, 45 }, { BOARD_WIDTH / 2 - 40, 45 }, { BOARD_WIDTH / 2 - 30, 45 },
 			{ BOARD_WIDTH / 2 - 20, 45 }, { BOARD_WIDTH / 2 - 10, 45 }, { BOARD_WIDTH / 2, 45 },
 			{ BOARD_WIDTH / 2 + 10, 45 }, { BOARD_WIDTH / 2 + 20, 45 }, { BOARD_WIDTH / 2 + 30, 45 },
-			{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 },
-			{ BOARD_WIDTH / 2 - 20, 15 }, { BOARD_WIDTH / 2 - 10, 15 }, { BOARD_WIDTH / 2, 15 },
-			{ BOARD_WIDTH / 2 + 10, 15 }, { BOARD_WIDTH / 2 + 20, 15 } };
-
+			{ BOARD_WIDTH / 2 + 40, 45 }, { BOARD_WIDTH / 2 + 50, 45 }, { BOARD_WIDTH / 2 + 60, 45 }};
+	
+	
 	public int cont = 0;
 
 	public int[] assignCoordinates(Sprite sprite, int level) {
