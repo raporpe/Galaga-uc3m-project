@@ -66,16 +66,7 @@ public class Constants {
 	
 	
 	
-	
 
-	private static int counterL1 = 0;
-
-	public static int getInitialCoordinates(int level) {
-		if (level == 1) {
-			return enemyCoordinatesLevel1[counterL1X++][0];
-		}
-		return 0;
-	}
 
 	public static final int[][] enemyCoordinatesLevel1 = {
 
@@ -324,24 +315,39 @@ public class Constants {
 
 		return "";
 	}
-
+	
+	
 	public static final int[][] StarPositions = { { 11, 11 }, { 28, 22 }, { 33, 33 }, { 44, 44 }, { 23, 34 },
 			{ 1, 80 } };
-	private static int StarPosCounter = 0;
-	private boolean firstTime = true;
+	
 
-	public static int[] getCoordinates(Sprite sprite) {
+	private static int counterL1 = 0;
+
+	public static int[] getInitialCoordinatesArray(Sprite sprite) {
+		if (level == 1) {
+			return enemyCoordinatesLevel1[counterL1X++][0];
+		}
+		return 0;
+	}
+	
+	
+
+
+	private static int StarPosCounter = 0;
+	private static boolean firstTime = true;
+
+	public static int[] getInitialCoordinatesVector(Sprite sprite) {
 		if (sprite instanceof Star) {
 
-//			if(firstTime) { //Implement the stars shifting
-//				if (StarPosCounter >= StarPositions.length) {
-//					StarPosCounter = 0;
-//				}
-//				fistTime = !fistTime;
-//				return StarPositions[StarPosCounter++];
-//			} else {
-//				
-//			}
+			if(firstTime) { //Implement the stars shifting
+				if (StarPosCounter >= StarPositions.length) {
+					StarPosCounter = 0;
+				}
+				fistTime = !fistTime;
+				return StarPositions[StarPosCounter++];
+			} else {
+				
+			}
 
 		}
 

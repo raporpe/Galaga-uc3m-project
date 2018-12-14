@@ -24,7 +24,7 @@ abstract public class Sprite {
 		setId(IdManager.assignId(this));
 		setSpriteSkin(Constants.getSkin(this, 0));
 		
-		int[] tempInitialCoordinates = Constants.getCoordinates(this);
+		int[] tempInitialCoordinates = Constants.getInitialCoordinatesVector(this);
 		setX(tempInitialCoordinates[0]);
 		setY(tempInitialCoordinates[1]);
 
