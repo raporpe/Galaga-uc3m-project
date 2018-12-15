@@ -72,6 +72,7 @@ abstract public class Enemy extends Sprite {
 		}
 	}
 
+	
 
 	public void death() {
 		exploding = true;
