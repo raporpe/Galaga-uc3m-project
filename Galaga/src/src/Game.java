@@ -86,7 +86,9 @@ public class Game {
 		Zako[] zako = new Zako[positionAssingner.getNumberOfAvailablePositions("Zako",1)];
 		Goei[] goei = new Goei[positionAssingner.getNumberOfAvailablePositions("Goei",1)];
 		Commander[] commander = new Commander[positionAssingner.getNumberOfAvailablePositions("Commander",1)];
-
+		
+		// create swarmPositions
+		// create currentPositions (x,y)
 
 		//Initialize torpedoes array
 		for(int ii = 0; ii < playerTorpedo.length; ii++) {
@@ -127,30 +129,6 @@ public class Game {
 			commander[ii] = new Commander(board);
 		}
 
-		
-		
-		
-		
-		
-		
-		
-		
-
-
-
-
-
-				
-		
-		
-
-		
-		
-		
-		
-				
-
-		
 		double lastShotTime = 0;
 
 
@@ -193,7 +171,70 @@ public class Game {
 				}
 				
 			}
+			
+			//create function to know when has touched left and right bounds
+			
+			//MOVE SWARM
 
+			for(int i=0;i<goei.length;i++) {
+				if (goei[i].boundRight==false) {
+					goei[i].xSwarm++;
+					if (goei[i].xSwarm == Constants.BOARD_WIDTH-20) {
+						goei[i].ySwarm++;
+						goei[i].boundRight=true;
+
+					}
+				}else {
+					goei[i].xSwarm--;
+					if (goei[i].xSwarm == 20) {
+						goei[i].boundLeft=true;
+						goei[i].boundRight=false;
+						goei[i].ySwarm++;
+					}
+				}
+			}
+			
+			for(int i=0;i<commander.length;i++) {
+				if (commander[i].boundRight==false) {
+					commander[i].xSwarm++;
+					if (commander[i].xSwarm == Constants.BOARD_WIDTH-20) {
+						commander[i].ySwarm++;
+						commander[i].boundRight=true;
+
+					}
+				}else {
+					commander[i].xSwarm--;
+					if (commander[i].xSwarm == 20) {
+						commander[i].boundLeft=true;
+						commander[i].boundRight=false;
+						commander[i].ySwarm++;
+					}
+				}
+			}
+			
+			for(int i=0;i<zako.length;i++) {
+				if (zako[i].boundRight==false) {
+					zako[i].xSwarm++;
+					if (zako[i].xSwarm == Constants.BOARD_WIDTH-20) {
+						zako[i].ySwarm++;
+						zako[i].boundRight=true;
+
+					}
+				}else {
+					zako[i].xSwarm--;
+					if (zako[i].xSwarm == 20) {
+						zako[i].boundLeft=true;
+						zako[i].boundRight=false;
+						zako[i].ySwarm++;
+					}
+				}
+			}
+			for(int i=0;i<goei.length;i++) {
+				goei[i].xSwarm= goei[i].xSwarm++;
+			}
+			for(int i=0;i<commander.length;i++) {
+				commander[i].xSwarm= commander[i].xSwarm++;
+			}
 
 			game.update(playerTorpedo);
 			game.update(slowStar);

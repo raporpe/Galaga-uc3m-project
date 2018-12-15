@@ -11,13 +11,23 @@ abstract public class Enemy extends Sprite {
 	protected boolean exploding;
 	protected boolean attacking;
 	protected boolean defaultSwarmSkin = true;
-	protected double lastSystemTime;
-	protected boolean swarm;
 	protected int explodingSkin;
+	protected double lastSystemTime;
+	protected boolean swarm=true;
+	protected int xSwarm;
+	protected int ySwarm;
+	protected boolean boundRight;
+	protected boolean boundLeft;
 
-
+	// en el update
+	/*
+	 * si esta en el swarm, seguir xSwarm y tambien ySwarm
+	 * si no esta en el swarm, seguir x y tambien y
+	 */
 	public Enemy(GameBoardGUI board) {
 		super(board);
+		xSwarm=x;
+		ySwarm=y;
 
 	}
 
@@ -27,10 +37,13 @@ abstract public class Enemy extends Sprite {
 	
 	protected void update() {
 		animate();
-//		if(swarm) {
-//			moveSpriteTo()
-//		}
+		if(swarm) {
+			moveSpriteTo(xSwarm, ySwarm);
+		}else {
+			moveSpriteTo(x,y);
+		}
 	}
+	
 
 
 

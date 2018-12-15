@@ -30,6 +30,8 @@ abstract public class Sprite {
 			setX(tempInitialCoordinates[0]);
 			setY(tempInitialCoordinates[1]);
 		}
+		//PROBLEM: WE WANT TO CHANGE X BY XSWARM AND Y BY YSWARM BUT THEY DONT EXIST FOR PLAYER NOR TORPEDO
+		//Solution: initial value of xswarm and yswarm equalled in enemy contructor
 
 
 		//Initializing sprite
