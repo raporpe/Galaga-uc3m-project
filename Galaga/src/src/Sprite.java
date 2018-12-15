@@ -6,11 +6,12 @@ abstract public class Sprite {
 	
 	protected GameBoardGUI board;
 	protected int id;
-	protected int x;
-	protected int y;
+	protected int x = 50;
+	protected int y = 50;
 	protected boolean visible;
 	protected int lifes = 1;
 	protected String defaultSkin = "noSkin.png";
+//	Constants constants = new Constants();
 
 
 	
@@ -23,10 +24,9 @@ abstract public class Sprite {
 		setBoard(board);
 		setId(IdManager.assignId(this));
 		setSpriteSkin(Constants.getSkin(this, 0));
-		Constants constants = new Constants();
 		
 		if(!(this instanceof Enemy || this instanceof Torpedo)) { //Find better implementation
-			int[] tempInitialCoordinates = constants.getInitialCoordinatesVector(this);
+			int[] tempInitialCoordinates = Constants.getInitialCoordinatesVector(this);
 			setX(tempInitialCoordinates[0]);
 			setY(tempInitialCoordinates[1]);
 		}
@@ -46,30 +46,6 @@ abstract public class Sprite {
 		
 	}
 	
-//	protected void initializeSprite(int id, int x, int y, boolean visibility) {
-//		setId(id);
-//		setX(x);
-//		setY(y);
-//
-//		//Creating sprite
-//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-//		setVisibility(visibility);
-//	}
-		
-	
-//	public Sprite(int id, GameBoardGUI board, int x, int y) {
-//
-//		setId(id);
-//		setBoard(board);	
-//		setX(x);
-//		setY(y);														Deprecated
-//		
-//		//Creating sprite
-//		this.board.gb_addSprite(this.id, this.defaultSkin, true);
-//		this.board.gb_moveSpriteCoord(this.id, this.x, this.y);
-//		
-//	}
 
 	
 	
@@ -163,12 +139,13 @@ abstract public class Sprite {
 		
 		public void setSpriteSkin(String image){
 			this.defaultSkin = image;
+			board.gb_setSpriteImage(id, this.defaultSkin);
 		}
 		
 		
 		public void destroy() {
 			this.death();
-			this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
+		//	this.moveSpriteTo(Constants.DEFAULT_SPRITE_POS_X, Constants.DEFAULT_SPRITE_POS_Y);
 		}
 		
 		//Temporal
